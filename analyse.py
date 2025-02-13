@@ -1,6 +1,7 @@
 import scanpy as sc
 import sys
 import importlib_metadata
+import argparse
 
 sys.modules['importlib.metadata'] = importlib_metadata
 
@@ -9,8 +10,7 @@ parser.add_argument('myObject')
 args = parser.parse_args()
 
 myObject =  args.myObject
-parts = myObject.split("_")  
-newObject = "analysed_" + parts[1]
+newObject = "analysed_" + myObject
 
 combined_adata = sc.read(myObject)
 

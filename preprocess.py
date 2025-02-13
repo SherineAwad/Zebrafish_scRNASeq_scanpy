@@ -1,6 +1,7 @@
 import scanpy as sc
 import sys
 import importlib_metadata
+import argparse
 
 sys.modules['importlib.metadata'] = importlib_metadata
 
