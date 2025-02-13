@@ -3,6 +3,7 @@ import sys
 import importlib_metadata
 import anndata 
 import argparse
+import scanpy.external as sce
 
 sys.modules['importlib.metadata'] = importlib_metadata
 
@@ -12,26 +13,23 @@ parser.add_argument('myObject')
 args = parser.parse_args()
 
 myObject =  args.myObject
-parts = myObject.split("_")  
-newObject = "corrected_" + parts[1]
+newObject = "corrected_" + myObject 
 
 combined_adata = sc.read(myObject)
 
-batches = combined_adata.obs["sample"].unique()
-corrected_batches = []  # List to store corrected batch data
 
-for batch in batches:
-    print(f"Processing batch: {batch}")  # Track progress
-    adata_batch = combined_adata[combined_adata.obs["sample"] == batch].copy()
-    
-    # Apply ComBat
-    sc.pp.combat(adata_batch, key="sample")
-    
-    # Append corrected batch to list
-    corrected_batches.append(adata_batch)
+sc.pp.normalize_total(combined_adata, target_sum=1e4)
+sc.pp.log1p(combined_adata)
+sc.pp.highly_variable_genes(combined_adata)
+sc.pp.scale(combined_adata)
 
-corrected_adata = anndata.concat(corrected_batches, join="outer", merge="same")
+sc.tl.pca(combined_adata, svd_solver='arpack')
+sce.pp.harmony_integrate(combined_adata, key='sample')
 
-corrected_adata.write(newObject)
+combined_adata.obsm['X_pca'] = combined_adata.obsm['X_pca_harmony']
+sc.pp.neighbors(combined_adata, random_state=0)
+sc.tl.umap(combined_adata)
 
+sc.pl.umap(combined_adata, color='sample', size=2, save='_Harmonyzebrafishes.png')
 
+combined_adata.write(newObject)

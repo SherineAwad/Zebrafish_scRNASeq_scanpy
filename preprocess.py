@@ -59,10 +59,6 @@ def main():
         multi_panel=True, save="After_QC.png"
     )
 
-
-    sc.pp.normalize_total(combined_adata, target_sum=1e4)
-    sc.pp.log1p(combined_adata)
-    
     filename = obj_name + ".h5ad"
     combined_adata.write(filename)
 if __name__ == "__main__":

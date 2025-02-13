@@ -6,7 +6,7 @@ with open(config['SAMPLES']) as fp:
 rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
-            expand("analysed_{all}.h5ad", all=config['ALL']),  
+            expand("corrected_{all}.h5ad", all=config['ALL'])
             expand("clustered_{all}.h5ad", all=config['ALL']), 
  
 rule preprocess: 
@@ -35,7 +35,7 @@ rule batch:
 
 rule analyse: 
      input: 
-         expand("{all}.h5ad", all=config['ALL'])
+        expand("corrected_{all}.h5ad", all=config['ALL'])
      output: 
         expand("analysed_{all}.h5ad", all=config['ALL'])
      shell:
@@ -45,7 +45,7 @@ rule analyse:
 
 rule cluster: 
        input:
-          expand("analysed_{all}.h5ad", all=config['ALL']) 
+          expand("corrected_{all}.h5ad", all=config['ALL']) 
        output:
           expand("clustered_{all}.h5ad", all=config['ALL'])
        shell:

@@ -3,10 +3,5 @@
 #---------------------------------------------------
 ALL: "Zebrafishes"
 SAMPLES: "samples.tsv"
-nCount1: 1200
-nCount2: 30000
-nfeatures1: 800
-nfeatures2: 6000
-mt: 25
 
 
