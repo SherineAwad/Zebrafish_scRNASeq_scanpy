@@ -6,7 +6,7 @@ with open(config['SAMPLES']) as fp:
 rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
-            expand("corrected_{all}.h5ad", all=config['ALL'])
+            expand("corrected_{all}.h5ad", all=config['ALL']),
             expand("clustered_{all}.h5ad", all=config['ALL']), 
  
 rule preprocess: 

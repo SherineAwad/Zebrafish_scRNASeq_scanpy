@@ -45,7 +45,7 @@ def main():
          combined_adata,
          ["n_genes_by_counts", "total_counts", "pct_counts_mt"],
          jitter=0.4,
-         multi_panel=True, save="QC.png"
+         multi_panel=True, save="_QC.png"
     )
 
     sc.pp.filter_cells(combined_adata, min_genes=100)
@@ -56,7 +56,7 @@ def main():
         combined_adata,
         ["n_genes_by_counts", "total_counts", "pct_counts_mt"],
         jitter=0.4,
-        multi_panel=True, save="After_QC.png"
+        multi_panel=True, save="_AfterQC.png"
     )
 
     filename = obj_name + ".h5ad"

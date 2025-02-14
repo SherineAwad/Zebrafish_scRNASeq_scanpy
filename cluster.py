@@ -17,7 +17,7 @@ newObject = "clustered_" + parts[1]
 combined_adata = sc.read(myObject)
 
 sc.tl.leiden(combined_adata,  n_iterations=2)
-sc.pl.umap(combined_adata, color=["leiden"], save= "clusters.png")
+sc.pl.umap(combined_adata, color=["leiden"], save= "_clusters.png",legend_loc="on data")
 combined_adata.write(newObject)
 
 marker_genes  = {
@@ -28,8 +28,12 @@ marker_genes  = {
     "AC": ["gad1a","gad1b","gad2","slc6a9","tfap2b","prox1a","pax6a","calb2a","calb2b","pcp4a","elavl3","isl1"], 
     "HC": ["lhx1a","cbln4","calb1","nefla","neflb","nefma","nefmb"], 
     "RGC": ["nefla","neflb","nefma","nefmb","sncga","sncgb","thy1","ebf3a","rbfox3a","rbfox3b","isl1","isl2a","isl2b","pou4f1","pou4f2","pou4f3","rbpms"],  
-    "Microglia": ["ptprc","csf2rb","mpeg1.1"] }
-sc.pl.dotplot(combined_adata, marker_genes, groupby="leiden", standard_scale="var", save="markerGenes.png")
+    "Microglia": ["ptprc","csf2rb","mpeg1.1"], 
+    "Progenitors": ["neurod1","sox2","cdh2","atoh7"], 
+    "Endothelial": ["tie1"],
+    "Pericytes": ["kcnj8"]
+    }
+sc.pl.dotplot(combined_adata, marker_genes, groupby="leiden", standard_scale="var", save="_markerGenes.png")
 
 
 
@@ -49,26 +53,28 @@ nrows = (n_genes + ncols - 1) // ncols  # This calculates the number of rows nee
 fig, axes = plt.subplots(nrows, ncols, figsize=(ncols * 4, nrows * 4))  # Adjust figsize as needed
 axes = axes.flatten()  # Flatten the axes array to easily loop over them
 
+
 # Plot each gene in a separate subplot
 for i, gene in enumerate(all_genes):
     if gene in combined_adata.var_names:
         # Plot the gene expression as a feature plot in the appropriate subplot
-        sc.pl.scatter(combined_adata, color=gene, title=gene, basis='umap', ax=axes[i], show=False)
+        sc.pl.scatter(combined_adata, color=gene, title=gene, basis='umap',legend_loc='right margin',  ax=axes[i], show=False)
         axes[i].set_title(f'{gene}')  # Optionally, customize the title
 
 plt.tight_layout()
 plt.savefig('all_marker_genes_feature_plots.png', dbi="300")
 
 
+
+
+''' 
 #For printing a file for each gene 
-'''
 for cluster, genes in marker_genes.items():
     for gene in genes:
         if gene in combined_adata.var_names:  # Check if the gene is present in the data
             # Plot using sc.pl.scatter with UMAP embedding
             sc.pl.scatter(combined_adata, color=gene, title=f'{cluster} - {gene}', basis='umap', save=f'{gene}_umap_feature_plot.png')
 
-
-'''
+''' 
 
 
