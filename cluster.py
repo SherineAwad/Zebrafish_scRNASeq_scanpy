@@ -18,22 +18,23 @@ combined_adata = sc.read(myObject)
 
 sc.tl.leiden(combined_adata,  n_iterations=2)
 sc.pl.umap(combined_adata, color=["leiden"], save= "_clusters.png",legend_loc="on data")
-combined_adata.write(newObject)
-
 marker_genes  = {
     "MG": ["rlbp1a","rlbp1b","gfap","apoea","apoeb","her6","notch1a","notch1b","aqp4","pax6a","prdx6","slc1a3a","slc1a3b","vim"],
-    "Rod": ["rho","nrl","crx","guca1b","rom1a","rom1b"],
-    "Cones": ["opn1mw1","opn1mw2","opn1mw3","opn1mw4","opn1sw1","opn1sw2","arr3a","thrb"], 
-    "BC": ["sebox","bhlhe23","cabp5a","cabp5b","vsx2","pcp4a","isl1"] ,
-    "AC": ["gad1a","gad1b","gad2","slc6a9","tfap2b","prox1a","pax6a","calb2a","calb2b","pcp4a","elavl3","isl1"], 
-    "HC": ["lhx1a","cbln4","calb1","nefla","neflb","nefma","nefmb"], 
+    "Rod": ["insm1a","nr2e3","rho","nrl","crx","guca1b","rom1a","rom1b"],
+    "Cones": ["prdm1a","opn1mw1","opn1mw2","opn1mw3","opn1mw4","opn1sw1","opn1sw2","arr3a","thrb","gnat2"], 
+    "BC": ["vsx1", "sebox","bhlhe23","cabp5a","cabp5b","vsx2","pcp4a","isl1"] ,
+    "AC": ["gad1a","gad1b","gad2","slc6a9","tfap2b","prox1a","pax6a","calb2a","calb2b","pcp4a","elavl3","isl1","chata", "th", "stat3"], 
+    "HC": ["ompa","lhx1a","cbln4","calb1","nefla","neflb","nefma","nefmb"], 
     "RGC": ["nefla","neflb","nefma","nefmb","sncga","sncgb","thy1","ebf3a","rbfox3a","rbfox3b","isl1","isl2a","isl2b","pou4f1","pou4f2","pou4f3","rbpms"],  
     "Microglia": ["ptprc","csf2rb","mpeg1.1"], 
-    "Progenitors": ["neurod1","sox2","cdh2","atoh7"], 
+    "Progenitors": ["her4.2", "her4.3", "her4.4","dla", "ccnd1","ascl1a","neurod1","sox2","cdh2","atoh7"], 
     "Endothelial": ["tie1"],
-    "Pericytes": ["kcnj8"]
+    "Pericytes": ["kcnj8"],
+    "Proliferating cells": ["cdk1"], 
+    "RPE": ["rpe65a"],
+
     }
-sc.pl.dotplot(combined_adata, marker_genes, groupby="leiden", standard_scale="var", save="_markerGenes.png")
+sc.pl.dotplot(combined_adata, marker_genes, groupby="leiden", standard_scale="var", save="markerGenes.png")
 
 
 
@@ -67,14 +68,12 @@ plt.savefig('all_marker_genes_feature_plots.png', dbi="300")
 
 
 
-''' 
 #For printing a file for each gene 
 for cluster, genes in marker_genes.items():
     for gene in genes:
         if gene in combined_adata.var_names:  # Check if the gene is present in the data
             # Plot using sc.pl.scatter with UMAP embedding
-            sc.pl.scatter(combined_adata, color=gene, title=f'{cluster} - {gene}', basis='umap', save=f'{gene}_umap_feature_plot.png')
+            sc.pl.scatter(combined_adata, color=gene, title=f'{cluster} - {gene}', basis='umap', save=f'_{gene}.png')
 
-''' 
-
-
+combined_adata.obs_names_make_unique()
+##combined_adata.write(newObject,compression="gzip")
