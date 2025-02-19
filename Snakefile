@@ -6,9 +6,9 @@ with open(config['SAMPLES']) as fp:
 rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
-            expand("corrected_{all}.h5ad", all=config['ALL']),
-            expand("clustered_{all}.h5ad", all=config['ALL']), 
-            expand("annotated_{all}.h5ad", all=config['ALL'])
+            #expand("corrected_{all}.h5ad", all=config['ALL']),
+            #expand("clustered_{all}.h5ad", all=config['ALL']), 
+            #expand("annotated_{all}.h5ad", all=config['ALL'])
  
 rule preprocess: 
         input:  
@@ -20,7 +20,7 @@ rule preprocess:
           name = config['ALL']
         shell: 
             """
-           python preprocess.R {params.samples}  {params.name}  
+           python preprocess.py {params.samples}  {params.name}  
            """ 
 
 rule batch: 
