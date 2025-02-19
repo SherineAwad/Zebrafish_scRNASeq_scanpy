@@ -9,11 +9,13 @@ def read_samples(file_path):
     samples = {}
     with open(file_path, 'r') as file:
         for line in file:
-            parts = line.strip().split(',')
-            if len(parts) == 2:
-                sample_id, filename = parts
+            sample_id = line.strip()  # Get the sample name (e.g., x, y, z)
+            if sample_id:  # Ensure there's a valid sample name
+                # Construct the filename by appending '_filtered_feature_bc_matrix.h5' to the sample name
+                filename = f"{sample_id}_filtered_feature_bc_matrix.h5"
                 samples[sample_id] = filename
     return samples
+
 
 
 def main():
@@ -22,11 +24,12 @@ def main():
     parser.add_argument('obj_name') 
     args = parser.parse_args()
     
-    inputfile = args.samples
+    inputfile = args.inputfile
     obj_name = args.obj_name 
 
     adatas = {}
-    samples = read_samples(inputfile)  
+    samples = read_samples(inputfile) 
+    print(samples)
     for sample_id, filename in samples.items():
         print(f"Reading {filename}...")  # Optional: Print status
         adata = sc.read_10x_h5(filename)  # Read the file
