@@ -2,7 +2,7 @@
 
 We analyse Zebrafish LD, NMDA and control scRNASeq samples using scanpy. 
 
-###### How to run Snakemake 
+##### How to run Snakemake 
 
 For dry run to check everythign before actual run:
 
