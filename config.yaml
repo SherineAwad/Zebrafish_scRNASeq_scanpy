@@ -3,5 +3,5 @@
 #---------------------------------------------------
 ALL: "Zebrafishes"
 SAMPLES: "samples.tsv"
-
+ANNOFILE: "annotations.txt"
 
