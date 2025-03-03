@@ -15,7 +15,7 @@ args = parser.parse_args()
 myObject =  args.myObject
 
 combined_adata = sc.read(myObject)
-
+'''
 combined_adata.var.head()
 combined_adata.obs.head()
 combined_adata.obs['leiden'].head()
@@ -48,6 +48,8 @@ sc.pl.violin(
     jitter=0.4,
     multi_panel=True,
     groupby="leiden",save="geneCountsPerCluster.png",rotation=90)
+'''
+sc.pl.umap(combined_adata, color='renamed_samples', size=2, save='_renamedHarmonyzebrafishes.png')
 
 
 

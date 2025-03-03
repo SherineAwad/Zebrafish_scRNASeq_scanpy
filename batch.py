@@ -13,7 +13,8 @@ parser.add_argument('myObject')
 args = parser.parse_args()
 
 myObject =  args.myObject
-newObject = "corrected_" + myObject 
+parts = myObject.split("_")
+newObject = "corrected_" + parts[1]
 
 combined_adata = sc.read(myObject)
 
@@ -24,12 +25,12 @@ sc.pp.highly_variable_genes(combined_adata)
 sc.pp.scale(combined_adata)
 
 sc.tl.pca(combined_adata, svd_solver='arpack')
-sce.pp.harmony_integrate(combined_adata, key='sample')
+sce.pp.harmony_integrate(combined_adata, key='renamed_samples')
 
 combined_adata.obsm['X_pca'] = combined_adata.obsm['X_pca_harmony']
 sc.pp.neighbors(combined_adata, random_state=0)
 sc.tl.umap(combined_adata)
 
-sc.pl.umap(combined_adata, color='sample', size=2, save='_Harmonyzebrafishes.png')
+sc.pl.umap(combined_adata, color='renamed_samples', size=2, save='_Harmonyzebrafishes.png')
 
 combined_adata.write(newObject)

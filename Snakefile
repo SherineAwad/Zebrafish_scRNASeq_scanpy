@@ -1,14 +1,16 @@
 with open(config['SAMPLES']) as fp:
     samples = fp.read().splitlines()
 
-
+SUBSET = ['Cones', 'AC'] 
 
 rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
-            #expand("corrected_{all}.h5ad", all=config['ALL']),
-            #expand("clustered_{all}.h5ad", all=config['ALL']), 
-            #expand("annotated_{all}.h5ad", all=config['ALL'])
+            expand("renamed_{all}.h5ad", all=config['ALL']),
+            expand("corrected_{all}.h5ad", all=config['ALL']),
+            expand("clustered_{all}.h5ad", all=config['ALL']), 
+            #expand("annotated_{all}.h5ad", all=config['ALL']), 
+            #expand("{subset}"_{all}.h5ad", all=config['ALL'], subset = SUBSET),
  
 rule preprocess: 
         input:  
@@ -22,10 +24,19 @@ rule preprocess:
             """
            python preprocess.py {params.samples}  {params.name}  
            """ 
+rule rename: 
+       input:
+           expand("{all}.h5ad", all= config['ALL']),
+       output:
+          expand("renamed_{all}.h5ad", all= config['ALL']),
+       shell:
+           """
+           python preprocess.py {input} {output} 
+           """
 
 rule batch: 
      input: 
-         expand("{all}.h5ad", all=config['ALL'])
+         expand("renamed_{all}.h5ad", all=config['ALL'])
      output: 
          expand("corrected_{all}.h5ad", all=config['ALL'])
      shell: 
@@ -33,16 +44,6 @@ rule batch:
         python batch.py {input} 
         """ 
 
-
-rule analyse: 
-     input: 
-        expand("corrected_{all}.h5ad", all=config['ALL'])
-     output: 
-        expand("analysed_{all}.h5ad", all=config['ALL'])
-     shell:
-        """
-        python analyse.py {input}
-        """
 
 rule cluster: 
        input:
@@ -64,4 +65,13 @@ rule annotate:
           python annotate.py {input}
           """
 
-
+rule subset: 
+      input: 
+         expand("annotated_{all}.h5ad", all=config['ALL'])
+      output: 
+         expand("{subset}_{all}.h5ad", all=config['ALL'], subset = SUBSET),
+      shell: 
+          """ 
+          python subset.py {input} ConesSubtypes.txt" 
+          """
+      

@@ -76,4 +76,4 @@ for cluster, genes in marker_genes.items():
             sc.pl.scatter(combined_adata, color=gene, title=f'{cluster} - {gene}', basis='umap', save=f'_{gene}.png')
 
 combined_adata.obs_names_make_unique()
-##combined_adata.write(newObject,compression="gzip")
+combined_adata.write(newObject,compression="gzip")

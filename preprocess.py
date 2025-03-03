@@ -51,6 +51,16 @@ def main():
          multi_panel=True, save="_QC.png"
     )
 
+    combined_adata = combined_adata[
+      (combined_adata.obs['n_genes_by_counts'] > 1000) &
+      (combined_adata.obs['n_genes_by_counts'] < 7000) &
+      (combined_adata.obs['total_counts'] > 1500) &
+      (combined_adata.obs['total_counts'] < 30000) &
+      (combined_adata.obs['pct_counts_mt'] < 20), :
+      ]
+
+
+
     sc.pp.filter_cells(combined_adata, min_genes=100)
     sc.pp.filter_genes(combined_adata, min_cells=3)
 
