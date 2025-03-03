@@ -7,6 +7,7 @@ rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
             expand("renamed_{all}.h5ad", all=config['ALL']),
+            expand("doubletRemoved_{all}.h5ad", all=config['ALL']),
             expand("corrected_{all}.h5ad", all=config['ALL']),
             expand("clustered_{all}.h5ad", all=config['ALL']), 
             #expand("annotated_{all}.h5ad", all=config['ALL']), 
@@ -31,12 +32,22 @@ rule rename:
           expand("renamed_{all}.h5ad", all= config['ALL']),
        shell:
            """
-           python preprocess.py {input} {output} 
+           python preprocess.py {input} 
+           """
+
+rule remove_doublet: 
+      input:
+           expand("renamed_{all}.h5ad", all= config['ALL']),
+      output:
+          expand("doubletRemoved_{all}.h5ad", all= config['ALL']),
+      shell:
+           """
+           python doublet.py {input} 
            """
 
 rule batch: 
      input: 
-         expand("renamed_{all}.h5ad", all=config['ALL'])
+         expand("doubletRemoved_{all}.h5ad", all=config['ALL'])
      output: 
          expand("corrected_{all}.h5ad", all=config['ALL'])
      shell: 

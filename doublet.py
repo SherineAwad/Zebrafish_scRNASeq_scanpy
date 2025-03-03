@@ -14,8 +14,9 @@ parser.add_argument('myObject')
 args = parser.parse_args()
 
 myObject =  args.myObject
-newObject = "doupletRemoved_" + myObject
+parts = myObject.split("_")
 
+newObject = "doubletRemoved_" + parts[1]
 parts = myObject.split("_")
 
 fname = parts[1].split(".") 
@@ -32,10 +33,8 @@ doublet_scores, predicted_doublets = scrub.scrub_doublets()
 
 combined_adata.obs['predicted_doublets'] = predicted_doublets
 
-figure_name = fname + "predictedDroublets.png"
+figure_name = fname + "predictedDoublets.png"
 sc.pl.violin(combined_adata, 'predicted_doublets', jitter=True, boxplot=True, save = figure_name)
-figure_name = fname + "droubletUmap.png" 
-sc.pl.umap(combined_adata, color='predicted_doublets', save=figure_name)
 
 combined_adata = combined_adata[~combined_adata.obs['predicted_doublets'], :]
 
