@@ -51,12 +51,13 @@ def main():
          multi_panel=True, save="_QC.png"
     )
 
+
     combined_adata = combined_adata[
-      (combined_adata.obs['n_genes_by_counts'] > 1000) &
-      (combined_adata.obs['n_genes_by_counts'] < 7000) &
-      (combined_adata.obs['total_counts'] > 1500) &
+      (combined_adata.obs['n_genes_by_counts'] > 800) &
+      (combined_adata.obs['n_genes_by_counts'] < 6000) &
+      (combined_adata.obs['total_counts'] > 1200) &
       (combined_adata.obs['total_counts'] < 30000) &
-      (combined_adata.obs['pct_counts_mt'] < 20), :
+      (combined_adata.obs['pct_counts_mt'] < 25), :
       ]
 
 

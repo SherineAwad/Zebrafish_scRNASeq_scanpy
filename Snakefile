@@ -1,6 +1,5 @@
 with open(config['SAMPLES']) as fp:
     samples = fp.read().splitlines()
-
 SUBSET = ['Cones', 'AC'] 
 
 rule all:
@@ -10,8 +9,8 @@ rule all:
             expand("doubletRemoved_{all}.h5ad", all=config['ALL']),
             expand("corrected_{all}.h5ad", all=config['ALL']),
             expand("clustered_{all}.h5ad", all=config['ALL']), 
-            #expand("annotated_{all}.h5ad", all=config['ALL']), 
-            #expand("{subset}"_{all}.h5ad", all=config['ALL'], subset = SUBSET),
+            expand("annotated_{all}.h5ad", all=config['ALL']), 
+            expand("{subset}"_{all}.h5ad", all=config['ALL'], subset = SUBSET),
  
 rule preprocess: 
         input:  
@@ -19,11 +18,11 @@ rule preprocess:
         output: 
           expand("{all}.h5ad", all= config['ALL']), 
         params: 
-          samples = config['SAMPLES'],  
+          samplesFile = config['SAMPLES'],  
           name = config['ALL']
         shell: 
             """
-           python preprocess.py {params.samples}  {params.name}  
+           python preprocess.py {params.samplesFile}  {params.name}  
            """ 
 rule rename: 
        input:
@@ -32,7 +31,7 @@ rule rename:
           expand("renamed_{all}.h5ad", all= config['ALL']),
        shell:
            """
-           python preprocess.py {input} 
+           python rename.py {input} 
            """
 
 rule remove_doublet: 
@@ -69,11 +68,13 @@ rule cluster:
 rule annotate:
        input:
           expand("clustered_{all}.h5ad", all=config['ALL'])
+       params: 
+          annofile = config['ANNOFILE'] 
        output:
           expand("annotated_{all}.h5ad", all=config['ALL'])
        shell:
           """
-          python annotate.py {input}
+          python annotate.py {input} {params.annofile} 
           """
 
 rule subset: 

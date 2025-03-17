@@ -30,7 +30,7 @@ combined_adata = sc.read_h5ad(myObject, backed="r")
 cluster_to_celltype_dict = {}
 with open(annot_file, "r") as f:
     for line in f:
-        cluster, celltype = line.strip().split()
+        cluster, celltype = line.strip().split('\t')
         cluster_to_celltype_dict[cluster] = celltype
 
 cluster_to_celltype_dict = {str(key): value for key, value in cluster_to_celltype_dict.items()}

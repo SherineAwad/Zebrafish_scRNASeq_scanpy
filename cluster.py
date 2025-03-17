@@ -32,7 +32,9 @@ marker_genes  = {
     "Pericytes": ["kcnj8"],
     "Proliferating cells": ["cdk1"], 
     "RPE": ["rpe65a"],
-
+    "Olignocytes ": ["mbpa"],
+    "RPC": ["her12", "fgf19","sfrp2", "gli1"], 
+    "Astrocytes":["pax2a", "pax2b","igf2a", "igf2b"]  
     }
 sc.pl.dotplot(combined_adata, marker_genes, groupby="leiden", standard_scale="var", save="markerGenes.png")
 
