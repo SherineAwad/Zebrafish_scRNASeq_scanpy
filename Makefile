@@ -27,7 +27,7 @@ Drerio_genome:
 	/nfs/turbo/umms-thahoang/sherine/tools/cellranger-7.2.0/cellranger mkref --genome=Drerio_genome --fasta=Danio_rerio.GRCz11.dna.primary_assembly.fa --genes=Danio_rerio.GRCz11.105.filtered.gtf
 
 TH70/TH70_S72_L004_R2_001.fastq.gz: 
-	#find ${FASTQS}/TH65* -type f -name "*.fastq.gz" -exec ln -fs {} TH65/ \;
+	find ${FASTQS}/TH65* -type f -name "*.fastq.gz" -exec ln -fs {} TH65/ \;
 	find ${FASTQS}/TH66* -type f -name "*.fastq.gz" -exec ln -fs {} TH66/ \;
 	find ${FASTQS}/TH67* -type f -name "*.fastq.gz" -exec ln -fs {} TH67/ \;
 	find ${FASTQS}/TH68* -type f -name "*.fastq.gz" -exec ln -fs {} TH68/ \;
