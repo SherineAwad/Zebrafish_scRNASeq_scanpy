@@ -17,6 +17,14 @@ top_genes_53 = pd.DataFrame({
 
 print(top_genes_53.head(10))
 
+# Get the top 10 genes
+top_genes_list = top_genes_53['gene'].head(10).tolist()
+
+# Plot UMAP for top genes and save the plot
+sc.pl.umap(combined_adata, color=top_genes_list, size=50, cmap='viridis', save='_top_genes_53_umap.png')
+
+
+
 sc.tl.rank_genes_groups(combined_adata, groupby='leiden', groups=['55'], reference='rest', method='wilcoxon')
 cluster_55_results = copy.deepcopy(combined_adata.uns['rank_genes_groups'])
 
@@ -27,5 +35,11 @@ top_genes_55 = pd.DataFrame({
 })
 
 print(top_genes_55.head(10))
+
+# Get the top 10 genes
+top_genes_list = top_genes_55['gene'].head(10).tolist()
+
+# Plot UMAP for top genes and save the plot
+sc.pl.umap(combined_adata, color=top_genes_list, size=50, cmap='viridis',  save='_top_genes_55_umap.png')
 
 
