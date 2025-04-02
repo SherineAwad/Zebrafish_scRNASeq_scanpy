@@ -29,15 +29,24 @@ combined_adata = sc.read_h5ad(myObject, backed="r")
 
 sc.pl.dotplot(combined_adata, 
               var_names=marker_genes, 
-              groupby='leiden',  
+              groupby='celltype',  
               save=plot_name) 
 
 sc.pl.violin(
     combined_adata, 
     keys=marker_genes,
-    groupby='leiden',   
-    save=plot_name
+    groupby='celltype', rotation =90, 
+    save=plot_name, stripplot=True,  
+    show=True 
 )
 
+
+
+for gene in marker_genes:
+    sc.pl.scatter(
+        combined_adata,
+        color=gene,  basis='umap', 
+        save=plot_name + f"_{gene}_featureplot.png"
+    )
 
 

@@ -16,8 +16,9 @@ newObject = "clustered_" + parts[1]
 
 combined_adata = sc.read(myObject)
 
-sc.tl.leiden(combined_adata,  n_iterations=2)
-sc.pl.umap(combined_adata, color=["leiden"], save= "_clusters.png",legend_loc="on data")
+sc.tl.leiden(combined_adata, n_iterations=2)
+sc.pl.umap(combined_adata, color=["leiden"], save="_clusters.png", legend_loc="on data") 
+
 marker_genes  = {
     "MG": ["rlbp1a","rlbp1b","gfap","apoea","apoeb","her6","notch1a","notch1b","aqp4","pax6a","prdx6","slc1a3a","slc1a3b","vim"],
     "Rod": ["insm1a","nr2e3","rho","nrl","crx","guca1b","rom1a","rom1b"],
@@ -29,7 +30,7 @@ marker_genes  = {
     "Microglia": ["ptprc","csf2rb","mpeg1.1"], 
     "Progenitors": ["her4.2", "her4.3", "her4.4","dla", "ccnd1","ascl1a","neurod1","sox2","cdh2","atoh7"], 
     "Endothelial": ["tie1"],
-    "Pericytes": ["kcnj8"],
+    "Pericytes": ["kcnj8", "acta2"],
     "Proliferating cells": ["cdk1"], 
     "RPE": ["rpe65a"],
     "Olignocytes ": ["mbpa"],
@@ -76,6 +77,8 @@ for cluster, genes in marker_genes.items():
         if gene in combined_adata.var_names:  # Check if the gene is present in the data
             # Plot using sc.pl.scatter with UMAP embedding
             sc.pl.scatter(combined_adata, color=gene, title=f'{cluster} - {gene}', basis='umap', save=f'_{gene}.png')
+
+
 
 combined_adata.obs_names_make_unique()
 combined_adata.write(newObject,compression="gzip")
