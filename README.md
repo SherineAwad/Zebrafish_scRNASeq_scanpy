@@ -15,7 +15,7 @@ These violin plots visualize cell-level quality metrics **before and after filte
 
 This plot shows **raw quality control metrics** (e.g., number of genes per cell, mitochondrial percentage) **before filtering**. It helps identify thresholds for removing low-quality or dead cells.
 
-![violin_QC.png](violin_QC.png)
+![violin_QC.png](figures/violin_QC.png)
 
 ---
 
@@ -23,7 +23,7 @@ This plot shows **raw quality control metrics** (e.g., number of genes per cell,
 
 This plot shows the same QC metrics **after filtering**. It confirms that poor-quality cells were successfully removed based on chosen thresholds.
 
-![violin_AfterQC.png](violin_AfterQC.png)
+![violin_AfterQC.png](figures/violin_AfterQC.png)
 
 
 ## UMAP After Batch Effect Removal (Harmony)
