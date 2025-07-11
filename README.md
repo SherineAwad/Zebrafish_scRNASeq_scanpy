@@ -49,7 +49,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## Clustering 
 
-### UMAP after clustering 
+### UMAP after clustering (resolution: default =1)  
 
 <img src="figures/originalgeneByGene/umap_clustersNumbers.png" alt="Umap Annotations" width="90%">
 
@@ -90,8 +90,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
 
-## We need to increase the resolution to seperate the tiny branch of Rod Cells
-
+## We need to increase the resolution to 2.5 to seperate the tiny branch of Rod Cells
 
 ### UMAP after clustering 
 
