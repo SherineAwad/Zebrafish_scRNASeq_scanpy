@@ -47,16 +47,18 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umap_reclustered_LD.png" alt="UMAP LD sample" width="33%"><img src="figures/umap_reclustered_NMDA.png" alt="UMAP NMDA sample" width="33%"><img src="figures/umap_reclustered_Control.png" alt="UMAP Control sample" width="33%">
 
 
-## Dot plot for Marker Genes
+## Clustering 
+
+### UMAP after clustering 
+
+<img src="figures/originalgeneByGene/umap_clustersNumbers.png" alt="Umap Annotations" width="90%">
+
+### Dot plot for Marker Genes
 
 <img src="figures/originalgeneByGene/dotplot_markerGenes.png" alt="Umap Annotations" width="90%">
 
 
-where the cluster numbers are as follows: 
-
-<img src="figures/originalgeneByGene/umap_clustersNumbers.png" alt="Umap Annotations" width="90%">
-
-## Marker Genes UMAP 
+### Marker Genes UMAP 
 
 <img src="figures/originalgeneByGene/umap_acta2.png" alt="acta2" width="33%"><img src="figures/originalgeneByGene/umap_apoea.png" alt="apoea" width="33%"><img src="figures/originalgeneByGene/umap_apoeb.png" alt="apoeb" width="33%">
 <img src="figures/originalgeneByGene/umap_aqp4.png" alt="aqp4" width="33%"><img src="figures/originalgeneByGene/umap_arr3a.png" alt="arr3a" width="33%"><img src="figures/originalgeneByGene/umap_ascl1a.png" alt="ascl1a" width="33%">
@@ -82,14 +84,14 @@ where the cluster numbers are as follows:
 
 
 
-### After annotation using marker genes
+## After annotation using marker genes
 
 <img src="figures/umapZebrafishes_annotations.png" alt="Umap Annotations" width="90%">  
 <img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
 
 
-##### How to run Snakemake 
+## How to run Snakemake 
 
 For dry run to check everythign before actual run:
 
