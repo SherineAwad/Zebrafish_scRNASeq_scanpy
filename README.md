@@ -49,8 +49,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## Dot plot for Marker Genes
 
-<img src="figures/originalgeneByGene/dotplot_markerGenes.png" alt="Umap Annotations" width="49%">
-
+<img src="figures/originalgeneByGene/dotplot_markerGenes.png" alt="Umap Annotations" width="90%">
 
 ## Marker Genes UMAP 
 
