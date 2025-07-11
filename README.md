@@ -90,6 +90,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
 
+## We need to increase the resolution to seperate the tiny branch of Rod Cells
+
+
+### UMAP after clustering 
+
+<img src="figures/umap_clusters.png" alt="Umap Annotations" width="90%">
+
 
 ## How to run Snakemake 
 
