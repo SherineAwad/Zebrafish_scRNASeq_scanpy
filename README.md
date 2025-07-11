@@ -36,6 +36,15 @@ By aligning shared biological structure across different batches or samples, Har
 
 ![umap_Harmonyzebrafishes.png](figures/umap_Harmonyzebrafishes.png)
 
+### UMAP per sample
+
+Below are the UMAP plots split by individual samples after reclustering:
+
+<img src="figures/umap_reclustered_LD.png" alt="UMAP LD sample" width="33%">
+<img src="figures/umap_reclustered_NMDA.png" alt="UMAP NMDA sample" width="33%">
+<img src="figures/umap_reclustered_Control.png" alt="UMAP Control sample" width="33%">
+
+
 ## Dot plot for Marker Genes
 
 <img src="figures/originalgeneByGene/dotplot_markerGenes.png" alt="Umap Annotations" width="49%">
