@@ -51,6 +51,11 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/originalgeneByGene/dotplot_markerGenes.png" alt="Umap Annotations" width="90%">
 
+
+where the cluster numbers are as follows: 
+
+<img src="figures/originalgeneByGene/umap_clustersNumbers.png" alt="Umap Annotations" width="90%">
+
 ## Marker Genes UMAP 
 
 <img src="figures/originalgeneByGene/umap_acta2.png" alt="acta2" width="33%"><img src="figures/originalgeneByGene/umap_apoea.png" alt="apoea" width="33%"><img src="figures/originalgeneByGene/umap_apoeb.png" alt="apoeb" width="33%">
