@@ -69,8 +69,8 @@ By aligning shared biological structure across different batches or samples, Har
 
 ### After annotation using marker genes
 
-<img src="figures/umapZebrafishes_annotations.png" alt="Umap Annotations" width="70%">  
-<img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="70%">
+<img src="figures/umapZebrafishes_annotations.png" alt="Umap Annotations" width="90%">  
+<img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
 
 
