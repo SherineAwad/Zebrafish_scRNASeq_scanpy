@@ -102,6 +102,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umap_clusters.png" alt="Umap Annotations" width="90%">
 
 
+## After re-Clusteringannotation using marker genes
+
+<img src="figures/umapZebrafishes_Reannotations.png" alt="Umap Annotations" width="90%">
+<img src="figures/umapZebrafishes_ReannotationsON.png" alt="Umap Annotations ON" width="90%">
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everythign before actual run:
