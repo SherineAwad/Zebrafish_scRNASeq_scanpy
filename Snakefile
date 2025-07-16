@@ -5,12 +5,11 @@ SUBSET = ['Cones', 'AC']
 rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
-            expand("renamed_{all}.h5ad", all=config['ALL']),
             expand("doubletRemoved_{all}.h5ad", all=config['ALL']),
             expand("corrected_{all}.h5ad", all=config['ALL']),
-            expand("clustered_{all}.h5ad", all=config['ALL']), 
-            expand("annotated_{all}.h5ad", all=config['ALL']), 
-            expand("{subset}"_{all}.h5ad", all=config['ALL'], subset = SUBSET),
+            #expand("clustered_{all}.h5ad", all=config['ALL']), 
+            #expand("annotated_{all}.h5ad", all=config['ALL']), 
+            #expand("{subset}"_{all}.h5ad", all=config['ALL'], subset = SUBSET),
  
 rule preprocess: 
         input:  
@@ -36,7 +35,7 @@ rule rename:
 
 rule remove_doublet: 
       input:
-           expand("renamed_{all}.h5ad", all= config['ALL']),
+           expand("{all}.h5ad", all= config['ALL']),
       output:
           expand("doubletRemoved_{all}.h5ad", all= config['ALL']),
       shell:

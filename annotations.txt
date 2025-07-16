@@ -1,6 +1,7 @@
 28	Progenitors
 61	Progenitors
 35	Progenitors
+56	Progenitors
 3	Post_Mitotic
 51	Rod
 19	Rod
@@ -48,6 +49,10 @@
 45	AC
 92	AC
 54	AC
+91	AC
+33	AC
+42	AC
+59	AC
 25	HC
 85	HC
 57	HC
@@ -57,7 +62,6 @@
 48	HC
 71	HC
 10	HC
-93 	HC
 4	HC
 49	HC
 5	RGC
@@ -66,7 +70,6 @@
 80	Endothelial
 31	RPE
 76	Cones_MG_Progenitors_PostMitotic
-68 	Oligodenrocyte 
 8	Cones
 46	Cones
 24	Cones
@@ -79,3 +82,15 @@
 0	MG
 41	MG	
 43	Perycites
+68	Oligodenrocyte
+13	MG
+52	MG
+89	MG
+81	MG
+58	Rod
+86	Rod
+66	Rod
+30	Rod
+87	Rod
+90	HC
+93	HC

@@ -11,12 +11,11 @@ parser.add_argument('myObject')
 args = parser.parse_args()
 
 myObject =  args.myObject
-parts = myObject.split("_")  
-newObject = "clustered_" + parts[1]
+newObject = "clustered_" + myObject 
 
 combined_adata = sc.read(myObject)
 
-sc.tl.leiden(combined_adata, n_iterations=2)
+sc.tl.leiden(combined_adata, resolution=2.5)
 sc.pl.umap(combined_adata, color=["leiden"], save="_clusters.png", legend_loc="on data") 
 
 marker_genes  = {

@@ -26,27 +26,29 @@ print(marker_genes)
 
 combined_adata = sc.read_h5ad(myObject, backed="r")
 
-
-sc.pl.dotplot(combined_adata, 
-              var_names=marker_genes, 
-              groupby='celltype',  
-              save=plot_name) 
-
-sc.pl.violin(
-    combined_adata, 
-    keys=marker_genes,
-    groupby='celltype', rotation =90, 
-    save=plot_name, stripplot=True,  
-    show=True 
-)
+with open(markers, 'r') as f:
+    marker_genes = [g.strip() for g in f if g.strip()]
 
 
+present = [g for g in marker_genes if g in combined_adata.var_names]
+missing = [g for g in marker_genes if g not in combined_adata.var_names]  
+if missing:
+    print(f"Warning: these genes were not found in the dataset and will be skipped:\n  {missing}")
 
-for gene in marker_genes:
-    sc.pl.scatter(
-        combined_adata,
-        color=gene,  basis='umap', 
-        save=plot_name + f"_{gene}_featureplot.png"
-    )
+if present:
+    sc.pl.dotplot(combined_adata, var_names=present, groupby='celltype', save=plot_name)
+    sc.pl.violin(combined_adata, keys=present, groupby='celltype',
+                 rotation=90, stripplot=True, save=plot_name, show=True)
+else:
+    print("No marker genes found—skipping dotplot/violin.")
+
+for gene in present:
+    sc.pl.scatter(combined_adata,
+                  color=gene,
+                  basis='umap',
+                  save=f"{plot_name}_{gene}_featureplot.png")
+
+
+
 
 

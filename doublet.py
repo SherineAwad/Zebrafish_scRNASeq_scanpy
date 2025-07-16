@@ -16,12 +16,9 @@ args = parser.parse_args()
 myObject =  args.myObject
 parts = myObject.split("_")
 
-newObject = "doubletRemoved_" + parts[1]
-parts = myObject.split("_")
+newObject = "doubletRemoved_" + myObject 
 
-fname = parts[1].split(".") 
-
-fname = fname[0] 
+fname = "Zebrafishes"
 
 combined_adata = sc.read(myObject, backed="r")
 

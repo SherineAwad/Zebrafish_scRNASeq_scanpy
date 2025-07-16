@@ -19,11 +19,9 @@ args = parser.parse_args()
 myObject =  args.myObject
 annot_file = args.annotations
 
-parts = myObject.split("_")
-newObject = "annotated_" + parts[1]
+newObject = "annotated_" + myObject 
 
-fname = parts[1].split(".")
-sample = fname[0]
+sample = "Zebrafishes" 
 combined_adata = sc.read_h5ad(myObject, backed="r")
 
 
@@ -41,7 +39,9 @@ combined_adata.obs["celltype"] = combined_adata.obs["leiden"].map(cluster_to_cel
 figure_name = sample +"_annotationsON.png"
 combined_adata.obs_names_make_unique()
 sc.pl.umap(combined_adata, color='celltype',legend_loc="on data", save=figure_name)
+
 figure_name = sample +"_annotations.png"
 sc.pl.umap(combined_adata, color='celltype',save=figure_name)
+
 
 combined_adata.write(newObject, compression="gzip")
