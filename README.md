@@ -111,6 +111,29 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/Restacked_bar_celltype_by_sample.png" width="90%">
 
+### UMAPs of Major Retinal Cell Subtypes
+
+The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
+
+#### Müller Glia Subtypes
+<img src="ifigures/umapMG.png" alt="Müller Glia subtypes" width="60%">
+
+#### Cone Photoreceptor Subtypes
+<img src="figures/umapCones.png" alt="Cone subtypes" width="60%">
+
+#### Retinal Ganglion Cell (RGC) Subtypes
+<img src="figures/umapRGC.png" alt="RGC subtypes" width="60%">
+
+#### Horizontal Cell (HC) Subtypes
+<img src="figures/umapHC.png" alt="Horizontal cell subtypes" width="60%">
+
+#### Bipolar Cell (BC) Subtypes
+<img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="60%">
+
+#### Amacrine Cell (AC) Subtypes
+<img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="60%">
+
+
 
 
 ## How to run Snakemake 
