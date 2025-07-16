@@ -116,7 +116,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
 
 #### Müller Glia Subtypes
-<img src="ifigures/umapMG.png" alt="Müller Glia subtypes" width="60%">
+<img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
 
 #### Cone Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="60%">
