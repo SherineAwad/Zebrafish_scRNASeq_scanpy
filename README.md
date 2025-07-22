@@ -196,8 +196,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umapBC_calb2a_featureplot.png" alt="calb2a" width="33%"><img src="figures/umapBC_calb2b_featureplot.png" alt="calb2b" width="33%">
 
 
-#### Müller Glia Subtypes
-<img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
+#### MG Subtypes
+<img src="figures/umapMG.png" alt="MG subtypes" width="60%">
 
 
 
