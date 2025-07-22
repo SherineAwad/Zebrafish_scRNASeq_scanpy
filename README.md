@@ -123,24 +123,15 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### Cones Marker Genes 
 
-<img src="figures/umapCones_gnat2_featureplot.png" width="33%">
-<img src="figures/umapCones_grk7b_featureplot.png" width="33%">
-<img src="figures/umapCones_tgfa_featureplot.png" width="33%">
+<img src="figures/umapCones_gnat2_featureplot.png" alt="gnat2" width="33%"><img src="figures/umapCones_grk7b_featureplot.png" alt="grk7b" width="33%"><img src="figures/umapCones_tgfa_featureplot.png" alt="tgfa" width="33%">
 
-<img src="figures/umapCones_tbx2a_featureplot.png" width="33%">
-<img src="figures/umapCones_opn1sw1_featureplot.png" width="33%">
-<img src="figures/umapCones_mpzl2b_featureplot.png" width="33%">
+<img src="figures/umapCones_tbx2a_featureplot.png" alt="tbx2a" width="33%"><img src="figures/umapCones_opn1sw1_featureplot.png" alt="opn1sw1" width="33%"><img src="figures/umapCones_mpzl2b_featureplot.png" alt="mpzl2b" width="33%">
 
-<img src="figures/umapCones_opn1sw2_featureplot.png" width="33%">
-<img src="figures/umapCones_opn1mw4_featureplot.png" width="33%">
-<img src="figures/umapCones_opn1lw1_featureplot.png" width="33%">
+<img src="figures/umapCones_opn1sw2_featureplot.png" alt="opn1sw2" width="33%"><img src="figures/umapCones_opn1mw4_featureplot.png" alt="opn1mw4" width="33%"><img src="figures/umapCones_opn1lw1_featureplot.png" alt="opn1lw1" width="33%">
 
-<img src="figures/umapCones_snap25a_featureplot.png" width="33%">
-<img src="figures/umapCones_gngt2a_featureplot.png" width="33%">
-<img src="figures/umapCones_arr3a_featureplot.png" width="33%">
+<img src="figures/umapCones_snap25a_featureplot.png" alt="snap25a" width="33%"><img src="figures/umapCones_gngt2a_featureplot.png" alt="gngt2a" width="33%"><img src="figures/umapCones_arr3a_featureplot.png" alt="arr3a" width="33%">
 
-<img src="figures/umapCones_thrb_featureplot.png" width="33%">
-<img src="figures/umapCones_opn1lw2_featureplot.png" width="33%">
+<img src="figures/umapCones_thrb_featureplot.png" alt="thrb" width="33%"><img src="figures/umapCones_opn1lw2_featureplot.png" alt="opn1lw2" width="33%">
 
 
 
