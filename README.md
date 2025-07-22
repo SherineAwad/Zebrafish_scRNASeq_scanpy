@@ -111,12 +111,17 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/Restacked_bar_celltype_by_sample.png" width="90%">
 
+<img src="Restacked_bar_sample_by_celltype.png" width="90%">
+
+
 ### UMAPs of Major Retinal Cell Subtypes
 
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
 
 #### Cones Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="60%">
+
+<img src="figures/dotplot_Cones.png" width="90%">
 
 #### Cones Marker Genes 
 
@@ -132,6 +137,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### Amacrine Cell (AC) Subtypes
 <img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="60%">
+
+<img src="figures/dotplot_AC.png" width="90%">
 
 #### AC Marker Genes 
 
@@ -153,6 +160,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" alt="RGC subtypes" width="60%">
 
+<img src="figures/dotplot_RGC.png" width="90%">
 
 #### RGC Marker Genes 
 <img src="figures/umapRGC_robo2_featureplot.png" alt="robo2" width="33%"><img src="figures/umapRGC_isl2b_featureplot.png" alt="isl2b" width="33%"><img src="figures/umapRGC_rbpms2a_featureplot.png" alt="rbpms2a" width="33%">
@@ -163,6 +171,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Horizontal Cell (HC) Subtypes
 <img src="figures/umapHC.png" alt="Horizontal cell subtypes" width="60%">
 
+
+<img src="figures/dotplot_HC.png" width="90%">
 
 #### HC Marker Genes
 
@@ -175,6 +185,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### Bipolar Cell (BC) Subtypes
 <img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="60%">
+
+<img src="figures/dotplot_BC.png" width="90%">
 
 #### BC Marker Genes 
 
