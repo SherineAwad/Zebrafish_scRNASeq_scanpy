@@ -115,9 +115,6 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
 
-#### Müller Glia Subtypes
-<img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
-
 #### Cones Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="60%">
 
@@ -133,6 +130,24 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/umapCones_thrb_featureplot.png" alt="thrb" width="33%"><img src="figures/umapCones_opn1lw2_featureplot.png" alt="opn1lw2" width="33%">
 
+#### Amacrine Cell (AC) Subtypes
+<img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="60%">
+
+#### AC Marker Genes 
+
+<img src="figures/umapAC_tfap2a_featureplot.png" alt="tfap2a" width="33%"><img src="figures/umapAC_chata_featureplot.png" alt="chata" width="33%"><img src="figures/umapAC_gad1a_featureplot.png" alt="gad1a" width="33%">
+
+<img src="figures/umapAC_gad1b_featureplot.png" alt="gad1b" width="33%"><img src="figures/umapAC_gad2_featureplot.png" alt="gad2" width="33%"><img src="figures/umapAC_slc6a9_featureplot.png" alt="slc6a9" width="33%">
+
+<img src="figures/umapAC_th_featureplot.png" alt="th" width="33%"><img src="figures/umapAC_slc18a3a_featureplot.png" alt="slc18a3a" width="33%"><img src="figures/umapAC_chgb_featureplot.png" alt="chgb" width="33%">
+
+<img src="figures/umapAC_bhlhe22_featureplot.png" alt="bhlhe22" width="33%"><img src="figures/umapAC_bhlhe23_featureplot.png" alt="bhlhe23" width="33%"><img src="figures/umapAC_fosab_featureplot.png" alt="fosab" width="33%">
+
+<img src="figures/umapAC_tkta_featureplot.png" alt="tkta" width="33%"><img src="figures/umapAC_hmgb2b_featureplot.png" alt="hmgb2b" width="33%"><img src="figures/umapAC_sox2_featureplot.png" alt="sox2" width="33%">
+
+<img src="figures/umapAC_sox4a_featureplot.png" alt="sox4a" width="33%">
+
+
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
@@ -144,8 +159,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Bipolar Cell (BC) Subtypes
 <img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="60%">
 
-#### Amacrine Cell (AC) Subtypes
-<img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="60%">
+
+#### Müller Glia Subtypes
+<img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
 
 
 
