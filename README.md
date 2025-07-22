@@ -118,8 +118,31 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Müller Glia Subtypes
 <img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
 
-#### Cone Photoreceptor Subtypes
+#### Cones Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="60%">
+
+#### Cones Marker Genes 
+
+<img src="figures/umapCones_gnat2_featureplot.png" width="33%">
+<img src="figures/umapCones_grk7b_featureplot.png" width="33%">
+<img src="figures/umapCones_tgfa_featureplot.png" width="33%">
+
+<img src="figures/umapCones_tbx2a_featureplot.png" width="33%">
+<img src="figures/umapCones_opn1sw1_featureplot.png" width="33%">
+<img src="figures/umapCones_mpzl2b_featureplot.png" width="33%">
+
+<img src="figures/umapCones_opn1sw2_featureplot.png" width="33%">
+<img src="figures/umapCones_opn1mw4_featureplot.png" width="33%">
+<img src="figures/umapCones_opn1lw1_featureplot.png" width="33%">
+
+<img src="figures/umapCones_snap25a_featureplot.png" width="33%">
+<img src="figures/umapCones_gngt2a_featureplot.png" width="33%">
+<img src="figures/umapCones_arr3a_featureplot.png" width="33%">
+
+<img src="figures/umapCones_thrb_featureplot.png" width="33%">
+<img src="figures/umapCones_opn1lw2_featureplot.png" width="33%">
+
+
 
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" alt="RGC subtypes" width="60%">
