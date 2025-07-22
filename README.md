@@ -159,6 +159,17 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Bipolar Cell (BC) Subtypes
 <img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="60%">
 
+#### BC Marker Genes 
+
+<img src="figures/umapBC_vsx2_featureplot.png" alt="vsx2" width="33%"><img src="figures/umapBC_cabp5a_featureplot.png" alt="cabp5a" width="33%"><img src="figures/umapBC_cabp5b_featureplot.png" alt="cabp5b" width="33%">
+
+<img src="figures/umapBC_bhlhe23_featureplot.png" alt="bhlhe23" width="33%"><img src="figures/umapBC_vamp1_featureplot.png" alt="vamp1" width="33%"><img src="figures/umapBC_vsx1_featureplot.png" alt="vsx1" width="33%">
+
+<img src="figures/umapBC_grm6a_featureplot.png" alt="grm6a" width="33%"><img src="figures/umapBC_grm6b_featureplot.png" alt="grm6b" width="33%"><img src="figures/umapBC_calb1_featureplot.png" alt="calb1" width="33%">
+
+<img src="figures/umapBC_calb2a_featureplot.png" alt="calb2a" width="33%"><img src="figures/umapBC_calb2b_featureplot.png" alt="calb2b" width="33%">
+
+
 
 #### Müller Glia Subtypes
 <img src="figures/umapMG.png" alt="Müller Glia subtypes" width="60%">
