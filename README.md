@@ -153,8 +153,25 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" alt="RGC subtypes" width="60%">
 
+
+#### RGC Marker Genes 
+<img src="figures/umapRGC_robo2_featureplot.png" alt="robo2" width="33%"><img src="figures/umapRGC_isl2b_featureplot.png" alt="isl2b" width="33%"><img src="figures/umapRGC_rbpms2a_featureplot.png" alt="rbpms2a" width="33%">
+
+<img src="figures/umapRGC_rbpms2b_featureplot.png" alt="rbpms2b" width="33%"><img src="figures/umapRGC_mafaa_featureplot.png" alt="mafaa" width="33%"><img src="figures/umapRGC_eomesa_featureplot.png" alt="eomesa" width="33%">
+
+
 #### Horizontal Cell (HC) Subtypes
 <img src="figures/umapHC.png" alt="Horizontal cell subtypes" width="60%">
+
+
+#### HC Marker Genes
+
+<img src="figures/umapHC_ompa_featureplot.png" alt="ompa" width="33%"><img src="figures/umapHC_cx52.6_featureplot.png" alt="cx52.6" width="33%"><img src="figures/umapHC_cx52.9_featureplot.png" alt="cx52.9" width="33%">
+
+<img src="figures/umapHC_cx52.7_featureplot.png" alt="cx52.7" width="33%"><img src="figures/umapHC_pcp4a_featureplot.png" alt="pcp4a" width="33%"><img src="figures/umapHC_lhx1a_featureplot.png" alt="lhx1a" width="33%">
+
+<img src="figures/umapHC_isl1_featureplot.png" alt="isl1" width="33%"><img src="figures/umapHC_gad1b_featureplot.png" alt="gad1b" width="33%"><img src="figures/umapHC_gad2_featureplot.png" alt="gad2" width="33%">
+
 
 #### Bipolar Cell (BC) Subtypes
 <img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="60%">
