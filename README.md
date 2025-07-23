@@ -89,12 +89,6 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_annotations.png" alt="Umap Annotations" width="90%">  
 <img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
-## Cell ratio 
-
-
-<img src="figures/stacked_bar_celltype_by_sample.png" width="90%">
-
-
 ## We need to increase the resolution to 2.5 to seperate the tiny branch of Rod Cells
 
 ### UMAP after clustering 
@@ -108,8 +102,6 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_ReannotationsON.png" alt="Umap Annotations ON" width="90%">
 
 ## Cell ratio after increasing resolution and re-annotations 
-
-<img src="figures/Restacked_bar_celltype_by_sample.png" width="90%">
 
 <img src="figures/Restacked_bar_sample_by_celltype.png" width="90%">
 
@@ -152,8 +144,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umapAC_tkta_featureplot.png" alt="tkta" width="33%"><img src="figures/umapAC_hmgb2b_featureplot.png" alt="hmgb2b" width="33%"><img src="figures/umapAC_sox2_featureplot.png" alt="sox2" width="33%">
 
 <img src="figures/umapAC_sox4a_featureplot.png" alt="sox4a" width="33%">
-
-
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
