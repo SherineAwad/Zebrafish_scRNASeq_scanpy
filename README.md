@@ -114,6 +114,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Cones Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="60%"> 
 <img src="figures/umap_Cones_all_samples_umap.png" width="60%">
+
 <img src= "figures/umap_Cones_NMDA_umap.png" width ="33%"><img src= "figures/umap_Cones_LD_umap.png" width ="33%"><img src= "figures/umap_Cones_Control_umap.png" width ="33%">
 
 
@@ -134,6 +135,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Amacrine Cell (AC) Subtypes
 <img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="60%"> 
 <img src="figures/umap_AC_all_samples_umap.png" width="60%">
+
 <img src= "figures/umap_AC_NMDA_umap.png" width ="33%"><img src= "figures/umap_AC_LD_umap.png" width ="33%"><img src= "figures/umap_AC_Control_umap.png" width ="33%">
 
 #### AC Marker Genes 
@@ -155,6 +157,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" alt="RGC subtypes" width="60%">
 <img src="figures/umap_RGC_all_samples_umap.png" width="60%">
+
 <img src= "figures/umap_RGC_NMDA_umap.png" width ="33%"><img src= "figures/umap_RGC_LD_umap.png" width ="33%"><img src= "figures/umap_RGC_Control_umap.png" width ="33%">
 
 #### RGC Marker Genes
@@ -168,6 +171,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### Horizontal Cell (HC) Subtypes
 <img src="figures/umapHC.png" alt="Horizontal cell subtypes" width="60%">
 <img src="figures/umap_HC_all_samples_umap.png" width="60%">
+
 <img src= "figures/umap_HC_NMDA_umap.png" width ="33%"><img src= "figures/umap_HC_LD_umap.png" width ="33%"><img src= "figures/umap_HC_Control_umap.png" width ="33%">
 
 
