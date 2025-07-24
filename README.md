@@ -206,6 +206,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umapMG.png" alt="MG subtypes" width="70%">
 <img src="figures/umap_MG_all_conditions_umap.png" width ="70%">
 
+<img src="figures/umap_MG_NMDA_umap.png" width ="33%"><img src="figures/umap_MG_LD_umap.png" width ="33%"><img src="figures/umap_MG_Control_umap.png" width="33%"> 
+
+
 <img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_apoeb_featureplot.png" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" width="33%">
 <img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_MG_stat3_featureplot.png" width="33%">
 <img src="figures/umap_MG_sox2_featureplot.png" width="33%"><img src="figures/umap_MG_rho_featureplot.png" width="33%"><img src="figures/umap_MG_nr2e3_featureplot.png" width="33%">
