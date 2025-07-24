@@ -1,52 +1,87 @@
-import scanpy as sc
-import sys
-import importlib_metadata
-import matplotlib.pyplot as plt
 import argparse
+import scanpy as sc
+import os
 
-sys.modules['importlib.metadata'] = importlib_metadata
-
-parser = argparse.ArgumentParser()
-parser.add_argument('myObject')
-parser.add_argument('markers') 
+# Argument parsing
+parser = argparse.ArgumentParser(description="Plot marker genes and UMAPs per sample")
+parser.add_argument('myObject', help='Path to input AnnData (.h5ad) file')
+parser.add_argument('markers', help='Path to file with marker gene list (one per line)')
 args = parser.parse_args()
 
-myObject =  args.myObject
+myObject = args.myObject
 markers = args.markers
-print(markers)
 
-parts = myObject.split("_")
-plot_name = parts[0] + ".png"
+# Extract base name
+parts = os.path.basename(myObject).split("_")
+base_prefix = parts[0]
+plot_suffix = ".png"
 
-
-with open(markers, 'r') as file:
-    marker_genes = [line.strip() for line in file.readlines()]
-
-print(marker_genes)
-
-combined_adata = sc.read_h5ad(myObject, backed="r")
-
+# Load marker genes
 with open(markers, 'r') as f:
     marker_genes = [g.strip() for g in f if g.strip()]
+print("Loaded marker genes:", marker_genes)
 
+# Read AnnData and ensure it's fully in memory
+adata = sc.read_h5ad(myObject)
+print("=== adata.obs columns ===")
+print(adata.obs.columns.tolist())
+print("\n=== adata.obs head ===")
+print(adata.obs.head())
 
-present = [g for g in marker_genes if g in combined_adata.var_names]
-missing = [g for g in marker_genes if g not in combined_adata.var_names]  
+print("\n=== adata.var columns ===")
+print(adata.var.columns.tolist())
+print("\n=== adata.var head ===")
+print(adata.var.head())
+
+# If you want to see keys in adata.uns:
+print("\n=== adata.uns keys ===")
+print(list(adata.uns.keys()))
+
+# Filter marker genes to those present in the data
+present = [g for g in marker_genes if g in adata.var_names]
+missing = [g for g in marker_genes if g not in adata.var_names]
+
 if missing:
-    print(f"Warning: these genes were not found in the dataset and will be skipped:\n  {missing}")
+    print(f"Warning: These genes were not found and will be skipped:\n  {missing}")
 
+# Plot dotplot and violin for valid genes
 if present:
-    sc.pl.dotplot(combined_adata, var_names=present, groupby='celltype', save=plot_name)
-    sc.pl.violin(combined_adata, keys=present, groupby='celltype',
-                 rotation=90, stripplot=True, save=plot_name, show=True)
+    sc.pl.dotplot(adata, var_names=present, groupby='celltype', save=f"_{base_prefix}_dotplot{plot_suffix}", show=False)
+    sc.pl.violin(adata, keys=present, groupby='celltype', rotation=90, stripplot=True,
+                 save=f"_{base_prefix}_violin{plot_suffix}", show=False)
 else:
-    print("No marker genes found—skipping dotplot/violin.")
+    print("No valid marker genes found for plotting.")
 
+# UMAP feature plots per gene
 for gene in present:
-    sc.pl.scatter(combined_adata,
-                  color=gene,
-                  basis='umap',
-                  save=f"{plot_name}_{gene}_featureplot.png")
+    sc.pl.umap(adata, color=gene, save=f"_{base_prefix}_{gene}_featureplot{plot_suffix}", show=False)
+
+renamed_samples = adata.obs['renamed_samples'].cat.categories
+
+for sample in renamed_samples:
+    sample_adata = adata[adata.obs['renamed_samples'] == sample].copy()
+    # This removes all categories except the ones actually present in the subset
+    sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].cat.remove_unused_categories()
+    
+    sc.pl.umap(
+        sample_adata,
+        color='renamed_samples',  # Now only one category remains here
+        title=f"Sample: {sample}",
+        size=20,
+        save=f"_{base_prefix}_{sample}_umap.png",
+        show=False
+    )
+
+# Plot all samples together (uses default color map)
+sc.pl.umap(
+    adata,
+    color='renamed_samples',
+    size=2,
+    save=f"_{base_prefix}_all_conditions_umap{plot_suffix}",
+    show=False
+)
+
+
 
 
 
