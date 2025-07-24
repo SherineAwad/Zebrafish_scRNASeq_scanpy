@@ -101,6 +101,11 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_Reannotations.png" alt="Umap Annotations" width="90%">
 <img src="figures/umapZebrafishes_ReannotationsON.png" alt="Umap Annotations ON" width="90%">
 
+
+## QC per Celltype 
+
+<img src="figures/annotated_clustered_corrected_doubletRemoved_Zebrafishes_qc_violin.png" width ="90%">
+
 ## Cell ratio after increasing resolution and re-annotations 
 
 <img src="figures/Restacked_bar_sample_by_celltype.png" width="90%">
