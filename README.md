@@ -122,6 +122,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src= "figures/umap_Cones_NMDA_umap.png" width ="33%"><img src= "figures/umap_Cones_LD_umap.png" width ="33%"><img src= "figures/umap_Cones_Control_umap.png" width ="33%">
 
+#### QC  per Cluster 
+
+<img src="figures/Cones_qc_violin.png" width ="70%">
 
 #### Cones Marker Genes 
 
@@ -143,6 +146,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src= "figures/umap_AC_NMDA_umap.png" width ="33%"><img src= "figures/umap_AC_LD_umap.png" width ="33%"><img src= "figures/umap_AC_Control_umap.png" width ="33%">
 
+#### QC  per Cluster 
+
+<img src="figures/AC_qc_violin.png" width ="70%">
+
 #### AC Marker Genes 
 <img src="figures/dotplot_AC.png" width="90%">
 
@@ -162,6 +169,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src= "figures/umap_RGC_NMDA_umap.png" width ="33%"><img src= "figures/umap_RGC_LD_umap.png" width ="33%"><img src= "figures/umap_RGC_Control_umap.png" width ="33%">
 
+#### QC  per Cluster 
+
+<img src="figures/RGC_qc_violin.png" width ="70%">
+
 #### RGC Marker Genes
 <img src="figures/dotplot_RGC.png" width="90%">
 
@@ -175,6 +186,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_HC_all_conditions_umap.png" width ="70%">
 
 <img src= "figures/umap_HC_NMDA_umap.png" width ="33%"><img src= "figures/umap_HC_LD_umap.png" width ="33%"><img src= "figures/umap_HC_Control_umap.png" width ="33%">
+
+#### QC  per Cluster 
+
+<img src="figures/HC_qc_violin.png" width ="70%">
 
 
 #### HC Marker Genes
@@ -195,6 +210,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src= "figures/umap_BC_NMDA_umap.png" width ="33%"><img src= "figures/umap_BC_LD_umap.png" width ="33%"><img src= "figures/umap_BC_Control_umap.png" width ="33%">
 
 
+#### QC  per Cluster 
+
+<img src="figures/BC_qc_violin.png" width ="70%">
+
 #### BC Marker Genes 
 
 <img src="figures/dotplot_BC.png" width="90%">
@@ -213,20 +232,16 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/umap_MG_NMDA_umap.png" width ="33%"><img src="figures/umap_MG_LD_umap.png" width ="33%"><img src="figures/umap_MG_Control_umap.png" width="33%"> 
 
+#### QC  per Cluster 
 
+<img src="figures/MG_qc_violin.png" width ="70%">
+
+#### MG Marker Genes
 <img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_apoeb_featureplot.png" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" width="33%">
 <img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_MG_stat3_featureplot.png" width="33%">
 <img src="figures/umap_MG_sox2_featureplot.png" width="33%"><img src="figures/umap_MG_rho_featureplot.png" width="33%"><img src="figures/umap_MG_nr2e3_featureplot.png" width="33%">
 <img src="figures/umap_MG_vsx1_featureplot.png" width="33%"><img src="figures/umap_MG_cabp5a_featureplot.png" width="33%"><img src="figures/umap_MG_ompa_featureplot.png" width="33%">
 <img src="figures/umap_MG_gnat2_featureplot.png" width="33%"><img src="figures/umap_MG_gad1b_featureplot.png" width="33%">
-
-
-
-#### MG Marker Genes
-
-<img src="figures/umap_MG_apoeb_featureplot.png" alt="apoeb" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" alt="aqp4" width="33%"><img src="figures/umap_MG_gfap_featureplot.png" alt="gfap" width="33%">
-<img src="figures/umap_MG_rlbp1a_featureplot.png" alt="rlbp1a" width="33%"><img src="figures/umap_MG_stat3_featureplot.png" alt="stat3" width="33%"><img src="figures/umap_MG_sox2_featureplot.png" alt="sox2" width="33%">
-
 
 
 ## How to run Snakemake 
