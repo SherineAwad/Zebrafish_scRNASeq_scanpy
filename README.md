@@ -214,13 +214,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### MG Marker Genes
 
-<img src="figures/umap_MG_apoeb_featureplot.png" alt="apoeb" width="33%">
-<img src="figures/umap_MG_aqp4_featureplot.png" alt="aqp4" width="33%">
-<img src="figures/umap_MG_gfap_featureplot.png" alt="gfap" width="33%">
+<img src="figures/umap_MG_apoeb_featureplot.png" alt="apoeb" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" alt="aqp4" width="33%"><img src="figures/umap_MG_gfap_featureplot.png" alt="gfap" width="33%">
+<img src="figures/umap_MG_rlbp1a_featureplot.png" alt="rlbp1a" width="33%"><img src="figures/umap_MG_stat3_featureplot.png" alt="stat3" width="33%"><img src="figures/umap_MG_sox2_featureplot.png" alt="sox2" width="33%">
 
-<img src="figures/umap_MG_rlbp1a_featureplot.png" alt="rlbp1a" width="33%">
-<img src="figures/umap_MG_stat3_featureplot.png" alt="stat3" width="33%">
-<img src="figures/umap_MG_sox2_featureplot.png" alt="sox2" width="33%">
 
 
 ## How to run Snakemake 
