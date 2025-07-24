@@ -122,15 +122,15 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/dotplot_Cones.png" width="90%">
 
-<img src="figures/umapCones_gnat2_featureplot.png" alt="gnat2" width="33%"><img src="figures/umapCones_grk7b_featureplot.png" alt="grk7b" width="33%"><img src="figures/umapCones_tgfa_featureplot.png" alt="tgfa" width="33%">
+<img src="figures/umap_Cones_gnat2_featureplot.png" width="33%"><img src="figures/umap_Cones_grk7b_featureplot.png" width="33%"><img src="figures/umap_Cones_tgfa_featureplot.png" width="33%">
+<img src="figures/umap_Cones_tbx2a_featureplot.png" width="33%"><img src="figures/umap_Cones_opn1sw1_featureplot.png" width="33%"><img src="figures/umap_Cones_mpzl2b_featureplot.png" width="33%">
+<img src="figures/umap_Cones_opn1sw2_featureplot.png" width="33%"><img src="figures/umap_Cones_opn1mw4_featureplot.png" width="33%"><img src="figures/umap_Cones_opn1lw1_featureplot.png" width="33%">
+<img src="figures/umap_Cones_snap25a_featureplot.png" width="33%"><img src="figures/umap_Cones_gngt2a_featureplot.png" width="33%"><img src="figures/umap_Cones_arr3a_featureplot.png" width="33%">
+<img src="figures/umap_Cones_thrb_featureplot.png" width="33%"><img src="figures/umap_Cones_opn1lw2_featureplot.png" width="33%"><img src="figures/umap_Cones_rho_featureplot.png" width="33%">
+<img src="figures/umap_Cones_nr2e3_featureplot.png" width="33%"><img src="figures/umap_Cones_vsx1_featureplot.png" width="33%"><img src="figures/umap_Cones_cabp5a_featureplot.png" width="33%">
+<img src="figures/umap_Cones_ompa_featureplot.png" width="33%"><img src="figures/umap_Cones_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_Cones_aqp4_featureplot.png" width="33%">
+<img src="figures/umap_Cones_gad1b_featureplot.png" width="33%">
 
-<img src="figures/umapCones_tbx2a_featureplot.png" alt="tbx2a" width="33%"><img src="figures/umapCones_opn1sw1_featureplot.png" alt="opn1sw1" width="33%"><img src="figures/umapCones_mpzl2b_featureplot.png" alt="mpzl2b" width="33%">
-
-<img src="figures/umapCones_opn1sw2_featureplot.png" alt="opn1sw2" width="33%"><img src="figures/umapCones_opn1mw4_featureplot.png" alt="opn1mw4" width="33%"><img src="figures/umapCones_opn1lw1_featureplot.png" alt="opn1lw1" width="33%">
-
-<img src="figures/umapCones_snap25a_featureplot.png" alt="snap25a" width="33%"><img src="figures/umapCones_gngt2a_featureplot.png" alt="gngt2a" width="33%"><img src="figures/umapCones_arr3a_featureplot.png" alt="arr3a" width="33%">
-
-<img src="figures/umapCones_thrb_featureplot.png" alt="thrb" width="33%"><img src="figures/umapCones_opn1lw2_featureplot.png" alt="opn1lw2" width="33%">
 
 #### Amacrine Cell (AC) Subtypes
 <img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="70%"> 
@@ -141,17 +141,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### AC Marker Genes 
 <img src="figures/dotplot_AC.png" width="90%">
 
-<img src="figures/umapAC_tfap2a_featureplot.png" alt="tfap2a" width="33%"><img src="figures/umapAC_chata_featureplot.png" alt="chata" width="33%"><img src="figures/umapAC_gad1a_featureplot.png" alt="gad1a" width="33%">
-
-<img src="figures/umapAC_gad1b_featureplot.png" alt="gad1b" width="33%"><img src="figures/umapAC_gad2_featureplot.png" alt="gad2" width="33%"><img src="figures/umapAC_slc6a9_featureplot.png" alt="slc6a9" width="33%">
-
-<img src="figures/umapAC_th_featureplot.png" alt="th" width="33%"><img src="figures/umapAC_slc18a3a_featureplot.png" alt="slc18a3a" width="33%"><img src="figures/umapAC_chgb_featureplot.png" alt="chgb" width="33%">
-
-<img src="figures/umapAC_bhlhe22_featureplot.png" alt="bhlhe22" width="33%"><img src="figures/umapAC_bhlhe23_featureplot.png" alt="bhlhe23" width="33%"><img src="figures/umapAC_fosab_featureplot.png" alt="fosab" width="33%">
-
-<img src="figures/umapAC_tkta_featureplot.png" alt="tkta" width="33%"><img src="figures/umapAC_hmgb2b_featureplot.png" alt="hmgb2b" width="33%"><img src="figures/umapAC_sox2_featureplot.png" alt="sox2" width="33%">
-
-<img src="figures/umapAC_sox4a_featureplot.png" alt="sox4a" width="33%">
+<img src="figures/umap_AC_tfap2a_featureplot.png" width="33%"><img src="figures/umap_AC_chata_featureplot.png" width="33%"><img src="figures/umap_AC_gad1a_featureplot.png" width="33%">
+<img src="figures/umap_AC_gad1b_featureplot.png" width="33%"><img src="figures/umap_AC_gad2_featureplot.png" width="33%"><img src="figures/umap_AC_slc6a9_featureplot.png" width="33%">
+<img src="figures/umap_AC_th_featureplot.png" width="33%"><img src="figures/umap_AC_slc18a3a_featureplot.png" width="33%"><img src="figures/umap_AC_chgb_featureplot.png" width="33%">
+<img src="figures/umap_AC_bhlhe22_featureplot.png" width="33%"><img src="figures/umap_AC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_AC_fosab_featureplot.png" width="33%">
+<img src="figures/umap_AC_tkta_featureplot.png" width="33%"><img src="figures/umap_AC_hmgb2b_featureplot.png" width="33%"><img src="figures/umap_AC_sox2_featureplot.png" width="33%">
+<img src="figures/umap_AC_sox4a_featureplot.png" width="33%"><img src="figures/umap_AC_rho_featureplot.png" width="33%"><img src="figures/umap_AC_nr2e3_featureplot.png" width="33%">
+<img src="figures/umap_AC_vsx1_featureplot.png" width="33%"><img src="figures/umap_AC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_AC_ompa_featureplot.png" width="33%">
+<img src="figures/umap_AC_gnat2_featureplot.png" width="33%"><img src="figures/umap_AC_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_AC_aqp4_featureplot.png" width="33%">
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
@@ -178,11 +175,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### HC Marker Genes
 <img src="figures/dotplot_HC.png" width="90%">
 
-<img src="figures/umapHC_ompa_featureplot.png" alt="ompa" width="33%"><img src="figures/umapHC_cx52.6_featureplot.png" alt="cx52.6" width="33%"><img src="figures/umapHC_cx52.9_featureplot.png" alt="cx52.9" width="33%">
-
-<img src="figures/umapHC_cx52.7_featureplot.png" alt="cx52.7" width="33%"><img src="figures/umapHC_pcp4a_featureplot.png" alt="pcp4a" width="33%"><img src="figures/umapHC_lhx1a_featureplot.png" alt="lhx1a" width="33%">
-
-<img src="figures/umapHC_isl1_featureplot.png" alt="isl1" width="33%"><img src="figures/umapHC_gad1b_featureplot.png" alt="gad1b" width="33%"><img src="figures/umapHC_gad2_featureplot.png" alt="gad2" width="33%">
+<img src="figures/umap_HC_ompa_featureplot.png" width="33%"><img src="figures/umap_HC_cx52.6_featureplot.png" width="33%"><img src="figures/umap_HC_cx52.9_featureplot.png" width="33%">
+<img src="figures/umap_HC_cx52.7_featureplot.png" width="33%"><img src="figures/umap_HC_pcp4a_featureplot.png" width="33%"><img src="figures/umap_HC_lhx1a_featureplot.png" width="33%">
+<img src="figures/umap_HC_isl1_featureplot.png" width="33%"><img src="figures/umap_HC_gad1b_featureplot.png" width="33%"><img src="figures/umap_HC_gad2_featureplot.png" width="33%">
+<img src="figures/umap_HC_rho_featureplot.png" width="33%"><img src="figures/umap_HC_nr2e3_featureplot.png" width="33%"><img src="figures/umap_HC_vsx1_featureplot.png" width="33%">
+<img src="figures/umap_HC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_HC_gnat2_featureplot.png" width="33%"><img src="figures/umap_HC_rlbp1a_featureplot.png" width="33%">
+<img src="figures/umap_HC_aqp4_featureplot.png" width="33%"><img src="figures/umap_HC_gad1b_featureplot.png" width="33%">
 
 
 #### Bipolar Cell (BC) Subtypes
@@ -196,20 +194,24 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/dotplot_BC.png" width="90%">
 
-<img src="figures/umapBC_vsx2_featureplot.png" alt="vsx2" width="33%"><img src="figures/umapBC_cabp5a_featureplot.png" alt="cabp5a" width="33%"><img src="figures/umapBC_cabp5b_featureplot.png" alt="cabp5b" width="33%">
-
-<img src="figures/umapBC_bhlhe23_featureplot.png" alt="bhlhe23" width="33%"><img src="figures/umapBC_vamp1_featureplot.png" alt="vamp1" width="33%"><img src="figures/umapBC_vsx1_featureplot.png" alt="vsx1" width="33%">
-
-<img src="figures/umapBC_grm6a_featureplot.png" alt="grm6a" width="33%"><img src="figures/umapBC_grm6b_featureplot.png" alt="grm6b" width="33%"><img src="figures/umapBC_calb1_featureplot.png" alt="calb1" width="33%">
-
-<img src="figures/umapBC_calb2a_featureplot.png" alt="calb2a" width="33%"><img src="figures/umapBC_calb2b_featureplot.png" alt="calb2b" width="33%">
+<img src="figures/umap_BC_vsx2_featureplot.png" width="33%"><img src="figures/umap_BC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_BC_cabp5b_featureplot.png" width="33%">
+<img src="figures/umap_BC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_BC_vamp1_featureplot.png" width="33%"><img src="figures/umap_BC_vsx1_featureplot.png" width="33%">
+<img src="figures/umap_BC_grm6a_featureplot.png" width="33%"><img src="figures/umap_BC_grm6b_featureplot.png" width="33%"><img src="figures/umap_BC_calb1_featureplot.png" width="33%">
+<img src="figures/umap_BC_calb2a_featureplot.png" width="33%"><img src="figures/umap_BC_calb2b_featureplot.png" width="33%"><img src="figures/umap_BC_rho_featureplot.png" width="33%">
+<img src="figures/umap_BC_nr2e3_featureplot.png" width="33%"><img src="figures/umap_BC_ompa_featureplot.png" width="33%"><img src="figures/umap_BC_gnat2_featureplot.png" width="33%">
+<img src="figures/umap_BC_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_BC_aqp4_featureplot.png" width="33%"><img src="figures/umap_BC_gad1b_featureplot.png" width="33%">
 
 
 #### MG Subtypes
 <img src="figures/umapMG.png" alt="MG subtypes" width="70%">
 <img src="figures/umap_MG_all_conditions_umap.png" width ="70%">
 
-<img src= "figures/umap_MG_NMDA_umap.png" width ="33%"><img src= "figures/umap_MG_LD_umap.png" width ="33%"><img src= "figures/umap_MG_Control_umap.png" width ="33%">
+<img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_apoeb_featureplot.png" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" width="33%">
+<img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_MG_stat3_featureplot.png" width="33%">
+<img src="figures/umap_MG_sox2_featureplot.png" width="33%"><img src="figures/umap_MG_rho_featureplot.png" width="33%"><img src="figures/umap_MG_nr2e3_featureplot.png" width="33%">
+<img src="figures/umap_MG_vsx1_featureplot.png" width="33%"><img src="figures/umap_MG_cabp5a_featureplot.png" width="33%"><img src="figures/umap_MG_ompa_featureplot.png" width="33%">
+<img src="figures/umap_MG_gnat2_featureplot.png" width="33%"><img src="figures/umap_MG_gad1b_featureplot.png" width="33%">
+
 
 
 #### MG Marker Genes
