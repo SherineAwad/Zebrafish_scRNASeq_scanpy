@@ -249,7 +249,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%"> 
+<img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%"> 
 
 ## MG Subset 
 
@@ -260,7 +260,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%">
+<img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%">
 
 ## Cones Subset 
 
@@ -270,7 +270,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%">
+<img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%">
 
 ## RGC Subset 
 
@@ -280,7 +280,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%">
+<img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%">
 
 ## HC Subset 
 
@@ -290,7 +290,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%">
+<img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%">
 
 ## BC Subset
 
@@ -300,7 +300,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width =90%">
+<img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width=90%">
 
 
 ## How to run Snakemake 
