@@ -249,7 +249,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img srs="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%"> 
 
 ## MG Subset 
@@ -261,7 +261,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img srs="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
 ## Cones Subset 
@@ -272,7 +272,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img srs="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
 ## RGC Subset 
@@ -283,7 +283,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction
 
-<img srs="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
 ## HC Subset 
@@ -294,7 +294,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img srs="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
 ## BC Subset
@@ -305,7 +305,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### QC after batch correction 
 
-<img srs="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
+<img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
 
