@@ -242,12 +242,49 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ## Removing batch effects from subsets 
 
-
 ## AC Subset 
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
+
+
+
+## MG Subset 
+
+<img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
+<img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
+<img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
+<img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
+
+## Cones Subset 
+
+<img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
+<img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
+<img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
+<img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
+
+## RGC Subset 
+
+<img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
+<img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
+<img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
+<img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
+
+## HC Subset 
+
+<img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
+<img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
+<img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
+<img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
+
+
+## BC Subset
+
+<img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
+<img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width="70%">
+<img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width="70%">
+<img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width="70%">
 
 
 ## How to run Snakemake 
