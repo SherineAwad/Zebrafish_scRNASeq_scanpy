@@ -240,7 +240,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_MG_vsx1_featureplot.png" width="33%"><img src="figures/umap_MG_cabp5a_featureplot.png" width="33%"><img src="figures/umap_MG_ompa_featureplot.png" width="33%">
 <img src="figures/umap_MG_gnat2_featureplot.png" width="33%"><img src="figures/umap_MG_gad1b_featureplot.png" width="33%"><img src="figures/umap_MG_arr3a_featureplot.png" width="33%">
 
-## Removing batch effects from subsets 
+# ✨✨✨ Removing Batch Effects from Data Subsets {#removing-batch-effects}
+
 
 ## AC Subset 
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
