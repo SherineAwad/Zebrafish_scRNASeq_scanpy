@@ -252,7 +252,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%"> 
 
-## Marker genes for AC subtypes after batch correction 
+## Marker genes of AC subtype after batch correction 
 
 <img src="figures/umap_corrected_AC_aqp4_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_bhlhe22_featureplot.png" width="33%">
 <img src="figures/umap_corrected_AC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_chata_featureplot.png" width="33%">
@@ -277,6 +277,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
+## Marker genes of MG subtype after batch correction 
+<img src="figures/umap_corrected_MG_sox2_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_aqp4_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_stat3_featureplot.png" width="33%">
+<img src="figures/umap_corrected_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_gnat2_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_rho_featureplot.png" width="33%">
+<img src="figures/umap_corrected_MG_gad1b_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_cabp5a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_MG_apoeb_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_vsx1_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_rlbp1a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_MG_nr2e3_featureplot.png" width="33%"><img src="figures/umap_corrected_MG_ompa_featureplot.png" width="33%">
+
+
 ## Cones Subset 
 
 <img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
@@ -287,6 +295,17 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/umap_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
+
+## Marker genes of Cones subtype after batch correction 
+<img src="figures/umap_corrected_Cones_opn1lw2_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_opn1lw1_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_opn1sw2_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_thrb_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_snap25a_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_gngt2a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_rho_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_gad1b_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_gnat2_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_opn1sw1_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_cabp5a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_vsx1_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_ompa_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_tbx2a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_opn1mw4_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_tgfa_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_nr2e3_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_mpzl2b_featureplot.png" width="33%"><img src="figures/umap_corrected_Cones_aqp4_featureplot.png" width="33%">
+<img src="figures/umap_corrected_Cones_grk7b_featureplot.png" width="33%">
+
 
 ## RGC Subset 
 
@@ -299,6 +318,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
+## Marker genes of RGC  subtype after batch correction 
+
+<img src="figures/umap_corrected_RGC_robo2_featureplot.png" width="33%"><img src="figures/umap_corrected_RGC_rbpms2b_featureplot.png" width="33%"><img src="figures/umap_corrected_RGC_rbpms2a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_RGC_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_RGC_gad1b_featureplot.png" width="33%"><img src="figures/umap_corrected_RGC_isl2b_featureplot.png" width="33%">
+<img src="figures/umap_corrected_RGC_mafaa_featureplot.png" width="33%"><img src="figures/umap_corrected_RGC_eomesa_featureplot.png" width="33%">
+
 ## HC Subset 
 
 <img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width="70%">
@@ -309,6 +334,16 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src="figures/umap_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
+
+## Marker genes of HC subtype after batch correction 
+
+<img src="figures/umap_corrected_HC_cx52.7_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_cx52.6_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_ompa_featureplot.png" width="33%">
+<img src="figures/umap_corrected_HC_gad2_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_gnat2_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_isl1_featureplot.png" width="33%">
+<img src="figures/umap_corrected_HC_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_cx52.9_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_rho_featureplot.png" width="33%">
+<img src="figures/umap_corrected_HC_pcp4a_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_gad1b_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_vsx1_featureplot.png" width="33%">
+<img src="figures/umap_corrected_HC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_lhx1a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_HC_nr2e3_featureplot.png" width="33%"><img src="figures/umap_corrected_HC_aqp4_featureplot.png" width="33%">
+
 
 ## BC Subset
 
@@ -321,6 +356,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width="90%">
 <img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_QCPerCluster.png" width="90%">
 
+## Marker genes of BC subtype after batch correction 
+<img src="figures/umap_corrected_BC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_vsx1_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_cabp5b_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_gnat2_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_gad1b_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_rho_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_vamp1_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_cabp5a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_calb2b_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_grm6b_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_vsx2_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_ompa_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_calb1_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_grm6a_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_calb2a_featureplot.png" width="33%"><img src="figures/umap_corrected_BC_nr2e3_featureplot.png" width="33%">
+<img src="figures/umap_corrected_BC_aqp4_featureplot.png" width="33%">
 
 ## How to run Snakemake 
 
