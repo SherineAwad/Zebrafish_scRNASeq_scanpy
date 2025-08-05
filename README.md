@@ -254,15 +254,15 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ## Marker genes for AC subtypes after batch correction 
 
-<img src="figures/umap_corrected_AC_aqp4_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_arr3a_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_bhlhe22_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_bhlhe23_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_cabp5a_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_chata_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_chgb_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_fosab_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_gad1a_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_gad1b_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_gad2_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_gnat2_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_hmgb2b_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_nr2e3_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_ompa_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_rho_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_rlbp1a_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_slc18a3a_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_slc6a9_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_sox2_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_sox4a_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_tfap2a_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_th_featureplot.png" width="33%"/> <img src="figures/umap_corrected_AC_tkta_featureplot.png" width="33%"/>
-<img src="figures/umap_corrected_AC_vsx1_featureplot.png" width="33%"/>
+<img src="figures/umap_corrected_AC_aqp4_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_arr3a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_bhlhe22_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_chata_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_chgb_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_fosab_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_gad1a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_gad1b_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_gad2_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_gnat2_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_hmgb2b_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_nr2e3_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_ompa_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_rho_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_rlbp1a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_slc18a3a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_slc6a9_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_sox2_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_sox4a_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_tfap2a_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_th_featureplot.png" width="33%"><img src="figures/umap_corrected_AC_tkta_featureplot.png" width="33%">
+<img src="figures/umap_corrected_AC_vsx1_featureplot.png" width="33%">
 
 
 ## MG Subset 
