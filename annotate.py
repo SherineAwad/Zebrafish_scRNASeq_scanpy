@@ -22,7 +22,7 @@ annot_file = args.annotations
 newObject = "annotated_" + myObject 
 
 sample = "Zebrafishes" 
-combined_adata = sc.read_h5ad(myObject, backed="r")
+combined_adata = sc.read_h5ad(myObject)
 
 
 cluster_to_celltype_dict = {}
@@ -43,5 +43,12 @@ sc.pl.umap(combined_adata, color='celltype',legend_loc="on data", save=figure_na
 figure_name = sample +"_annotations.png"
 sc.pl.umap(combined_adata, color='celltype',save=figure_name)
 
+unwanted_type = "Cones_MG_MGPC_PostMitotic"
+combined_adata_filtered = combined_adata[combined_adata.obs["celltype"] != unwanted_type].copy()
 
-combined_adata.write(newObject, compression="gzip")
+# Plot UMAP with annotations
+sc.pl.umap(combined_adata_filtered, color='celltype', legend_loc="on data", save=sample + "_NannotationsON.png")
+sc.pl.umap(combined_adata_filtered, color='celltype', save=sample + "_Nannotations.png")
+
+
+combined_adata_filtered.write(newObject, compression="gzip")

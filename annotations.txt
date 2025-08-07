@@ -1,8 +1,8 @@
-28	Progenitors
-61	Progenitors
-35	Progenitors
-56	Progenitors
-3	Post_Mitotic
+28	MGPC
+61	MGPC
+35	MGPC
+56	MGPC
+3	PR precursors
 51	Rod
 19	Rod
 22	Rod
@@ -39,8 +39,8 @@
 32	BC
 29	BC
 26	BC
-34	AC
-75	AC
+34	Microglia_ImmuneCells
+75	Microglia_ImmuneCells
 95	AC
 18	AC
 94	AC
@@ -69,7 +69,7 @@
 65	Endothelial
 80	Endothelial
 31	RPE
-76	Cones_MG_Progenitors_PostMitotic
+76	Cones_MG_MGPC_PostMitotic
 8	Cones
 46	Cones
 24	Cones
@@ -87,9 +87,9 @@
 52	MG
 89	MG
 81	MG
-58	Rod
+58	MG_AC
 86	Rod
-66	Rod
+66	MG_AC
 30	Rod
 87	Rod
 90	HC
