@@ -39,7 +39,7 @@ plt.savefig(figurename1, dpi=300, bbox_inches="tight")
 plt.close()
 
 
-figurename2 = "figures/celltype_"+base_name+"_qc_violin.png"
+figurename2 = "figures/celltype_"+base_name+"_qc_violin.tif"
 sc.pl.violin(
     adata,
     keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
@@ -49,7 +49,7 @@ sc.pl.violin(
     multi_panel=True,
     show=False
 )
-plt.savefig(figurename2, dpi=300, bbox_inches="tight")
+plt.savefig(figurename2, format ='tiff', dpi=300, bbox_inches="tight")
 plt.close()
 
 
@@ -108,7 +108,36 @@ plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 
 # Save figure
-plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=300)
+plt.savefig("figures/Restacked_bar_sample_by_celltype.tif", dpi=300, format='tiff')
+plt.close()
+
+
+# Ensure 'renamed_samples' is categorical
+adata.obs['renamed_samples'] = adata.obs['renamed_samples'].astype('category')
+renamed_samples = adata.obs['renamed_samples'].cat.categories
+
+for sample in renamed_samples:
+    sample_adata = adata[adata.obs['renamed_samples'] == sample].copy()
+    sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].astype('category')
+    sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].cat.remove_unused_categories()
+
+    sc.pl.umap(
+        sample_adata,
+        color='renamed_samples',
+        title=f"Sample: {sample}",
+        size=20,
+        show=False
+    )
+plt.savefig(f"figures/umap_{base_name}_{sample}.tif", dpi=300, format='tiff')
+plt.close()
+
+# Plot all samples together
+sc.pl.umap(
+    adata,
+    color='renamed_samples',
+    size=2, show=False
+)
+plt.savefig(f"figures/umap_merged_{base_name}.tif", dpi=300, format='tiff')
 plt.close()
 
 

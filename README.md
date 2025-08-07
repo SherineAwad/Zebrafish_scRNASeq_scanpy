@@ -119,6 +119,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/Restacked_bar_sample_by_celltype.png" width="90%">
 
+## Umap for Control,LD, and NMDA merged 
+
+<img src="figures/umap_merged_annotated_clustered_corrected_doubletRemoved_Zebrafishes.tif" width="90%"> 
+
+## Umap per sample 
+<img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Control.tif" width="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_LD.tif" width ="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_NMDA.tif" width="33%">
+
 
 ### UMAPs of Major Retinal Cell Subtypes
 
