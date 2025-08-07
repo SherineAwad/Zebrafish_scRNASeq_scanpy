@@ -13,7 +13,7 @@ These violin plots visualize cell-level quality metrics **before and after filte
 
 ###  `violin_QC.png`
 
-This plot shows **raw quality control metrics** (e.g., number of genes per cell, mitochondrial percentage) **before filtering**. It helps identify thresholds for removing low-quality or dead cells.
+This plot shows **raw quality control metrics** (e.g., number of genes per cell, mitochondrial percentage) **before filtering**. It helps ide.pngy thresholds for removing low-quality or dead cells.
 
 ![violin_QC.png](figures/violin_QC.png)
 
@@ -121,10 +121,10 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## Umap for Control,LD, and NMDA merged 
 
-<img src="figures/umap_merged_annotated_clustered_corrected_doubletRemoved_Zebrafishes.tif" width="90%"> 
+<img src="figures/umap_merged_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png" width="90%"> 
 
 ## Umap per sample 
-<img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Control.tif" width="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_LD.tif" width ="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_NMDA.tif" width="33%">
+<img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Control.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_LD.png" width ="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_NMDA.png" width="33%">
 
 
 ### UMAPs of Major Retinal Cell Subtypes
