@@ -107,13 +107,6 @@ Below are the UMAP plots split by individual samples after reclustering:
 <img src="figures/umapZebrafishes_Nannotations.png" alt="Umap Annotations" width="90%">
 <img src="figures/umapZebrafishes_NannotationsON.png" alt="Umap Annotations ON" width="90%">
  
-## QC per Sample  
-
-<img src="figures/sample_annotated_clustered_corrected_doubletRemoved_Zebrafishes_qc_violin.png" width ="90%">
-
-## QC per celltype 
-
-<img src="figures/celltype_annotated_clustered_corrected_doubletRemoved_Zebrafishes_qc_violin.png" width ="90%">
 
 ## Cell ratio after increasing resolution and re-annotations 
 
@@ -140,7 +133,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### Cones Marker Genes 
 
-<img src="figures/dotplot_Cones.png" width="90%">
 
 <img src="figures/umap_Cones_gnat2_featureplot.png" width="33%"><img src="figures/umap_Cones_grk7b_featureplot.png" width="33%"><img src="figures/umap_Cones_tgfa_featureplot.png" width="33%">
 <img src="figures/umap_Cones_tbx2a_featureplot.png" width="33%"><img src="figures/umap_Cones_opn1sw1_featureplot.png" width="33%"><img src="figures/umap_Cones_mpzl2b_featureplot.png" width="33%">
@@ -159,7 +151,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 #### AC Marker Genes 
-<img src="figures/dotplot_AC.png" width="90%">
 
 <img src="figures/umap_AC_tfap2a_featureplot.png" width="33%"><img src="figures/umap_AC_chata_featureplot.png" width="33%"><img src="figures/umap_AC_gad1a_featureplot.png" width="33%">
 <img src="figures/umap_AC_gad1b_featureplot.png" width="33%"><img src="figures/umap_AC_gad2_featureplot.png" width="33%"><img src="figures/umap_AC_slc6a9_featureplot.png" width="33%">
@@ -180,7 +171,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 #### RGC Marker Genes
-<img src="figures/dotplot_RGC.png" width="90%">
 
 <img src="figures/umapRGC_robo2_featureplot.png" alt="robo2" width="33%"><img src="figures/umapRGC_isl2b_featureplot.png" alt="isl2b" width="33%"><img src="figures/umapRGC_rbpms2a_featureplot.png" alt="rbpms2a" width="33%">
 <img src="figures/umapRGC_rbpms2b_featureplot.png" alt="rbpms2b" width="33%"><img src="figures/umapRGC_mafaa_featureplot.png" alt="mafaa" width="33%"><img src="figures/umapRGC_eomesa_featureplot.png" alt="eomesa" width="33%"> 
@@ -193,7 +183,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src= "figures/umap_HC_NMDA.png" width ="33%"><img src= "figures/umap_HC_LD.png" width ="33%"><img src= "figures/umap_HC_Control.png" width ="33%">
 
 #### HC Marker Genes
-<img src="figures/dotplot_HC.png" width="90%">
 
 <img src="figures/umap_HC_ompa_featureplot.png" width="33%"><img src="figures/umap_HC_cx52.6_featureplot.png" width="33%"><img src="figures/umap_HC_cx52.9_featureplot.png" width="33%">
 <img src="figures/umap_HC_cx52.7_featureplot.png" width="33%"><img src="figures/umap_HC_pcp4a_featureplot.png" width="33%"><img src="figures/umap_HC_lhx1a_featureplot.png" width="33%">
@@ -211,7 +200,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### BC Marker Genes 
 
-<img src="figures/dotplot_BC.png" width="90%">
 
 <img src="figures/umap_BC_vsx2_featureplot.png" width="33%"><img src="figures/umap_BC_cabp5a_featureplot.png" width="33%"><img src="figures/umap_BC_cabp5b_featureplot.png" width="33%">
 <img src="figures/umap_BC_bhlhe23_featureplot.png" width="33%"><img src="figures/umap_BC_vamp1_featureplot.png" width="33%"><img src="figures/umap_BC_vsx1_featureplot.png" width="33%">
