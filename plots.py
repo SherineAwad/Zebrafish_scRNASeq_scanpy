@@ -77,7 +77,7 @@ plt.title("Cell Type Contribution per Sample")
 plt.xticks(rotation=45, ha='right')
 plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
-plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=600)
+plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=600,bbox_inches='tight')
 plt.close()
 
 # Ensure 'renamed_samples' is categorical
@@ -95,13 +95,31 @@ for sample in renamed_samples:
         title=f"Sample: {sample}",
         size=20,
         show=False,return_fig=True)
-    fig.savefig(f"figures/umap_{base_name}_{sample}.png", dpi=600)
+    fig.savefig(f"figures/umap_{base_name}_{sample}.png", dpi=600,bbox_inches='tight')
     plt.close(fig)
 # Plot all samples together
 fig = sc.pl.umap(
     adata,
     color='renamed_samples',
     size=2, show=False,return_fig=True)
-fig.savefig(f"figures/umap_merged_{base_name}.png", dpi=600)
+fig.savefig(f"figures/umap_merged_{base_name}.png", dpi=600,bbox_inches='tight')
 plt.close(fig)
+
+
+sc.pl.violin(
+    adata,
+    keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
+    groupby='leiden',
+    jitter=0.4,
+    rotation=45,
+    multi_panel=False,
+    show=False,
+    save=f"_{base_name}_qc.png"
+)
+
+
+
+
+
+
 

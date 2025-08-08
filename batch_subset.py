@@ -105,7 +105,7 @@ sc.tl.leiden(combined_adata, resolution=1.0, random_state=0)
 
 
 fig = sc.pl.umap(combined_adata, color='renamed_samples', size=2, show=False,return_fig=True)
-fig.savefig(f'_{base_name}_Harmony.png', dpi=600,bbox_inches='tight')
+fig.savefig(f'figures/{base_name}_Harmony.png', dpi=600,bbox_inches='tight')
 plt.close(fig)
 
 samples = combined_adata.obs['renamed_samples'].unique()
@@ -118,20 +118,32 @@ for sample in samples:
         size=20,
         show=False, return_fig=True
     )
-    fig.savefig(f"_{base_name}_Harmony_{sample}.png", dpi=600,bbox_inches='tight')
+    fig.savefig(f"figures/{base_name}_Harmony_{sample}.png", dpi=600,bbox_inches='tight')
     plt.close(fig)
     
 
 fig = sc.pl.umap(
-        combined_adata[combined_adata.obs['renamed_samples'] == sample],
-        color='leiden',
-        title=f"Sample: {sample} - Leiden clusters",
-        size=20,
-        show=False,return_fig=True
-    )
-fig.savefig(f"_{base_name}_Harmony_leiden.png",dpi=600,bbox_inches='tight')
+    combined_adata,
+    color='leiden',
+    title="Leiden clusters",
+    size=20,
+    legend_loc="on data",
+    show=False,
+    return_fig=True
+)
+fig.savefig(f"figures/{base_name}_Harmony_leiden.png", dpi=600, bbox_inches='tight')
 plt.close(fig) 
+
+sc.pl.violin(
+    combined_adata,
+    keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
+    groupby='leiden',
+    jitter=0.4,
+    rotation=45,
+    multi_panel=False,
+    show=False,
+    save=f"_{base_name}_qc.png"
+)
+
+
 combined_adata.write(newObject)
-
-
-
