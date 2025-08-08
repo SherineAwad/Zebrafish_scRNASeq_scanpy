@@ -132,7 +132,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
 
 #### Cones Photoreceptor Subtypes
-<img src="figures/umapCones.png" alt="Cone subtypes" width="70%"> 
+<img src="figures/umapCones.png" width="70%"> 
 <img src="figures/umap_merged_Cones.png" width ="70%">
 
 <img src= "figures/umap_Cones_NMDA.png" width ="33%"><img src= "figures/umap_Cones_LD.png" width ="33%"><img src= "figures/umap_Cones_Control.png" width ="33%">
@@ -152,14 +152,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_Cones_gad1b_featureplot.png" width="33%"><img src="figures/umap_Cones_arr3a_featureplot.png" width="33%"> 
 
 #### Amacrine Cell (AC) Subtypes
-<img src="figures/umapAC.png" alt="Amacrine cell subtypes" width="70%"> 
-<img src="figures/umap_AC_all_conditions_umap.png" width ="70%">
+<img src="figures/umapAC.png" width="70%">
+<img src="figures/umap_merged_AC.png" width ="70%">
 
-<img src= "figures/umap_AC_NMDA_umap.png" width ="33%"><img src= "figures/umap_AC_LD_umap.png" width ="33%"><img src= "figures/umap_AC_Control_umap.png" width ="33%">
+<img src= "figures/umap_AC_NMDA.png" width ="33%"><img src= "figures/umap_AC_LD.png" width ="33%"><img src= "figures/umap_AC_Control.png" width ="33%">
 
-#### QC  per Cluster 
-
-<img src="figures/AC_qc_violin.png" width ="70%">
 
 #### AC Marker Genes 
 <img src="figures/dotplot_AC.png" width="90%">
@@ -175,14 +172,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_AC_arr3a_featureplot.png" width="33%">
 
 #### Retinal Ganglion Cell (RGC) Subtypes
-<img src="figures/umapRGC.png" alt="RGC subtypes" width="70%">
-<img src="figures/umap_RGC_all_conditions_umap.png" width ="70%">
+<img src="figures/umapRGC.png" width="70%">
+<img src="figures/umap_merged_RGC.png" width ="70%">
 
-<img src= "figures/umap_RGC_NMDA_umap.png" width ="33%"><img src= "figures/umap_RGC_LD_umap.png" width ="33%"><img src= "figures/umap_RGC_Control_umap.png" width ="33%">
+<img src= "figures/umap_RGC_NMDA.png" width ="33%"><img src= "figures/umap_RGC_LD.png" width ="33%"><img src= "figures/umap_RGC_Control.png" width ="33%">
 
-#### QC  per Cluster 
 
-<img src="figures/RGC_qc_violin.png" width ="70%">
 
 #### RGC Marker Genes
 <img src="figures/dotplot_RGC.png" width="90%">
@@ -192,15 +187,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_RGC_arr3a_featureplot.png" width="33%">
 
 #### Horizontal Cell (HC) Subtypes
-<img src="figures/umapHC.png" alt="Horizontal cell subtypes" width="70%">
-<img src="figures/umap_HC_all_conditions_umap.png" width ="70%">
+<img src="figures/umapHC.png" width="70%">
+<img src="figures/umap_merged_HC.png" width ="70%">
 
-<img src= "figures/umap_HC_NMDA_umap.png" width ="33%"><img src= "figures/umap_HC_LD_umap.png" width ="33%"><img src= "figures/umap_HC_Control_umap.png" width ="33%">
-
-#### QC  per Cluster 
-
-<img src="figures/HC_qc_violin.png" width ="70%">
-
+<img src= "figures/umap_HC_NMDA.png" width ="33%"><img src= "figures/umap_HC_LD.png" width ="33%"><img src= "figures/umap_HC_Control.png" width ="33%">
 
 #### HC Marker Genes
 <img src="figures/dotplot_HC.png" width="90%">
@@ -213,15 +203,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_HC_aqp4_featureplot.png" width="33%"><img src="figures/umap_HC_gad1b_featureplot.png" width="33%"><img src="figures/umap_HC_arr3a_featureplot.png" width="33%">
 
 #### Bipolar Cell (BC) Subtypes
-<img src="figures/umapBC.png" alt="Bipolar cell subtypes" width="70%">
-<img src="figures/umap_BC_all_conditions_umap.png" width ="70%">
+<img src="figures/umapBC.png" width="70%">
+<img src="figures/umap_merged_BC.png" width ="70%">
 
-<img src= "figures/umap_BC_NMDA_umap.png" width ="33%"><img src= "figures/umap_BC_LD_umap.png" width ="33%"><img src= "figures/umap_BC_Control_umap.png" width ="33%">
-<img src="figures/umap_BC_arr3a_featureplot.png" width="33%">
+<img src= "figures/umap_BC_NMDA.png" width ="33%"><img src= "figures/umap_BC_LD.png" width ="33%"><img src= "figures/umap_BC_Control.png" width ="33%">
 
-#### QC  per Cluster 
-
-<img src="figures/BC_qc_violin.png" width ="70%">
 
 #### BC Marker Genes 
 
@@ -236,14 +222,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_BC_arr3a_featureplot.png" width="33%">
 
 #### MG Subtypes
-<img src="figures/umapMG.png" alt="MG subtypes" width="70%">
-<img src="figures/umap_MG_all_conditions_umap.png" width ="70%">
+<img src="figures/umapMG.png" width="70%">
+<img src="figures/umap_merged_MG.png" width ="70%">
 
-<img src="figures/umap_MG_NMDA_umap.png" width ="33%"><img src="figures/umap_MG_LD_umap.png" width ="33%"><img src="figures/umap_MG_Control_umap.png" width="33%"> 
+<img src= "figures/umap_MG_NMDA.png" width ="33%"><img src= "figures/umap_MG_LD.png" width ="33%"><img src= "figures/umap_MG_Control.png" width ="33%">
 
-#### QC  per Cluster 
-
-<img src="figures/MG_qc_violin.png" width ="70%">
 
 #### MG Marker Genes
 <img src="figures/umap_MG_gfap_featureplot.png" width="33%"><img src="figures/umap_MG_apoeb_featureplot.png" width="33%"><img src="figures/umap_MG_aqp4_featureplot.png" width="33%">
