@@ -40,20 +40,24 @@ figure_name = sample +"_annotationsON.png"
 combined_adata.obs_names_make_unique()
 fig = sc.pl.umap(combined_adata, color='celltype',legend_loc="on data", show=False,return_fig=True)
 fig.savefig(figure_name, dpi=600,bbox_inches='tight')
+plt.close(fig) 
 
 figure_name = sample +"_annotations.png"
 fig = sc.pl.umap(combined_adata, color='celltype', show=False,return_fig=True)
 fig.savefig(figure_name, dpi=600,bbox_inches='tight')
+plt.close(fig)
 
 unwanted_type = "Cones_MG_MGPC_PostMitotic"
 combined_adata_filtered = combined_adata[combined_adata.obs["celltype"] != unwanted_type].copy()
 
 figure_name = sample +"_NannotationsON.png"
-fig = sc.pl.umap(combined_adata_filtered, color='celltype', legend_loc="on data", show=False)
+fig = sc.pl.umap(combined_adata_filtered, color='celltype', legend_loc="on data", show=False,return_fig=True)
 fig.savefig(figure_name, dpi=600,bbox_inches='tight')
+plt.close(fig)
 
 figure_name = sample +"_Nannotations.png"
 fig = sc.pl.umap(combined_adata_filtered, color='celltype', show=False,return_fig=True)
 fig.savefig(figure_name, dpi=600, bbox_inches='tight') 
+plt.close(fig)
 
 combined_adata_filtered.write(newObject, compression="gzip")
