@@ -98,14 +98,14 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## After re-Clustering annotation using marker genes
 
-<img src="figures/umapZebrafishes_annotations.png" alt="Umap Annotations" width="90%">
-<img src="figures/umapZebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
+<img src="figures/Zebrafishes_annotations.png" alt="Umap Annotations" width="90%">
+<img src="figures/Zebrafishes_annotationsON.png" alt="Umap Annotations ON" width="90%">
 
 
 ## Remove Celltype Cones_MG_MGPC_PostMitotic as likely doublet 
 
-<img src="figures/umapZebrafishes_Nannotations.png" alt="Umap Annotations" width="90%">
-<img src="figures/umapZebrafishes_NannotationsON.png" alt="Umap Annotations ON" width="90%">
+<img src="figures/Zebrafishes_Nannotations.png" alt="Umap Annotations" width="90%">
+<img src="figures/Zebrafishes_NannotationsON.png" alt="Umap Annotations ON" width="90%">
  
 
 ## Cell ratio after increasing resolution and re-annotations 
