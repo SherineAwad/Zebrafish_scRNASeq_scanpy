@@ -61,17 +61,5 @@ fig.set_size_inches(12, 12)
 fig.savefig(f"figures/umap_merged_{celltype}.png", dpi=600,bbox_inches='tight')
 plt.close(fig)
 
-fig = sc.pl.violin(
-    adata,
-    keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
-    groupby='leiden',     # change if you use another cluster label
-    jitter=0.4,
-    rotation=45,
-    multi_panel=False,
-    show=False,
-    return_fig=True)
-    fig.savefig(f"figures/leiden_{celltype}_qc_violin_panel{i+1}.png", format='png', dpi=600, bbox_inches="tight")
-    plt.close(fig)
-
 subset.write(newObject, compression="gzip")
 

@@ -6,6 +6,7 @@ import argparse
 import scanpy.external as sce
 import os 
 import numpy as np 
+import matplotlib.pyplot as plt
 
 sys.modules['importlib.metadata'] = importlib_metadata
 
@@ -49,7 +50,53 @@ sc.pp.highly_variable_genes(combined_adata)
 combined_adata.raw = combined_adata.copy()
 sc.pp.scale(combined_adata)
 sc.tl.pca(combined_adata, svd_solver='arpack')
-sce.pp.harmony_integrate(combined_adata, key='renamed_samples')
+# Perform batch correction using Harmony
+sce.pp.harmony_integrate(
+    combined_adata,
+    key='renamed_samples',  
+    # 🔸 key: str
+    # This is the column in `combined_adata.obs` that identifies batches, 
+    # such as sample names or experimental conditions.
+    # Harmony will align the embeddings across the values in this column.
+
+    theta=3,  
+    # 🔸 theta: float (default = 2)
+    # Controls the **strength of batch correction**.
+    # Higher values (e.g., 5–10) make Harmony more aggressive in aligning batches,
+    # possibly at the expense of biological variation.
+    # Lower values (e.g., 0–1) make it more conservative — useful if you want to retain subtle differences.
+
+    max_iter_harmony=20,  
+    # 🔸 max_iter_harmony: int (default = 20)
+    # Sets the **maximum number of optimization iterations** Harmony will run.
+    # More iterations allow better convergence, especially on complex datasets.
+    # Increase to 30–50 if Harmony stops before reaching convergence.
+
+    epsilon_cluster=1e-6,  
+    # 🔸 epsilon_cluster: float (default = 1e-5)
+    # **Tolerance for convergence of the soft clustering step.**
+    # Smaller values make convergence stricter (more accurate, slower).
+    # Can usually be left at default unless tuning for performance.
+
+    epsilon_harmony=1e-5,  
+    # 🔸 epsilon_harmony: float (default = 1e-4)
+    # **Tolerance for convergence of the batch correction step itself.**
+    # Smaller values force Harmony to refine the correction more precisely.
+
+    sigma=0.1,  
+    # 🔸 sigma: float (default = 0.1)
+    # Controls the **softness of cluster assignments** in Harmony's iterative updates.
+    # Lower values (e.g., 0.05) make clustering harder (more distinct clusters).
+    # Higher values (e.g., 0.2) soften boundaries between clusters.
+
+    tau=0  
+    # 🔸 tau: int (default = 0)
+    # The number of **initial PCA components to exclude** from correction.
+    # Use this if you know early PCs are dominated by technical noise or batch effect 
+    # and want to avoid misleading Harmony in early updates.
+    # Usually safe to keep as 0.
+)
+
 combined_adata.obsm['X_pca'] = combined_adata.obsm['X_pca_harmony']
 sc.pp.neighbors(combined_adata, random_state=0)
 sc.tl.umap(combined_adata, random_state=0)
@@ -57,21 +104,33 @@ sc.tl.leiden(combined_adata, resolution=1.0, random_state=0)
 
 
 
-sc.pl.umap(combined_adata, color='renamed_samples', size=2, save=f'_{base_name}_Harmony.png')
+fig = sc.pl.umap(combined_adata, color='renamed_samples', size=2, show=False,return_fig=True)
+fig.savefig(f'_{base_name}_Harmony.png', dpi=600,bbox_inches='tight')
+plt.close(fig)
 
 samples = combined_adata.obs['renamed_samples'].unique()
 
 for sample in samples:
-    sc.pl.umap(
+    fig = sc.pl.umap(
         combined_adata[combined_adata.obs['renamed_samples'] == sample],
         color='renamed_samples',
         title=f"Sample: {sample}",
         size=20,
-        save=f"_{base_name}_Harmony_{sample}.png",
-        show=False
+        show=False, return_fig=True
     )
+    fig.savefig(f"_{base_name}_Harmony_{sample}.png", dpi=600,bbox_inches='tight')
+    plt.close(fig)
+    
 
-
+fig = sc.pl.umap(
+        combined_adata[combined_adata.obs['renamed_samples'] == sample],
+        color='leiden',
+        title=f"Sample: {sample} - Leiden clusters",
+        size=20,
+        show=False,return_fig=True
+    )
+fig.savefig(f"_{base_name}_Harmony_leiden.png",dpi=600,bbox_inches='tight')
+plt.close(fig) 
 combined_adata.write(newObject)
 
 
