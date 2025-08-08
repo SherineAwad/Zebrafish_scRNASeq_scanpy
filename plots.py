@@ -24,9 +24,8 @@ adata.var.head()
 adata.obs.head()
 adata.obs['leiden'].head()
 
-
 figurename1 = "figures/sample_"+base_name+"_qc_violin.png"
-sc.pl.violin(
+fig = sc.pl.violin(
     adata,
     keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
     groupby='renamed_samples',     # change if you use another cluster label
@@ -35,12 +34,11 @@ sc.pl.violin(
     multi_panel=True,
     show=False
 )
-plt.savefig(figurename1, dpi=300, bbox_inches="tight")
-plt.close()
+fig.savefig(figurename1, dpi=600, bbox_inches="tight")
+plt.close(fig)
 
-
-figurename2 = "figures/celltype_"+base_name+"_qc_violin.tif"
-sc.pl.violin(
+figurename2 = "figures/celltype_"+base_name+"_qc_violin.png"
+fig = sc.pl.violin(
     adata,
     keys=['n_genes_by_counts', 'total_counts', 'pct_counts_mt'],
     groupby='celltype',     # change if you use another cluster label
@@ -49,9 +47,8 @@ sc.pl.violin(
     multi_panel=True,
     show=False
 )
-plt.savefig(figurename2, format ='tiff', dpi=300, bbox_inches="tight")
-plt.close()
-
+fig.savefig(figurename2, format ='png', dpi=600, bbox_inches="tight")
+plt.close(fig)
 
 # Validate required columns
 if 'renamed_samples' not in adata.obs or 'celltype' not in adata.obs:
@@ -108,9 +105,8 @@ plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 
 # Save figure
-plt.savefig("figures/Restacked_bar_sample_by_celltype.tif", dpi=300, format='tiff')
+plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=600)
 plt.close()
-
 
 # Ensure 'renamed_samples' is categorical
 adata.obs['renamed_samples'] = adata.obs['renamed_samples'].astype('category')
@@ -121,23 +117,20 @@ for sample in renamed_samples:
     sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].astype('category')
     sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].cat.remove_unused_categories()
 
-    sc.pl.umap(
+    fig = sc.pl.umap(
         sample_adata,
         color='renamed_samples',
         title=f"Sample: {sample}",
         size=20,
-        show=False
-    )
-plt.savefig(f"figures/umap_{base_name}_{sample}.tif", dpi=300, format='tiff')
-plt.close()
-
+        show=False,return_fig=True)
+    fig.savefig(f"figures/umap_{base_name}_{sample}.png", dpi=600)
+    plt.close(fig)
 # Plot all samples together
-sc.pl.umap(
+fig = sc.pl.umap(
     adata,
     color='renamed_samples',
     size=2, show=False
 )
-plt.savefig(f"figures/umap_merged_{base_name}.tif", dpi=300, format='tiff')
-plt.close()
-
+fig.savefig(f"figures/umap_merged_{base_name}.png", dpi=600)
+plt.close(fig)
 
