@@ -28,13 +28,13 @@ This plot shows the same QC metrics **after filtering**. It confirms that poor-q
 
 ## UMAP After Batch Effect Removal (Harmony)
 
-### `umap_Harmonyzebrafishes.png`
+### `umap_sHarmonyzebrafishes.png`
 
 This UMAP plot shows zebrafish single-cell data **after batch effect correction** using **Harmony**.
 
 By aligning shared biological structure across different batches or samples, Harmony improves the clustering and visualization. Cells are now grouped primarily by **biological similarity** rather than technical batch differences, enabling more accurate downstream analysis.
 
-![umap_Harmonyzebrafishes.png](figures/umap_Harmonyzebrafishes.png)
+![umap_sHarmonyzebrafishes.png](figures/umap_sHarmonyzebrafishes.png)
 
 ### UMAP per sample
 
@@ -133,11 +133,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### Cones Photoreceptor Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%"> 
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
 
 
 #### Amacrine Cell (AC) Subtypes
@@ -149,11 +152,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### AC Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%">
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
@@ -165,11 +171,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### RGC Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%">
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
 
 
 #### Horizontal Cell (HC) Subtypes
@@ -181,11 +190,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### HC Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%">
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
 
 
 #### Bipolar Cell (BC) Subtypes
@@ -196,11 +208,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### BC Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%">
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
 
 #### MG Subtypes
 <img src="figures/umapMG.png" width="70%">
@@ -211,11 +226,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 #### MG Subtypes after batch correction (STRICT PARAMETERS) 
 
-<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony.png" width ="90%">
+<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
 
-<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_LD.png" width ="33%"><img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_NMDA.png" width ="33%"><img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_Control.png" width ="33%">
+<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
 
-<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Harmony_leiden.png" width ="90%">
+
+### QC after batch correction (STRICT PARAMETERS)
+<img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
+<img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
 
 
 ## How to run Snakemake 

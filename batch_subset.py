@@ -105,7 +105,7 @@ sc.tl.leiden(combined_adata, resolution=1.0, random_state=0)
 
 
 fig = sc.pl.umap(combined_adata, color='renamed_samples', size=2, show=False,return_fig=True)
-fig.savefig(f'figures/{base_name}_Harmony.png', dpi=600,bbox_inches='tight')
+fig.savefig(f'figures/{base_name}_sHarmony.png', dpi=600,bbox_inches='tight')
 plt.close(fig)
 
 samples = combined_adata.obs['renamed_samples'].unique()
@@ -118,7 +118,7 @@ for sample in samples:
         size=20,
         show=False, return_fig=True
     )
-    fig.savefig(f"figures/{base_name}_Harmony_{sample}.png", dpi=600,bbox_inches='tight')
+    fig.savefig(f"figures/{base_name}_sHarmony_{sample}.png", dpi=600,bbox_inches='tight')
     plt.close(fig)
     
 
@@ -131,7 +131,7 @@ fig = sc.pl.umap(
     show=False,
     return_fig=True
 )
-fig.savefig(f"figures/{base_name}_Harmony_leiden.png", dpi=600, bbox_inches='tight')
+fig.savefig(f"figures/{base_name}_sHarmony_leiden.png", dpi=600, bbox_inches='tight')
 plt.close(fig) 
 
 sc.pl.violin(
@@ -142,7 +142,7 @@ sc.pl.violin(
     rotation=45,
     multi_panel=False,
     show=False,
-    save=f"_{base_name}_qc.png"
+    save=f"_{base_name}_sHarmony_QC.png"
 )
 
 
