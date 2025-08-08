@@ -131,16 +131,12 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
 
-
 #### Cones Photoreceptor Subtypes
 <img src="figures/umapCones.png" alt="Cone subtypes" width="70%"> 
-<img src="figures/umap_Cones_all_conditions_umap.png" width ="70%">
+<img src="figures/umap_merged_Cones.png" width ="70%">
 
-<img src= "figures/umap_Cones_NMDA_umap.png" width ="33%"><img src= "figures/umap_Cones_LD_umap.png" width ="33%"><img src= "figures/umap_Cones_Control_umap.png" width ="33%">
+<img src= "figures/umap_Cones_NMDA.png" width ="33%"><img src= "figures/umap_Cones_LD.png" width ="33%"><img src= "figures/umap_Cones_Control.png" width ="33%">
 
-#### QC  per Cluster 
-
-<img src="figures/Cones_qc_violin.png" width ="70%">
 
 #### Cones Marker Genes 
 
