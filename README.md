@@ -201,6 +201,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/violin_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
 
 
+### RGC Marker Genes after batch correction
+
+<img src="figures/umap_corrected_RGC_robo2_sHarmony.png" width="30%"><img src="figures/umap_corrected_RGC_rbpms2b_sHarmony.png" width="30%"><img src="figures/umap_corrected_RGC_rbpms2a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_RGC_arr3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_RGC_isl2b_sHarmony.png" width="30%"><img src="figures/umap_corrected_RGC_gad1b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_RGC_mafaa_sHarmony.png" width="30%"><img src="figures/umap_corrected_RGC_eomesa_sHarmony.png" width="30%">
+
 
 #### Horizontal Cell (HC) Subtypes
 <img src="figures/umapHC.png" width="70%">
@@ -272,6 +278,15 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ### QC after batch correction (STRICT PARAMETERS)
 <img src="figures/MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
 <img src="figures/violin_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
+### MG marker Genes after batch correction
+
+<img src="figures/umap_corrected_MG_sox2_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_aqp4_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_stat3_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_MG_gfap_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_rho_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_gnat2_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_MG_arr3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_cabp5a_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_gad1b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_MG_apoeb_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_vsx1_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_rlbp1a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_MG_ompa_sHarmony.png" width="30%"><img src="figures/umap_corrected_MG_nr2e3_sHarmony.png" width="30%">
+
 
 
 ## How to run Snakemake 
