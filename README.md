@@ -219,6 +219,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
 <img src="figures/violin_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
 
+### HC Marker Genes after batch correction
+
+<img src="figures/umap_corrected_HC_cx52.7_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_cx52.6_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_ompa_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_HC_gnat2_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_isl1_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_arr3a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_HC_cx52.9_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_gad2_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_rho_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_HC_vsx1_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_gad1b_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_pcp4a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_HC_cabp5a_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_rlbp1a_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_lhx1a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_HC_nr2e3_sHarmony.png" width="30%"><img src="figures/umap_corrected_HC_aqp4_sHarmony.png" width="30%">
 
 
 #### Bipolar Cell (BC) Subtypes
@@ -236,6 +244,15 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ### QC after batch correction (STRICT PARAMETERS)
 <img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
 <img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
+
+### BC Marker Genes after batch correction
+<img src="figures/umap_corrected_BC_bhlhe23_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_vsx1_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_gnat2_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_cabp5b_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_arr3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_gad1b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_rho_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_cabp5a_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_vamp1_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_calb2b_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_rlbp1a_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_grm6b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_vsx2_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_ompa_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_calb1_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_grm6a_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_calb2a_sHarmony.png" width="30%"><img src="figures/umap_corrected_BC_nr2e3_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_BC_aqp4_sHarmony.png" width="30%">
 
 
 #### MG Subtypes
