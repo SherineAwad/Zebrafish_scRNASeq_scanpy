@@ -141,6 +141,16 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
 <img src="figures/violin_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
 
+### Cones Marker Genes after batch correction 
+
+<img src="figures/umap_corrected_Cones_opn1lw1_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_opn1lw2_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_opn1sw2_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_snap25a_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_thrb_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_rho_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_gngt2a_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_arr3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_gnat2_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_gad1b_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_cabp5a_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_opn1sw1_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_vsx1_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_ompa_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_tbx2a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_opn1mw4_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_rlbp1a_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_tgfa_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_nr2e3_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_mpzl2b_sHarmony.png" width="30%"><img src="figures/umap_corrected_Cones_aqp4_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_Cones_grk7b_sHarmony.png" width="30%">
 
 
 #### Amacrine Cell (AC) Subtypes
@@ -160,6 +170,17 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
 <img src="figures/violin_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
 
+### AC Marker Genes after batch correction 
+
+<img src="figures/umap_corrected_AC_sox4a_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_slc6a9_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_hmgb2b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_gad2_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_gnat2_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_rho_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_arr3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_fosab_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_gad1b_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_bhlhe23_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_cabp5a_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_rlbp1a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_tkta_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_vsx1_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_ompa_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_tfap2a_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_bhlhe22_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_chgb_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_sox2_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_nr2e3_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_chata_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_slc18a3a_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_aqp4_sHarmony.png" width="30%"><img src="figures/umap_corrected_AC_gad1a_sHarmony.png" width="30%">
+<img src="figures/umap_corrected_AC_th_sHarmony.png" width="30%">
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
