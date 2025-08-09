@@ -1,6 +1,7 @@
 import argparse
 import scanpy as sc
 import os
+import matplotlib.pyplot as plt
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="Plot marker genes and UMAPs per sample")
@@ -11,10 +12,13 @@ args = parser.parse_args()
 myObject = args.myObject
 markers = args.markers
 
+
 # Extract base name
 parts = os.path.basename(myObject).split("_")
-base_prefix = parts[0]
-plot_suffix = ".png"
+base = os.path.splitext(os.path.basename(myObject))[0]
+parts = base.split("_")
+base_prefix = "_".join(parts[:2])  
+plot_suffix ="sHarmony.png" 
 
 # Load marker genes
 with open(markers, 'r') as f:
@@ -47,42 +51,15 @@ if missing:
 # Plot dotplot and violin for valid genes
 if present:
     sc.pl.dotplot(adata, var_names=present, groupby='celltype', save=f"_{base_prefix}_dotplot{plot_suffix}", show=False)
-    sc.pl.violin(adata, keys=present, groupby='celltype', rotation=90, stripplot=True,
-                 save=f"_{base_prefix}_violin{plot_suffix}", show=False)
 else:
     print("No valid marker genes found for plotting.")
 
 # UMAP feature plots per gene
 for gene in present:
-    sc.pl.umap(adata, color=gene, save=f"_{base_prefix}_{gene}_featureplot{plot_suffix}", show=False)
-
-renamed_samples = adata.obs['renamed_samples'].cat.categories
-
-for sample in renamed_samples:
-    sample_adata = adata[adata.obs['renamed_samples'] == sample].copy()
-    # This removes all categories except the ones actually present in the subset
-    sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].cat.remove_unused_categories()
-    
-    sc.pl.umap(
-        sample_adata,
-        color='renamed_samples',  # Now only one category remains here
-        title=f"Sample: {sample}",
-        size=20,
-        save=f"_{base_prefix}_{sample}_umap.png",
-        show=False
-    )
-
-# Plot all samples together (uses default color map)
-sc.pl.umap(
-    adata,
-    color='renamed_samples',
-    size=2,
-    save=f"_{base_prefix}_all_conditions_umap{plot_suffix}",
-    show=False
-)
-
-
-
+    fig = sc.pl.umap(adata, color=gene,show=False, return_fig=True)
+    fig.set_size_inches(12, 12)
+    fig.savefig(f"_{base_prefix}_{gene}_{plot_suffix}", dpi=600,bbox_inches='tight')
+    plt.close(fig) 
 
 
 
