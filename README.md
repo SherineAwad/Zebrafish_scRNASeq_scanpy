@@ -223,7 +223,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_RGC_rbpms2b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_mafaa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_eomesa_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_RGC_gad1b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_arr3a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_elavl3_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_RGC_isl2b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_pou4f2_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_mpeg1.1_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_RGC_mbpa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_rpe65a_sHarmony.png" width="30%" />
+<img src="figures/umap_corrected_RGC_mbpa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_rpe65a_sHarmony.png" width="30%" /><img src="figures/umap_corrected_RGC_tbr1b_sHarmony.png" width="30%" />
 
 
 #### Horizontal Cell (HC) Subtypes
