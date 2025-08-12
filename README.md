@@ -273,7 +273,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_BC_annotated_rlbp1a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_aqp4_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_gad1b_Harmony.png" width="30%" />
 <img src="figures/umap_BC_annotated_arr3a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_elavl3_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_isl2b_Harmony.png" width="30%" />
 <img src="figures/umap_BC_annotated_pou4f2_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mpeg1.1_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mbpa_Harmony.png" width="30%" />
-<img src="figures/umap_BC_annotated_rpe65a_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_rpe65a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_prkcaa_Harmony.png" width="30%" />
 
 
 #### BC Subtypes after batch correction (STRICT PARAMETERS) 
