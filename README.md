@@ -262,6 +262,20 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 <img src= "figures/umap_BC_NMDA.png" width ="33%"><img src= "figures/umap_BC_LD.png" width ="33%"><img src= "figures/umap_BC_Control.png" width ="33%">
 
+
+### BC Marker Genes without batch correction 
+
+<img src="figures/umap_BC_annotated_vsx2_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_cabp5a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_cabp5b_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_bhlhe23_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_vamp1_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_vsx1_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_grm6a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_grm6b_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_calb1_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_calb2a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_calb2b_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_rho_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_nr2e3_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_ompa_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_gnat2_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_rlbp1a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_aqp4_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_gad1b_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_arr3a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_elavl3_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_isl2b_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_pou4f2_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mpeg1.1_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mbpa_Harmony.png" width="30%" />
+<img src="figures/umap_BC_annotated_rpe65a_Harmony.png" width="30%" />
+
+
 #### BC Subtypes after batch correction (STRICT PARAMETERS) 
 
 <img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
