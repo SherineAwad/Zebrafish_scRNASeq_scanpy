@@ -296,8 +296,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_BC_rlbp1a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_aqp4_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_gad1b_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_BC_arr3a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_elavl3_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_isl2b_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_BC_pou4f2_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_mbpa_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_rpe65a_sHarmony.png" width="30%" />
-
+<img src="figures/umap_corrected_BC_rpe65a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_prkcaa_sHarmony.png" width="30%" /> 
 
 #### MG Subtypes
 <img src="figures/umapMG.png" width="70%">
