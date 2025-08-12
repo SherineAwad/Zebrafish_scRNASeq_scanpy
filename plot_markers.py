@@ -54,12 +54,11 @@ if present:
 else:
     print("No valid marker genes found for plotting.")
 
+import matplotlib.pyplot as plt
+plt.rcParams['figure.dpi'] = 600
 # UMAP feature plots per gene
 for gene in present:
-    fig = sc.pl.umap(adata, color=gene,show=False, return_fig=True)
-    fig.set_size_inches(12, 12)
-    fig.savefig(f"_{base_prefix}_{gene}_{plot_suffix}", dpi=600,bbox_inches='tight')
-    plt.close(fig) 
+    sc.pl.umap(adata, color=gene, save = f"_{base_prefix}_{gene}_{plot_suffix}",use_raw=False, show=False)
 
 
 
