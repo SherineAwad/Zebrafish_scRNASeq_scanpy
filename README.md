@@ -46,15 +46,6 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/umap_reclustered_LD.png" alt="UMAP LD sample" width="33%"><img src="figures/umap_reclustered_NMDA.png" alt="UMAP NMDA sample" width="33%"><img src="figures/umap_reclustered_Control.png" alt="UMAP Control sample" width="33%">
 
-### No. of Cells per Sample 
-
-| renamed_samples | Number of cells |
-|-----------------|-----------------|
-| Control         | 136,118         |
-| NMDA            | 15,654          |
-| LD              | 11,300          |
-
-
 ## Clustering 
 
 ### UMAP after clustering (resolution: default =1)  
@@ -126,6 +117,16 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## Umap per sample 
 <img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_Control.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_LD.png" width ="33%"><img src="figures/umap_annotated_clustered_corrected_doubletRemoved_Zebrafishes_NMDA.png" width="33%">
+
+
+
+### No. of Cells per Sample 
+
+| renamed_samples | Number of cells |
+|-----------------|-----------------|
+| Control         | 136,118         |
+| NMDA            | 15,654          |
+| LD              | 11,300          |
 
 
 ### UMAPs of Major Retinal Cell Subtypes
