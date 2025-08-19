@@ -138,7 +138,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ### Mini Dotplot 
 
-<img src= "figures/dotplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes_markerGenes.png", width ="90%"> 
+<img src="figures/dotplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes_markerGenes.png", width ="90%"> 
 
 
 ### UMAPs of Major Retinal Cell Subtypes
