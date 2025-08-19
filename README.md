@@ -136,6 +136,11 @@ Below are the UMAP plots split by individual samples after reclustering:
 | LD              | 11,214          |
 
 
+### Mini Dotplot 
+
+<img src= "figures/dotplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes_markerGenes.png", width ="90%"> 
+
+
 ### UMAPs of Major Retinal Cell Subtypes
 
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
