@@ -90,6 +90,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## We need to increase the resolution to 2.5 to seperate the tiny branch of Rod Cells
 
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑
+
+## 🚨 Starting from here, we have plots of resolution 2.5 🚨
+
+🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑
+
+
 ### UMAP after clustering 
 
 <img src="figures/umap_clusters.png" alt="Umap Annotations" width="90%">
@@ -275,28 +282,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_BC_annotated_pou4f2_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mpeg1.1_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_mbpa_Harmony.png" width="30%" />
 <img src="figures/umap_BC_annotated_rpe65a_Harmony.png" width="30%" /> <img src="figures/umap_BC_annotated_prkcaa_Harmony.png" width="30%" />
 
-
-#### BC Subtypes after batch correction (STRICT PARAMETERS) 
-
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony.png" width ="90%">
-
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_LD.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_NMDA.png" width ="33%"><img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_Control.png" width ="33%">
-
-### QC after batch correction (STRICT PARAMETERS)
-<img src="figures/BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_leiden.png" width ="90%">
-<img src="figures/violin_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_sHarmony_QC.png" width ="90%">
-
-### BC Marker Genes after batch correction
-
-<img src="figures/umap_corrected_BC_vsx2_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_cabp5a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_cabp5b_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_bhlhe23_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_vamp1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_vsx1_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_grm6a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_grm6b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_calb1_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_calb2a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_calb2b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_rho_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_nr2e3_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_ompa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_gnat2_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_rlbp1a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_aqp4_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_gad1b_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_arr3a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_elavl3_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_isl2b_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_pou4f2_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_mbpa_sHarmony.png" width="30%" />
-<img src="figures/umap_corrected_BC_rpe65a_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_BC_prkcaa_sHarmony.png" width="30%" /> 
 
 #### MG Subtypes
 <img src="figures/umapMG.png" width="70%">
