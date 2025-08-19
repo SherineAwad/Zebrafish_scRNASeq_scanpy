@@ -319,7 +319,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_MG_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_MG_mbpa_sHarmony.png" width="30%" />
 
 
-### MG clusters after removing clusters 14, 15, and 16 
+### MG clusters after removing clusters 11 and 13 
 
 <img src="figures/corrected_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%">
 
