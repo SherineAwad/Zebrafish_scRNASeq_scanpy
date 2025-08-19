@@ -203,6 +203,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_AC_pou4f2_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_AC_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_AC_mbpa_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_AC_rpe65a_sHarmony.png" width="30%" />
 
+
+
+### AC clusters after removing clusters 11, 48, and 49
 <img src="figures/corrected_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%"> 
 
 
@@ -262,9 +265,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_HC_elavl3_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_HC_isl2b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_HC_pou4f2_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_HC_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_HC_mbpa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_HC_rpe65a_sHarmony.png" width="30%" />
 
-### After removing clusters 14, 15, and 16 
+### HC clusters after removing clusters 14, 15, and 16 
 
-<img src="figures/corrected_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png", width ="90%"> 
+<img src="figures/corrected_HC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%">
+
 
 #### Bipolar Cell (BC) Subtypes
 <img src="figures/umapBC.png" width="70%">
@@ -314,9 +318,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_MG_elavl3_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_MG_isl2b_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_MG_pou4f2_sHarmony.png" width="30%" />
 <img src="figures/umap_corrected_MG_mpeg1.1_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_MG_mbpa_sHarmony.png" width="30%" />
 
-### After removing clusters 11 and 13 
 
-<img src="figures/corrected_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png", width ="90%">
+### MG clusters after removing clusters 14, 15, and 16 
+
+<img src="figures/corrected_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%">
+
 
 ## How to run Snakemake 
 
