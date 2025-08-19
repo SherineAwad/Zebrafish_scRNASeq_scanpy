@@ -131,9 +131,9 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 | renamed_samples | Number of cells |
 |-----------------|-----------------|
-| Control         | 136,118         |
-| NMDA            | 15,654          |
-| LD              | 11,300          |
+| Control         | 134,237         |
+| NMDA            | 15,424          |
+| LD              | 11,214          |
 
 
 ### UMAPs of Major Retinal Cell Subtypes
