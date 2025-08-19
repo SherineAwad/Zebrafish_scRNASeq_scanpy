@@ -33,8 +33,8 @@ with open(annot_file, "r") as f:
 
 cluster_to_celltype_dict = {str(key): value for key, value in cluster_to_celltype_dict.items()}
 
+combined_adata = combined_adata[combined_adata.obs["leiden"] != "80"].copy()
 combined_adata.obs["celltype"] = combined_adata.obs["leiden"].map(cluster_to_celltype_dict)
-
 
 figure_name = "figures/"+sample +"_annotationsON.png"
 combined_adata.obs_names_make_unique()
@@ -47,8 +47,8 @@ fig = sc.pl.umap(combined_adata, color='celltype', show=False,return_fig=True)
 fig.savefig(figure_name, dpi=600,bbox_inches='tight')
 plt.close(fig)
 
-unwanted_type = "Cones_MG_MGPC_PostMitotic"
-combined_adata_filtered = combined_adata[combined_adata.obs["celltype"] != unwanted_type].copy()
+unwanted_types = ["Cones_MG_MGPC_PostMitotic", "MG_AC"]
+combined_adata_filtered = combined_adata[~combined_adata.obs["celltype"].isin(unwanted_types)].copy()
 
 figure_name = "figures/"+ sample +"_NannotationsON.png"
 fig = sc.pl.umap(combined_adata_filtered, color='celltype', legend_loc="on data", show=False,return_fig=True)

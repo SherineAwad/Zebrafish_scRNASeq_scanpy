@@ -18,7 +18,7 @@ parts = os.path.basename(myObject).split("_")
 base = os.path.splitext(os.path.basename(myObject))[0]
 parts = base.split("_")
 base_prefix = "_".join(parts[:2])  
-plot_suffix ="sHarmony.png" 
+plot_suffix ="Harmony.png" 
 
 # Load marker genes
 with open(markers, 'r') as f:
