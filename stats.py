@@ -34,3 +34,50 @@ print("Number of cells per renamed_samples group:")
 print(cell_counts)
 
 
+
+marker_genes = {
+"MG":	["aqp4"],
+"MGPC":	["cdk1"],
+"PR precursors": ["nr2e3"],
+"Rod": ["guca1b"],
+"Cones": ["gnat2"],
+"BC":	["cabp5a"],
+"AC": ["elavl3"],
+"HC": 	["ompa"],
+"RGC":	["isl2b"],
+"Microglia_ImmuneCells": ["mpeg1.1"],
+"RPE": 	["rpe65a"],
+"Endothelial": ["tie1"],
+"Pericytes": ["acta2"],
+"Oligocytes": ["mbpa"],
+"Melanocytes": ["mitfa"]
+}
+celltype_order = ['MG', 'MGPC', 'PR precursors', 'Rod', 'Cones', 'BC', 'AC', 'HC', 'RGC','Microglia_ImmuneCells','RPE', 'Melanocyte','Endothelial','Perycites','Oligodenrocyte']
+adata.obs['celltype'] = pd.Categorical(adata.obs['celltype'], categories=celltype_order, ordered=True)
+
+
+figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
+fig = sc.pl.dotplot(
+    adata,
+    marker_genes,
+    groupby="celltype",
+    categories_order = celltype_order,
+    standard_scale="var",
+    figsize=(6,5),
+    dot_max=1.0, dendrogram=False, show =False,return_fig=True)
+
+fig.savefig(figure_name, dpi=600,bbox_inches="tight")
+
+
+'''sc.pl.dotplot(
+    adata,
+    marker_genes,
+    groupby="celltype",
+    categories_order=celltype_order,
+    standard_scale="var",
+    dot_max=1.0,
+    dendrogram=False,
+    show=False,
+    save=figure_name  # Save in the default figure directory
+)
+'''

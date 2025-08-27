@@ -67,7 +67,6 @@
 5	RGC
 84	Melanocyte
 65	Endothelial
-80	Endothelial
 31	RPE
 76	Cones_MG_MGPC_PostMitotic
 8	Cones
