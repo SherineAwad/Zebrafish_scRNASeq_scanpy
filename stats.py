@@ -55,8 +55,9 @@ marker_genes = {
 celltype_order = ['MG', 'MGPC', 'PR precursors', 'Rod', 'Cones', 'BC', 'AC', 'HC', 'RGC','Microglia_ImmuneCells','RPE', 'Melanocyte','Endothelial','Perycites','Oligodenrocyte']
 adata.obs['celltype'] = pd.Categorical(adata.obs['celltype'], categories=celltype_order, ordered=True)
 
-
 figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
+
+'''
 fig = sc.pl.dotplot(
     adata,
     marker_genes,
@@ -68,16 +69,22 @@ fig = sc.pl.dotplot(
 
 fig.savefig(figure_name, dpi=600,bbox_inches="tight")
 
+'''
 
-'''sc.pl.dotplot(
+figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
+fig = sc.pl.dotplot(
     adata,
     marker_genes,
     groupby="celltype",
     categories_order=celltype_order,
     standard_scale="var",
+    figsize=(6,5),
     dot_max=1.0,
     dendrogram=False,
     show=False,
-    save=figure_name  # Save in the default figure directory
+    return_fig=True
 )
-'''
+
+fig.savefig(figure_name, dpi=600, bbox_inches="tight")
+
+
