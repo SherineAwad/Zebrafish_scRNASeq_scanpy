@@ -29,10 +29,10 @@ sc.pp.neighbors(subset)
 sc.tl.umap(subset)
 sc.tl.leiden(subset,resolution=1.0)
 
-plot_name = celltype+".png" 
+plot_name = "umap"+celltype+".png" 
 fig = sc.pl.umap(subset, color='leiden', legend_loc='on data', show=False,return_fig=True) 
 fig.set_size_inches(12, 12)
-fig.savefig(plot_name, dpi=600,bbox_inches='tight')
+plt.savefig("figures/" + plot_name, dpi=600, bbox_inches="tight")
 plt.close(fig)
 
 # Ensure 'renamed_samples' is categorical
@@ -61,5 +61,6 @@ fig.set_size_inches(12, 12)
 fig.savefig(f"figures/umap_merged_{celltype}.png", dpi=600,bbox_inches='tight')
 plt.close(fig)
 
-subset.write(newObject, compression="gzip")
+newObject = newObject +".h5ad"
+subset.write(newObject, compression="gzip", overwrite=True)
 
