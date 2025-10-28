@@ -359,6 +359,106 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.2.png)
 
+# 🐍 For Debugging Issues
+
+### 💾 Command & Output
+```bash
+python print_h5ad.py annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad 
+Loading AnnData object from: annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad
+
+==================================================
+BASIC AnnData INFORMATION
+==================================================
+Overall shape: (160875, 24597) (cells: 160875, genes: 24597)
+Observation names (cells): ['AAACCAAAGCTTAACG-1', 'AAACCAAAGTACGCCG-1', 'AAACCATTCGCTCATT-1', 'AAACCCGCACCTCACG-1', 'AAACCCGCATCGGGAC-1']...
+Variable names (genes): ['fgfr1op2', 'si:dkey-21h14.12', 'si:dkey-285e18.2', 'znf1114', 'si:dkey-21h14.10']...
+
+=== adata.X (Primary Expression Matrix) ===
+Shape: (160875, 24597) (cells: 160875, genes: 24597)
+Type: dense
+Data type: float32
+Min: -6.042159
+Max: 381.777557
+Mean: -0.001693
+Std: 0.995661
+Non-zero values: 3957042375
+Zero values: 0
+Sparsity: 0.0000 (0.00%)
+
+Top 5 genes (first 5 rows):
+  fgfr1op2: min=-0.2939, max=7.9207, mean=-0.0006
+  si:dkey-21h14.12: min=-0.0168, max=101.5491, mean=-0.0000
+  si:dkey-285e18.2: min=-0.0079, max=182.2779, mean=0.0001
+  znf1114: min=-0.1110, max=18.6632, mean=0.0004
+  si:dkey-21h14.10: min=-0.0139, max=136.0288, mean=-0.0019
+
+Top 5 cells (first 5 columns):
+  AAACCAAAGCTTAACG-1: min=-2.3688, max=124.4653, mean=-0.0308
+  AAACCAAAGTACGCCG-1: min=-3.3848, max=44.7331, mean=-0.0216
+  AAACCATTCGCTCATT-1: min=-2.0438, max=22.0059, mean=0.0395
+  AAACCCGCACCTCACG-1: min=-2.7271, max=35.6094, mean=0.0179
+  AAACCCGCATCGGGAC-1: min=-2.5089, max=22.6247, mean=0.0050
+
+adata.raw type: <class 'anndata._core.raw.Raw'>
+
+=== adata.raw.X (Raw Expression Matrix) ===
+Shape: (160875, 24597) (cells: 160875, genes: 24597)
+Type: sparse
+Data type: float32
+Min: 0.000000
+Max: 8.389225
+Mean: 0.113462
+Std: 0.443252
+Non-zero values: 294862321
+Zero values: 3662180054
+Sparsity: 0.9255 (92.55%)
+
+Top 5 genes (first 5 rows):
+  fgfr1op2: min=0.0000, max=3.0251, mean=0.1080
+  si:dkey-21h14.12: min=0.0000, max=1.9556, mean=0.0003
+  si:dkey-285e18.2: min=0.0000, max=1.9756, mean=0.0001
+  znf1114: min=0.0000, max=2.6757, mean=0.0159
+  si:dkey-21h14.10: min=0.0000, max=2.1449, mean=0.0002
+
+Top 5 cells (first 5 columns):
+  AAACCAAAGCTTAACG-1: min=0.0000, max=4.7681, mean=0.0959
+  AAACCAAAGTACGCCG-1: min=0.0000, max=5.3671, mean=0.0970
+  AAACCATTCGCTCATT-1: min=0.0000, max=5.0932, mean=0.1313
+  AAACCCGCACCTCACG-1: min=0.0000, max=6.1345, mean=0.1182
+  AAACCCGCATCGGGAC-1: min=0.0000, max=5.2011, mean=0.1099
+
+==================================================
+COMPARISON: adata.X vs adata.raw.X
+==================================================
+Same shape: True
+Number of different elements: 3957042359
+Identical matrices: False
+
+==================================================
+CATEGORICAL OBSERVATIONS
+==================================================
+Found 4 categorical columns:
+
+Column: sample (8 unique values)
+Values: ['Zebra', 'TH115', 'TH44', 'TH54', 'TH55', 'TH56', 'TH57', 'TH71']
+---
+Column: renamed_samples (3 unique values)
+Values: ['LD', 'NMDA', 'Control']
+---
+Column: leiden (92 unique values)
+Values: ['3', '57', '13', '0', '56', '51', '12', '25', '35', '11', '87', '8', '30', '18', '28', '10', '33', '52', '61', '6', '5', '89', '16', '4', '42', '24', '44', '32', '72', '48', '70', '41', '9', '1', '45', '47', '93', '17', '86', '26', '29', '59', '94', '23', '15', '31', '78', '14', '34', '20', '27', '22', '92', '91', '54', '7', '85', '67', '21', '60', '37', '64', '2', '55', '19', '46', '75', '68', '43', '38', '36', '65', '63', '39', '53', '88', '90', '84', '83', '50', '69', '40', '82', '71', '77', '62', '49', '73', '74', '79', '81', '95']
+---
+Column: celltype (15 unique values)
+Values: ['PR precursors', 'HC', 'MG', 'MGPC', 'Rod', 'BC', 'Cones', 'AC', 'RGC', 'RPE', 'Microglia_ImmuneCells', 'Oligodenrocyte', 'Perycites', 'Endothelial', 'Melanocyte']
+---
+
+ADDITIONAL METADATA
+==================================================
+adata.obs columns: ['sample', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 'total_counts', 'log1p_total_counts', 'pct_counts_in_top_50_genes', 'pct_counts_in_top_100_genes', 'pct_counts_in_top_200_genes', 'pct_counts_in_top_500_genes', 'total_counts_mt', 'log1p_total_counts_mt', 'pct_counts_mt', 'n_genes', 'renamed_samples', 'predicted_doublets', 'leiden', 'celltype']
+adata.var columns: ['mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm', 'mean', 'std']
+
+No additional layers found.
+
 
 ## How to run Snakemake 
 
