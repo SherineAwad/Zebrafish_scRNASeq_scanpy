@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 
 def main():
     # ------------------------
@@ -18,6 +19,7 @@ def main():
     parser.add_argument("condition_column", type=str, help="Name of the column storing conditions (e.g., renamed_samples)")
     parser.add_argument("condition1", type=str, help="First condition name (e.g., Control)")
     parser.add_argument("condition2", type=str, help="Second condition name (e.g., LD)")
+    parser.add_argument("--min_mean_expr", type=float, required=True, help="Minimum mean expression for genes to be included")
     parser.add_argument("output_heatmap", type=str, help="Path to save the heatmap (e.g., heatmap.png)")
     args = parser.parse_args()
 
@@ -60,11 +62,6 @@ def main():
         raise ValueError("No common cell types found between the two conditions!")
 
     # ------------------------
-    # Initialize correlation matrix
-    # ------------------------
-    correlations = pd.DataFrame(index=common_celltypes, columns=common_celltypes, dtype=float)
-
-    # ------------------------
     # Compute average expression per cell type for each condition
     # ------------------------
     avg_expr_cond1 = {}
@@ -86,6 +83,41 @@ def main():
             avg_expr_cond2[ct] = pd.Series(0, index=gene_names)
 
     # ------------------------
+    # Filter genes based on expression criteria
+    # ------------------------
+    # Combine all average expression series to check gene expression across all cell types
+    all_avg_expr = list(avg_expr_cond1.values()) + list(avg_expr_cond2.values())
+    combined_avg_df = pd.concat(all_avg_expr, axis=1)
+    
+    # Calculate maximum mean expression across all cell types for each gene
+    max_mean_expr_per_gene = combined_avg_df.max(axis=1)
+    
+    # Filter genes: mean expression > min_mean_expr in at least one cell type
+    genes_to_keep = max_mean_expr_per_gene > args.min_mean_expr
+    filtered_genes = gene_names[genes_to_keep]
+    
+    total_genes = len(gene_names)
+    filtered_genes_count = len(filtered_genes)
+    print(f"Total genes: {total_genes}")
+    print(f"Genes with mean expression > {args.min_mean_expr} in at least one cell type: {filtered_genes_count} out of {total_genes}")
+    print(f"Genes filtered out: {total_genes - filtered_genes_count}")
+    
+    if len(filtered_genes) == 0:
+        raise ValueError(f"No genes passed the expression filter (min_mean_expr = {args.min_mean_expr}). Try a lower threshold.")
+
+    # ------------------------
+    # Filter the average expression data to only include selected genes
+    # ------------------------
+    for ct in common_celltypes:
+        avg_expr_cond1[ct] = avg_expr_cond1[ct].loc[filtered_genes]
+        avg_expr_cond2[ct] = avg_expr_cond2[ct].loc[filtered_genes]
+
+    # ------------------------
+    # Initialize correlation matrix
+    # ------------------------
+    correlations = pd.DataFrame(index=common_celltypes, columns=common_celltypes, dtype=float)
+
+    # ------------------------
     # Compute Pearson correlation between all pairs of cell types
     # ------------------------
     for ct1 in common_celltypes:
@@ -95,18 +127,25 @@ def main():
             correlations.loc[ct1, ct2] = corr_value
 
     # ------------------------
+    # Modify output filename to include min_mean_expr
+    # ------------------------
+    base_name, ext = os.path.splitext(args.output_heatmap)
+    output_filename = f"{base_name}_{args.min_mean_expr}{ext}"
+    
+    # ------------------------
     # Plot heatmap
     # ------------------------
     plt.figure(figsize=(max(8, len(common_celltypes)), max(6, len(common_celltypes))))
     sns.heatmap(correlations, annot=True, cmap="vlag", vmin=-1, vmax=1, 
                 square=True, fmt='.3f', cbar_kws={'label': 'Pearson correlation'})
     plt.title(f"Pearson correlation: {args.condition1} vs {args.condition2}\n"
-              f"(Rows: {args.condition1}, Columns: {args.condition2})")
+              f"(Rows: {args.condition1}, Columns: {args.condition2})\n"
+              f"Genes: {filtered_genes_count} out of {total_genes} (mean expr > {args.min_mean_expr})")
     plt.xlabel(f"Cell types in {args.condition2}")
     plt.ylabel(f"Cell types in {args.condition1}")
     plt.tight_layout()
-    plt.savefig(args.output_heatmap, dpi=300)
-    print(f"Heatmap saved to {args.output_heatmap}")
+    plt.savefig(output_filename, dpi=300)
+    print(f"Heatmap saved to {output_filename}")
     
     # Print correlation matrix
     print("\nCorrelation matrix:")
