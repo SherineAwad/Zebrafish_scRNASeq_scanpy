@@ -72,16 +72,14 @@ def main():
         idx_cond1 = (adata.obs['celltype'] == ct) & (adata.obs[args.condition_column] == args.condition1)
         if idx_cond1.sum() > 0:
             avg_expr_cond1[ct] = df.loc[idx_cond1].mean(axis=0)
-        else:
-            avg_expr_cond1[ct] = pd.Series(0, index=gene_names)
-        
+        #we can add else: avg_expr_cond1[ct] = pd.Series(0, index=gene_names)
+        #but not applicable here
         # Condition 2
         idx_cond2 = (adata.obs['celltype'] == ct) & (adata.obs[args.condition_column] == args.condition2)
         if idx_cond2.sum() > 0:
             avg_expr_cond2[ct] = df.loc[idx_cond2].mean(axis=0)
-        else:
-            avg_expr_cond2[ct] = pd.Series(0, index=gene_names)
-
+        #we can add else: avg_expr_cond2[ct] = pd.Series(0, index=gene_names)
+        #but not applicable here 
     # ------------------------
     # Filter genes based on expression criteria
     # ------------------------
