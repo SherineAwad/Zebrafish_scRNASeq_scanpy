@@ -329,6 +329,19 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/corrected_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%">
 
 
+## Pearson correlation 
+
+```bash
+python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad renamed_samples Control LD control_vs_ld_heatmap.png
+Using raw counts from .raw
+Cell types in Control: {'Melanocyte', 'Microglia_ImmuneCells', 'Rod', 'Perycites', 'RPE', 'HC', 'MG', 'MGPC', 'Oligodenrocyte', 'RGC', 'Cones', 'BC', 'AC', 'Endothelial', 'PR precursors'}
+Cell types in LD: {'Microglia_ImmuneCells', 'Rod', 'Perycites', 'RPE', 'HC', 'MGPC', 'MG', 'Oligodenrocyte', 'RGC', 'BC', 'Cones', 'AC', 'PR precursors'}
+Common cell types: ['AC', 'BC', 'Cones', 'HC', 'MG', 'MGPC', 'Microglia_ImmuneCells', 'Oligodenrocyte', 'PR precursors', 'Perycites', 'RGC', 'RPE', 'Rod']
+```
+
+![pearson correlation Heatmap](control_vs_ld_heatmap.png)
+
+
 ## How to run Snakemake 
 
 For dry run to check everythign before actual run:
