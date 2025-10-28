@@ -331,6 +331,17 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ## Pearson correlation 
 
+- The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
+
+- Once these averages are calculated, the script looks across all cell types to see how highly each gene is expressed in at least one cell type. It takes the maximum of these average expressions for each gene. This gives a single value per gene representing its highest mean expression in any cell type.
+
+- Then, the script filters out genes whose maximum mean expression is below the threshold you set. In other words, genes that are not expressed strongly in any cell type are removed from the analysis. Only genes that have at least one cell type where their mean expression exceeds the threshold are kept.
+
+- This way, the correlation analysis later is done only on genes that are meaningfully expressed, avoiding noise from genes that are essentially silent across all cell types.
+
+
+
+
 ```bash
 python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad renamed_samples Control LD control_vs_ld_heatmap.png --min_mean_expr n
 ``` 
