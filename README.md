@@ -339,12 +339,11 @@ Cell types in LD: {'Microglia_ImmuneCells', 'Rod', 'Perycites', 'RPE', 'HC', 'MG
 Common cell types: ['AC', 'BC', 'Cones', 'HC', 'MG', 'MGPC', 'Microglia_ImmuneCells', 'Oligodenrocyte', 'PR precursors', 'Perycites', 'RGC', 'RPE', 'Rod']
 ```
 
+![pearson correlation Heatmap](control_vs_ld_heatmap_0.05.png)
 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.1.png)
 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.2.png)
-
-![pearson correlation Heatmap](control_vs_ld_heatmap_0.05.png) 
 
 
 ## How to run Snakemake 
