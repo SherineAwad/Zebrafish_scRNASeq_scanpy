@@ -364,17 +364,25 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 | **Endothelial** | ✅ | ❌ |
 
 
+
+##### > 0.05 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.05.png?v=2)
 
+
+##### > 0.1 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.1.png?v=2)
 
+##### > 0.2 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.2.png?v=2)
 
+
+##### > 0.5 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.5.png?v=2)
 
 ### For testigng purposes: Control vs Control 
 
-![control vs control](control_vs_control_heatmap_0.0.png?v=2)
+![control vs control](control_vs_control_heatmap_0.0.png?v=3) 
+
 
 # 🐍 For Debugging Issues
 
