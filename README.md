@@ -373,7 +373,7 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ### For testigng purposes: Control vs Control 
 
-![control vs control](control_vs_ld_heatmap_0.0.png)
+![control vs control](control_vs_control_heatmap_0.0.png)
 
 # 🐍 For Debugging Issues
 
