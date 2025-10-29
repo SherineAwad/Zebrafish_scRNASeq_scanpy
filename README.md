@@ -370,6 +370,11 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.2.png)
 
+
+### For testigng purposes: Control vs Control 
+
+![control vs control](control_vs_ld_heatmap_0.0.png)
+
 # 🐍 For Debugging Issues
 
 ### 💾 Command & Output
