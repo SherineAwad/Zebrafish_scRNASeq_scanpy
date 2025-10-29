@@ -373,6 +373,12 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 # 🐍 For Debugging Issues
 
 ### 💾 Command & Output
+
+```
+# Name                     Version          Build            Channel
+scanpy                     1.9.3            pypi_0           pypi
+```
+
 ```bash
 python print_h5ad.py annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad 
 Loading AnnData object from: annotated_clustered_corrected_doubletRemoved_Zebrafishes.h5ad
