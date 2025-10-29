@@ -53,11 +53,11 @@ def main():
     celltypes_cond1 = set(adata.obs[adata.obs[args.condition_column] == args.condition1]['celltype'].unique())
     celltypes_cond2 = set(adata.obs[adata.obs[args.condition_column] == args.condition2]['celltype'].unique())
     common_celltypes = sorted(list(celltypes_cond1 & celltypes_cond2))
-    
+
     print(f"Cell types in {args.condition1}: {celltypes_cond1}")
     print(f"Cell types in {args.condition2}: {celltypes_cond2}")
     print(f"Common cell types: {common_celltypes}")
-    
+
     if not common_celltypes:
         raise ValueError("No common cell types found between the two conditions!")
 
@@ -66,7 +66,7 @@ def main():
     # ------------------------
     avg_expr_cond1 = {}
     avg_expr_cond2 = {}
-    
+
     for ct in common_celltypes:
         # Condition 1
         idx_cond1 = (adata.obs['celltype'] == ct) & (adata.obs[args.condition_column] == args.condition1)
@@ -86,20 +86,20 @@ def main():
     # Combine all average expression series to check gene expression across all cell types
     all_avg_expr = list(avg_expr_cond1.values()) + list(avg_expr_cond2.values())
     combined_avg_df = pd.concat(all_avg_expr, axis=1)
-    
+
     # Calculate maximum mean expression across all cell types for each gene
     max_mean_expr_per_gene = combined_avg_df.max(axis=1)
-    
+
     # Filter genes: mean expression > min_mean_expr in at least one cell type
     genes_to_keep = max_mean_expr_per_gene > args.min_mean_expr
     filtered_genes = gene_names[genes_to_keep]
-    
+
     total_genes = len(gene_names)
     filtered_genes_count = len(filtered_genes)
     print(f"Total genes: {total_genes}")
     print(f"Genes with mean expression > {args.min_mean_expr} in at least one cell type: {filtered_genes_count} out of {total_genes}")
     print(f"Genes filtered out: {total_genes - filtered_genes_count}")
-    
+
     if len(filtered_genes) == 0:
         raise ValueError(f"No genes passed the expression filter (min_mean_expr = {args.min_mean_expr}). Try a lower threshold.")
 
@@ -129,13 +129,18 @@ def main():
     # ------------------------
     base_name, ext = os.path.splitext(args.output_heatmap)
     output_filename = f"{base_name}_{args.min_mean_expr}{ext}"
-    
+
     # ------------------------
-    # Plot heatmap
+    # Plot heatmap with fixed scale bar
     # ------------------------
     plt.figure(figsize=(max(8, len(common_celltypes)), max(6, len(common_celltypes))))
-    sns.heatmap(correlations, annot=True, cmap="vlag", vmin=-1, vmax=1, 
-                square=True, fmt='.3f', cbar_kws={'label': 'Pearson correlation'})
+    
+    # Calculate the actual range of correlation values
+    min_corr = correlations.values.min()
+    max_corr = 1.0  # Pearson correlation max is always 1
+    
+    sns.heatmap(correlations, annot=True, cmap="vlag", vmin=min_corr, vmax=max_corr,
+                square=True, fmt='.3f', cbar_kws={'label': 'Pearson correlation', 'shrink': 0.8})
     plt.title(f"Pearson correlation: {args.condition1} vs {args.condition2}\n"
               f"(Rows: {args.condition1}, Columns: {args.condition2})\n"
               f"Genes: {filtered_genes_count} out of {total_genes} (mean expr > {args.min_mean_expr})")
@@ -144,7 +149,7 @@ def main():
     plt.tight_layout()
     plt.savefig(output_filename, dpi=300)
     print(f"Heatmap saved to {output_filename}")
-    
+
     # Print correlation matrix
     print("\nCorrelation matrix:")
     print(correlations)
