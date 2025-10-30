@@ -48,18 +48,21 @@ def main():
         df = pd.DataFrame(X.toarray(), index=adata.obs_names, columns=gene_names)
 
     # ------------------------
-    # Get celltypes present in both conditions
+    # Define celltypes in exact order
     # ------------------------
-    celltypes_cond1 = set(adata.obs[adata.obs[args.condition_column] == args.condition1]['celltype'].unique())
-    celltypes_cond2 = set(adata.obs[adata.obs[args.condition_column] == args.condition2]['celltype'].unique())
-    common_celltypes = sorted(list(celltypes_cond1 & celltypes_cond2))
+    common_celltypes = ['MG', 'MGPC', 'PR precursors', 'Rod', 'Cones', 'BC', 'AC', 'HC', 'RGC']
 
-    print(f"Cell types in {args.condition1}: {celltypes_cond1}")
-    print(f"Cell types in {args.condition2}: {celltypes_cond2}")
-    print(f"Common cell types: {common_celltypes}")
+    print(f"Using celltypes in order: {common_celltypes}")
 
-    if not common_celltypes:
-        raise ValueError("No common cell types found between the two conditions!")
+    # Check which celltypes actually exist in the data
+    available_celltypes = set(adata.obs['celltype'].unique())
+    existing_celltypes = [ct for ct in common_celltypes if ct in available_celltypes]
+    
+    if not existing_celltypes:
+        raise ValueError("None of the specified celltypes found in the data!")
+    
+    print(f"Available celltypes in data: {existing_celltypes}")
+    common_celltypes = existing_celltypes
 
     # ------------------------
     # Compute average expression per cell type for each condition
@@ -72,14 +75,30 @@ def main():
         idx_cond1 = (adata.obs['celltype'] == ct) & (adata.obs[args.condition_column] == args.condition1)
         if idx_cond1.sum() > 0:
             avg_expr_cond1[ct] = df.loc[idx_cond1].mean(axis=0)
-        #we can add else: avg_expr_cond1[ct] = pd.Series(0, index=gene_names)
-        #but not applicable here
+        else:
+            print(f"Warning: No cells found for {ct} in {args.condition1}")
+            continue
+
         # Condition 2
         idx_cond2 = (adata.obs['celltype'] == ct) & (adata.obs[args.condition_column] == args.condition2)
         if idx_cond2.sum() > 0:
             avg_expr_cond2[ct] = df.loc[idx_cond2].mean(axis=0)
-        #we can add else: avg_expr_cond2[ct] = pd.Series(0, index=gene_names)
-        #but not applicable here 
+        else:
+            print(f"Warning: No cells found for {ct} in {args.condition2}")
+            continue
+
+    # Remove celltypes that don't have data in both conditions
+    valid_celltypes = []
+    for ct in common_celltypes:
+        if ct in avg_expr_cond1 and ct in avg_expr_cond2:
+            valid_celltypes.append(ct)
+    
+    if not valid_celltypes:
+        raise ValueError("No celltypes found with data in both conditions!")
+        
+    common_celltypes = valid_celltypes
+    print(f"Final celltypes with data in both conditions: {common_celltypes}")
+
     # ------------------------
     # Filter genes based on expression criteria
     # ------------------------
