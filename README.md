@@ -399,6 +399,9 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ![ld vs nmda 0.5](ld_vs_nmda_heatmap_0.5.png?v=1)
 
+
+##### > 0.1 
+
 ![ld vs nmda 0.1](ld_vs_nmda_heatmap_0.1.png?v=1)
 
 
