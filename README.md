@@ -379,6 +379,22 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 ##### > 0.5 
 ![pearson correlation Heatmap](control_vs_ld_heatmap_0.5.png?v=3)
 
+
+
+## Control vs LD 
+
+#####  > 0.5 
+
+![control vs lD](control_vs_nmda_heatmap_0.5.png?v=1)
+
+## LD vs NMDA 
+
+##### > 0.5 
+
+![ld vs nmda](ld_vs_nmda_heatmap_0.5.png?v=1)
+
+
+
 ### For testigng purposes: Control vs Control 
 
 ![control vs control](control_vs_control_heatmap_0.0.png?v=4) 
