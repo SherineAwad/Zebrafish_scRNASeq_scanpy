@@ -383,24 +383,34 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ## Control vs NMDA
 
-#####  > 0.5 
 
-![control vs nmdaI 0.5](control_vs_nmda_heatmap_0.5.png?v=1)
-
-##### > 0.1 
-
-![control vs nmda 0.1](control_vs_nmda_heatmap_0.1.png?v=1) 
 
 
 ##### > 0.05 
 
 ![control vs nmda 0.05](control_vs_nmda_heatmap_0.05.png?v=1)
 
-## LD vs NMDA 
 
-##### > 0.5 
+##### > 0.1 
 
-![ld vs nmda 0.5](ld_vs_nmda_heatmap_0.5.png?v=1)
+![control vs nmda 0.1](control_vs_nmda_heatmap_0.1.png?v=1)
+
+
+##### > 0.2 
+
+![control vs nmda 0.2](control_vs_nmda_heatmap_0.2.png?v=1)
+
+#####  > 0.5 
+
+![control vs nmdaI 0.5](control_vs_nmda_heatmap_0.5.png?v=1)
+
+
+## LD vs NMDA
+
+
+##### > 0.05 
+
+![ld vs nmda 0.05](ld_vs_nmda_heatmap_0.05.png?v=1)
 
 
 ##### > 0.1 
@@ -408,9 +418,14 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 ![ld vs nmda 0.1](ld_vs_nmda_heatmap_0.1.png?v=1)
 
 
-##### > 0.05 
+##### > 0.2
 
-![ld vs nmda 0.05](ld_vs_nmda_heatmap_0.05.png?v=1)
+![ld vs nmda 0.2](ld_vs_nmda_heatmap_0.2.png?v=1)
+ 
+
+##### > 0.5 
+
+![ld vs nmda 0.5](ld_vs_nmda_heatmap_0.5.png?v=1)
 
 
 ### For testigng purposes: Control vs Control 
