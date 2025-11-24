@@ -381,11 +381,11 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 
 
-## Control vs LD 
+## Control vs NMDA
 
 #####  > 0.5 
 
-![control vs lD](control_vs_nmda_heatmap_0.5.png?v=1)
+![control vs nmda](control_vs_nmda_heatmap_0.5.png?v=1)
 
 ## LD vs NMDA 
 
