@@ -453,6 +453,10 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 [Download BC DGE here](https://docs.google.com/spreadsheets/d/1HTu3sQPdin4E-uG3_dBZvf9ZA6_mdFQW2TamAwhl8xY/edit?usp=sharing)
 
+
+![BC heatmap](figures/BC_dge_heatmap.png)
+
+
 # :rotating_light: Debugging section
 
 ### For testing purposes: Control vs Control 
