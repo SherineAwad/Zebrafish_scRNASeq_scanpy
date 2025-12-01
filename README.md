@@ -440,13 +440,22 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
         reference="rest",
         use_raw=True
     )
-
-
 ```
+#### groupby = celltype 
 
 [Download all DGE here](https://docs.google.com/spreadsheets/d/1oScRMJxrAxuHqHvN5rKrMcSK4r9nOAe3LghDPxujJ-8/edit?usp=sharing)
 
-### For testigng purposes: Control vs Control 
+
+
+## Differential gene expression per subset 
+
+#### BC: groubpy = leiden 
+
+[Download BC DGE here](https://docs.google.com/spreadsheets/d/1HTu3sQPdin4E-uG3_dBZvf9ZA6_mdFQW2TamAwhl8xY/edit?usp=sharing)
+
+# :rotating_light: Debugging section
+
+### For testing purposes: Control vs Control 
 
 ![control vs control](control_vs_control_heatmap_0.0.png?v=4) 
 
