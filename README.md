@@ -140,6 +140,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/dotplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes_markerGenes.png" width="90%">
 
+### Selected Markers per request 
+
+<img src="figures/umap_annotated_clustered_corrected_prdm1a_noHarmony.png" width="33%">
+
+<img src="figures/umap_annotated_clustered_corrected_prdm1b_noHarmony.png" width="33%">
+
+<img src="figures/umap_annotated_clustered_corrected_prkcaa_noHarmony.png" width="33%">
 
 ### UMAPs of Major Retinal Cell Subtypes
 
@@ -443,8 +450,7 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 ```
 #### groupby = celltype 
 
-[Download all DGE here](https://docs.google.com/spreadsheets/d/1oScRMJxrAxuHqHvN5rKrMcSK4r9nOAe3LghDPxujJ-8/edit?usp=sharing)
-
+[Download all DGE here](https://docs.google.com/spreadsheets/d/1yGYvD2I4IOZQUterO7G_7qOr6lOub_5T3ggRZiGe8nY/edit?usp=sharing)
 
 
 ## Differential gene expression per subset 
