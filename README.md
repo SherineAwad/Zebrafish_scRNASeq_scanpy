@@ -429,6 +429,23 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 ![ld vs nmda 0.5](ld_vs_nmda_heatmap_0.5.png?v=1)
 
 
+
+# Differential gene expression: per celltype 
+
+```
+ sc.tl.rank_genes_groups(
+        adata_for_dge,
+        groupby=groupby, #groupby can be celltype or leiden ..etc  
+        method="wilcoxon",
+        reference="rest",
+        use_raw=True
+    )
+
+
+```
+
+[Download all DGE here](https://docs.google.com/spreadsheets/d/1oScRMJxrAxuHqHvN5rKrMcSK4r9nOAe3LghDPxujJ-8/edit?usp=sharing)
+
 ### For testigng purposes: Control vs Control 
 
 ![control vs control](control_vs_control_heatmap_0.0.png?v=4) 
