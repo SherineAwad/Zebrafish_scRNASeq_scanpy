@@ -142,11 +142,7 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ### Selected Markers per request 
 
-<img src="figures/umap_annotated_clustered_corrected_prdm1a_noHarmony.png" width="33%">
-
-<img src="figures/umap_annotated_clustered_corrected_prdm1b_noHarmony.png" width="33%">
-
-<img src="figures/umap_annotated_clustered_corrected_prkcaa_noHarmony.png" width="33%">
+<img src="figures/umap_annotated_clustered_corrected_prdm1a_noHarmony.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_prdm1b_noHarmony.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_prkcaa_noHarmony.png" width="33%">
 
 ### UMAPs of Major Retinal Cell Subtypes
 
