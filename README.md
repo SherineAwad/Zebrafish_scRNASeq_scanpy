@@ -449,12 +449,12 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 ## Differential gene expression per subset 
 
-#### BC: groubpy = leiden 
+#### AC: groubpy = leiden 
 
-[Download BC DGE here](https://docs.google.com/spreadsheets/d/1HTu3sQPdin4E-uG3_dBZvf9ZA6_mdFQW2TamAwhl8xY/edit?usp=sharing)
+[Download AC DGE here](https://drive.google.com/file/d/1jLt8RPZID9oWCOiP2PMgdF_SiDhL2ai-/view?usp=sharing)
 
 
-![BC heatmap](figures/BC_dge_heatmap.png)
+![AC heatmap](figures/AC_dge_heatmap.png)
 
 
 # :rotating_light: Debugging section
