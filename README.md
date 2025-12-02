@@ -461,7 +461,7 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 
 ### Heatmap bu Wilcoxon score
-![AC heatmap](figures/AC_dge_heatmap.png?v=2)
+![AC heatmap](figures/AC_dge_heatmap.png?v=3)
 
 
 # :rotating_light: Debugging section
