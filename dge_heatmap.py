@@ -5,116 +5,103 @@ import scanpy as sc
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 
 def main():
-    parser = argparse.ArgumentParser(description="Plot heatmap from DGE h5ad")
+    parser = argparse.ArgumentParser(description="Plot Wilcoxon scores heatmap from DGE h5ad")
     parser.add_argument("-i", "--ih5ad", required=True, help="Input DGE .h5ad (from dge.py)")
     parser.add_argument("-g", "--groupby", required=True, help="Same groupby used in dge.py")
     parser.add_argument("-n", "--topn", type=int, default=20, help="Top N genes per group")
-    parser.add_argument("--heatmap", default="heatmap.png", help="Output PNG filename")
+    parser.add_argument("--heatmap", default="wilcoxon_heatmap.png", help="Output PNG filename")
     args = parser.parse_args()
-
+    
     groupby = args.groupby
     topn = args.topn
-
+    
     # Load the h5ad containing rank_genes_groups
     adata = sc.read_h5ad(args.ih5ad)
-
+    
+    # Extract DGE results from Scanpy
     if "rank_genes_groups" not in adata.uns:
         raise RuntimeError("rank_genes_groups missing. Run dge.py first.")
-
+    
     r = adata.uns["rank_genes_groups"]
-    scanpy_groups = r["names"].dtype.names  # original scanpy groups
-
-    # ------------------------
-    # Build dataframe of DE results
-    # ------------------------
+    de_groups = r["names"].dtype.names
+    
+    # Build dataframe of Wilcoxon scores
     rows = []
-    for g in scanpy_groups:
+    for g in de_groups:
         for i in range(len(r["names"][g])):
             rows.append({
                 "group": g,
                 "gene": r["names"][g][i],
                 "score": r["scores"][g][i],
             })
-
     df = pd.DataFrame(rows)
-
-    # Top N per group
+    
+    # Pick topN per group by score
     top_df = (
         df.sort_values("score", ascending=False)
-          .groupby("group")
-          .head(topn)
+        .groupby("group")
+        .head(topn)
     )
-
-    genes = top_df["gene"].unique().tolist()
-
-    # ------------------------
-    # Extract expression
-    # ------------------------
-    if adata.raw is not None:
-        X = adata.raw[:, genes].X
-    else:
-        X = adata[:, genes].X
-
-    if hasattr(X, "toarray"):
-        X = X.toarray()
-
-    # z-score across cells
-    X = (X - X.mean(axis=0)) / (X.std(axis=0) + 1e-9)
-
-    df_expr = pd.DataFrame(X, columns=genes)
-    df_expr[groupby] = adata.obs[groupby].values
-
-    # ------------------------
-    # Custom sorting for celltype
-    # ------------------------
+    
+    # Create a pivot table: genes x groups with Wilcoxon scores
+    heatmap_df = top_df.pivot_table(
+        index='gene',
+        columns='group',
+        values='score',
+        aggfunc='first'
+    )
+    
+    # Fill NaN with 0 (genes not significant for that group)
+    heatmap_df = heatmap_df.fillna(0)
+    
+    # Reorder columns by manual order if celltype
     if groupby == "celltype":
-        custom_order = (
-            'MG', 'MGPC', 'PR precursors', 'Rod', 'Cones',
-            'BC', 'AC', 'HC', 'RGC', 'Microglia_ImmuneCells','RPE','Endothelial', 'Pericytes','Oligocytes','Melanocytes'
-        )
-        # keep only those present in data
-        present_order = [x for x in custom_order if x in df_expr[groupby].unique()]
-        df_expr[groupby] = pd.Categorical(df_expr[groupby], categories=present_order, ordered=True)
-        df_expr = df_expr.sort_values(groupby)
-        ordered_groups = present_order
-    else:
-        df_expr = df_expr.sort_values(groupby)
-        ordered_groups = df_expr[groupby].unique().tolist()
-
-    # Extract heatmap matrix
-    heatmap_data = df_expr.drop(columns=[groupby]).to_numpy()
-
-    # ------------------------
+        manual_order = [
+            "MG", "MGPC", "PR precursors", "Rod", "Cones",
+            "BC", "AC", "HC", "RGC",
+            "Microglia_ImmuneCells", "Perycites", "Melanocyte",
+            "Endothelial", "RPE", "Oligodenrocyte"
+        ]
+        # Filter to existing columns
+        manual_order = [g for g in manual_order if g in heatmap_df.columns]
+        heatmap_df = heatmap_df[manual_order]
+    
+    # Sort genes by max score across groups
+    heatmap_df = heatmap_df.loc[heatmap_df.max(axis=1).sort_values(ascending=False).index]
+    
+    # Create the EXACT scale from your R code (dark blue to light blue, white, light red to dark red)
+    colors = [
+        '#2166AC',  # Dark blue
+        '#67A9CF',  # Medium blue  
+        '#D1E5F0',  # Light blue
+        '#FFFFFF',  # White
+        '#FDDBC7',  # Light red
+        '#EF8A62',  # Medium red
+        '#B2182B'   # Dark red
+    ]
+    
+    custom_cmap = LinearSegmentedColormap.from_list('custom_scale', colors, N=256)
+    
     # Plot heatmap
-    # ------------------------
     plt.figure(figsize=(12, 16))
-    plt.imshow(heatmap_data.T, aspect='auto', cmap='RdBu_r', interpolation='nearest')
-    plt.colorbar(label='z-score')
-
-    # gene names along y-axis
-    plt.yticks(range(len(genes)), genes, fontsize=4)
-
-    # Correct x-axis labeling: one tick per group
-    group_cell_counts = df_expr[groupby].value_counts()[ordered_groups].tolist()
-    group_tick_positions = np.cumsum([0] + group_cell_counts[:-1])
-
-    plt.xticks(
-        ticks=group_tick_positions,
-        labels=ordered_groups,
-        rotation=90,
-        fontsize=6
-    )
-
-    plt.title(f"Top {topn} genes per {groupby}")
+    plt.imshow(heatmap_df.values, aspect='auto', cmap=custom_cmap, interpolation='nearest')
+    plt.colorbar(label='Wilcoxon score')
+    
+    # y-axis = genes
+    plt.yticks(range(len(heatmap_df)), heatmap_df.index, fontsize=4)
+    
+    # x-axis = groups
+    plt.xticks(range(len(heatmap_df.columns)), heatmap_df.columns, rotation=90, fontsize=6)
+    
+    plt.title(f"Top {topn} genes per {groupby} - Wilcoxon scores")
     plt.tight_layout()
     plt.savefig(args.heatmap, dpi=300)
     plt.close()
-
-    print(f"Saved heatmap → {args.heatmap}")
-
+    
+    print(f"Saved Wilcoxon scores heatmap → {args.heatmap}")
 
 if __name__ == "__main__":
     main()
-

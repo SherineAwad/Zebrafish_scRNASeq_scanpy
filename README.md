@@ -448,7 +448,10 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 [Download all DGE here](https://docs.google.com/spreadsheets/d/1yGYvD2I4IOZQUterO7G_7qOr6lOub_5T3ggRZiGe8nY/edit?usp=sharing)
 
-![Zebrafish DGE heatmap](figures/zebrafish_dge_heatmap.png?v=2)
+
+### Heatmap by Wilcoxon score 
+
+![Zebrafish DGE heatmap](figures/zebrafish_dge_heatmap.png?v=3)
 
 ## Differential gene expression per subset 
 
@@ -457,7 +460,8 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 [Download AC DGE here](https://drive.google.com/file/d/1jLt8RPZID9oWCOiP2PMgdF_SiDhL2ai-/view?usp=sharing)
 
 
-![AC heatmap](figures/AC_dge_heatmap.png)
+### Heatmap bu Wilcoxon score
+![AC heatmap](figures/AC_dge_heatmap.png?v=2)
 
 
 # :rotating_light: Debugging section
