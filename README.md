@@ -460,7 +460,7 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 [Download AC DGE here](https://drive.google.com/file/d/1jLt8RPZID9oWCOiP2PMgdF_SiDhL2ai-/view?usp=sharing)
 
 
-### Heatmap bu Wilcoxon score
+### Heatmap by Wilcoxon score
 ![AC heatmap](figures/AC_dge_heatmap.png?v=3)
 
 
