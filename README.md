@@ -448,7 +448,7 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 [Download all DGE here](https://docs.google.com/spreadsheets/d/1yGYvD2I4IOZQUterO7G_7qOr6lOub_5T3ggRZiGe8nY/edit?usp=sharing)
 
-![Zebrafish DGE heatmap](figures/zebrafish_dge_heatmap.png)
+![Zebrafish DGE heatmap](figures/zebrafish_dge_heatmap.png?v=2)
 
 ## Differential gene expression per subset 
 

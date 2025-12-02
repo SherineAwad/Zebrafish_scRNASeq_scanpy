@@ -20,16 +20,17 @@ def main():
     # Load the h5ad containing rank_genes_groups
     adata = sc.read_h5ad(args.ih5ad)
 
-    # Extract DGE results from Scanpy
     if "rank_genes_groups" not in adata.uns:
         raise RuntimeError("rank_genes_groups missing. Run dge.py first.")
 
     r = adata.uns["rank_genes_groups"]
-    groups = r["names"].dtype.names  # all cluster names
+    scanpy_groups = r["names"].dtype.names  # original scanpy groups
 
-    # Build dataframe of Scanpy DE results
+    # ------------------------
+    # Build dataframe of DE results
+    # ------------------------
     rows = []
-    for g in groups:
+    for g in scanpy_groups:
         for i in range(len(r["names"][g])):
             rows.append({
                 "group": g,
@@ -39,7 +40,7 @@ def main():
 
     df = pd.DataFrame(rows)
 
-    # Pick topN per group
+    # Top N per group
     top_df = (
         df.sort_values("score", ascending=False)
           .groupby("group")
@@ -48,7 +49,9 @@ def main():
 
     genes = top_df["gene"].unique().tolist()
 
-    # Expression matrix from raw if exists
+    # ------------------------
+    # Extract expression
+    # ------------------------
     if adata.raw is not None:
         X = adata.raw[:, genes].X
     else:
@@ -57,29 +60,49 @@ def main():
     if hasattr(X, "toarray"):
         X = X.toarray()
 
-    # z-score genes
+    # z-score across cells
     X = (X - X.mean(axis=0)) / (X.std(axis=0) + 1e-9)
 
     df_expr = pd.DataFrame(X, columns=genes)
     df_expr[groupby] = adata.obs[groupby].values
 
-    # Sort cells by group
-    df_expr = df_expr.sort_values(by=groupby)
-    heatmap_data = df_expr.drop(columns=[groupby])
-    row_labels = df_expr[groupby].tolist()
+    # ------------------------
+    # Custom sorting for celltype
+    # ------------------------
+    if groupby == "celltype":
+        custom_order = (
+            'MG', 'MGPC', 'PR precursors', 'Rod', 'Cones',
+            'BC', 'AC', 'HC', 'RGC', 'Microglia_ImmuneCells','RPE','Endothelial', 'Pericytes','Oligocytes','Melanocytes'
+        )
+        # keep only those present in data
+        present_order = [x for x in custom_order if x in df_expr[groupby].unique()]
+        df_expr[groupby] = pd.Categorical(df_expr[groupby], categories=present_order, ordered=True)
+        df_expr = df_expr.sort_values(groupby)
+        ordered_groups = present_order
+    else:
+        df_expr = df_expr.sort_values(groupby)
+        ordered_groups = df_expr[groupby].unique().tolist()
 
+    # Extract heatmap matrix
+    heatmap_data = df_expr.drop(columns=[groupby]).to_numpy()
+
+    # ------------------------
     # Plot heatmap
+    # ------------------------
     plt.figure(figsize=(12, 16))
     plt.imshow(heatmap_data.T, aspect='auto', cmap='RdBu_r', interpolation='nearest')
     plt.colorbar(label='z-score')
 
-    # y-axis = genes
+    # gene names along y-axis
     plt.yticks(range(len(genes)), genes, fontsize=4)
 
-    # x-axis = group labels (cluster or celltype)
+    # Correct x-axis labeling: one tick per group
+    group_cell_counts = df_expr[groupby].value_counts()[ordered_groups].tolist()
+    group_tick_positions = np.cumsum([0] + group_cell_counts[:-1])
+
     plt.xticks(
-        ticks=np.linspace(0, heatmap_data.shape[0], num=len(groups), endpoint=False),
-        labels=groups,
+        ticks=group_tick_positions,
+        labels=ordered_groups,
         rotation=90,
         fontsize=6
     )
