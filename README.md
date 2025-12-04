@@ -457,9 +457,16 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 #### AC: groubpy = leiden 
 
-[Download AC DGE here](https://drive.google.com/file/d/1jLt8RPZID9oWCOiP2PMgdF_SiDhL2ai-/view?usp=sharing)
+[AC DGE Top 20 Wilcoxon score](https://docs.google.com/spreadsheets/d/1YazvIFqlM6t1Igvk5TMrhXM5Ic-ZDJSZy5D4ZYkzjpw/edit?usp=sharing)
 
+[AC DGE Top 20 logFC](https://docs.google.com/spreadsheets/d/1N__dzZ3yjLVtvfN1tIXwafgI017B7HCJupvdFM8mnzA/edit?usp=sharing)
 
+[AC DGE Top 20 adj Pvalue](https://docs.google.com/spreadsheets/d/19EMNx1iY71Ht5uG2hdj2RcoDlQz7Nhfd_bfBwBKR13E/edit?usp=sharing)
+
+##### Warning: very big file
+[Download AC DGE here](https://drive.google.com/file/d/1rtxQkZS-mr2CaItVfcuifJvm66pcmdL-/view?usp=sharing)
+
+  
 ### Heatmap by Wilcoxon score
 ![AC heatmap](figures/AC_dge_heatmap.png?v=3)
 

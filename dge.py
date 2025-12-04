@@ -2,13 +2,17 @@
 import argparse
 import scanpy as sc
 import pandas as pd
+import os
+import numpy as np
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--input", required=True)
-    parser.add_argument("-c", "--csv", required=True)
-    parser.add_argument("-g", "--groupby", required=True)
-    parser.add_argument("-o", "--out", required=True)
+    parser.add_argument("-i", "--input", required=True, help="Input h5ad file")
+    parser.add_argument("-c", "--csv", required=True, help="Output CSV file for full DE table")
+    parser.add_argument("-g", "--groupby", required=True, help="Column in adata.obs to group by")
+    parser.add_argument("-o", "--out", required=True, help="Output H5AD file with DE results")
+    parser.add_argument("-n", "--topn", type=int, default=None, help="Number of top genes per cluster")
+    parser.add_argument("-m", "--metric", type=str, default="wilcoxon_score", help="Metric to rank genes by (wilcoxon_score, logfoldchange, pval, pval_adj)")
     args = parser.parse_args()
 
     adata = sc.read_h5ad(args.input)
@@ -53,6 +57,27 @@ def main():
 
     print(f"Saved full DGE table → {args.csv}")
     print(f"Saved DE-containing object → {args.out}")
+
+    # Optional: Save top n genes per cluster based on metric
+    if args.topn is not None:
+        if args.metric not in df.columns:
+            raise ValueError(f"Metric '{args.metric}' not found in DE table columns: {list(df.columns)}")
+
+        top_rows = []
+        for g, group_df in df.groupby("group"):
+            # Sort by absolute value of the chosen metric, descending
+            top_group = group_df.reindex(
+                group_df[args.metric].abs().sort_values(ascending=False).index
+            ).head(args.topn)
+            top_rows.append(top_group)
+
+        df_top = pd.concat(top_rows)
+
+        # Construct new CSV name: original + _{n}{metric}.csv
+        base, ext = os.path.splitext(args.csv)
+        top_csv = f"{base}_{args.topn}{args.metric}{ext}"
+        df_top.to_csv(top_csv, index=False)
+        print(f"Saved top {args.topn} genes per cluster by absolute '{args.metric}' → {top_csv}")
 
 if __name__ == "__main__":
     main()
