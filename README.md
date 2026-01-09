@@ -151,12 +151,23 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/umap_annotated_clustered_corrected_prdm1a_Harmony.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_prdm1b_Harmony.png" width="33%"><img src="figures/umap_annotated_clustered_corrected_prkcaa_Harmony.png" width="33%">
 
+<img src="figures/umap_annotated_clustered_corrected_nr2e3_Harmony.png?v=1" width="33%">
+
 
 ### Selected Markers Violin per request
 
 <img src="figures/violin_annotated_clustered_corrected_ascl1a_Harmony.png?v=2" width="33%"><img src="figures/violin_annotated_clustered_corrected_atoh7_Harmony.png?v=2" width="33%"><img src="figures/violin_annotated_clustered_corrected_cdk1_Harmony.png?v=2" width="33%">
 
 <img src="figures/violin_annotated_clustered_corrected_nr2e3_Harmony.png?v=2" width="33%"><img src="figures/violin_annotated_clustered_corrected_nrl_Harmony.png?v=2" width="33%">
+
+
+
+### Comparisons between Rod and PR precusors 
+
+![Violin](figures/violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
+![Boxplot](figures/boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
 
 ### UMAPs of Major Retinal Cell Subtypes
 
