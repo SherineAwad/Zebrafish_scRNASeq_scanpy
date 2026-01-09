@@ -1,13 +1,13 @@
 import scanpy as sc
 import sys
 import importlib_metadata
-import anndata 
+import anndata
 import argparse
 import scanpy.external as sce
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os 
+import os
 
 sys.modules['importlib.metadata'] = importlib_metadata
 
@@ -53,6 +53,17 @@ pivot_df = df.pivot(index='renamed_samples', columns='celltype', values='fractio
 ordered_columns = [ct for ct in celltype_order if ct in pivot_df.columns]
 pivot_df = pivot_df[ordered_columns]
 
+# Print ONE table showing exact fractions in stack plot
+print("\n" + "="*80)
+print("STACKED BAR PLOT DATA (fractions per sample)")
+print("="*80)
+print("\nFraction of each cell type per sample (shown in stacked bar plot):")
+
+# Create display version as percentages
+display_df = (pivot_df * 100).round(2)
+print(display_df)
+print("\nValues are percentages (%)")
+
 # Extract color mapping from adata if available
 if 'celltype_colors' in adata.uns:
     # Ensure celltype is categorical with matching order
@@ -77,7 +88,9 @@ plt.title("Cell Type Contribution per Sample")
 plt.xticks(rotation=45, ha='right')
 plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
-plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=600,bbox_inches='tight')
+
+# Save the figure
+plt.savefig("figures/Restacked_bar_sample_by_celltype.png", dpi=600, bbox_inches='tight')
 plt.close()
 
 # Ensure 'renamed_samples' is categorical
@@ -116,10 +129,3 @@ sc.pl.violin(
     show=False,
     save=f"_{base_name}_qc.png"
 )
-
-
-
-
-
-
-

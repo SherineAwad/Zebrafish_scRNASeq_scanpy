@@ -116,6 +116,13 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ## Cell ratio after increasing resolution and re-annotations 
 
+| Sample   | MG   | MGPC | PR precursors | Rod  | Cones | BC    | AC    | HC    | RGC  | Microglia_ImmuneCells | RPE  | Melanocyte | Endothelial | Perycites | Oligodenrocyte |
+|----------|------|------|---------------|------|-------|-------|-------|-------|------|------------------------|------|-------------|--------------|-----------|----------------|
+| Control  | 6.49 | 1.13 | 0.88          | 4.76 | 7.54  | 46.85 | 10.24 | 13.40 | 3.20 | 1.74                   | 1.34 | 0.27        | 0.57         | 1.09      | 0.51           |
+| LD       | 43.12| 15.54| 14.44         | 7.90 | 3.32  | 4.86  | 3.05  | 6.17  | 1.40 | 0.14                   | 0.03 | 0.00        | 0.00         | 0.02      | 0.02           |
+| NMDA     | 29.89| 14.74| 13.87         | 13.74| 2.75  | 5.50  | 9.23  | 6.94  | 2.96 | 0.22                   | 0.00 | 0.02        | 0.02         | 0.05      | 0.07           |
+
+
 <img src="figures/Restacked_bar_sample_by_celltype.png" width="90%">
 
 ## Umap for Control,LD, and NMDA merged 
