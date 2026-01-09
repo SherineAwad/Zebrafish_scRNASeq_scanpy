@@ -164,10 +164,17 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 ### Comparisons between Rod and PR precusors 
 
-![Violin](figures/violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+#### prdm1a/nr2e3
+![Violin](figures/prdm1a_nr2e3_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
+
+![Boxplot](figures/figures/prdm1a_nr2e3_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 
 
-![Boxplot](figures/boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+#### rho/guca1b
+![Violin](figures/rho_guca1b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
+	
+![Boxplot](figures/rho_guca1b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 
 ### UMAPs of Major Retinal Cell Subtypes
 

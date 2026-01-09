@@ -52,6 +52,10 @@ cmap = plt.cm.Set3  # Good for categorical data
 for i, sample in enumerate(samples):
     sample_colors[sample] = cmap(i / max(1, len(samples) - 1))
 
+# Create a string with gene names for filenames
+gene_string = "_".join(present)
+base_filename = os.path.basename(myObject).replace('.h5ad', '')
+
 # ===============================
 # 1. RIDGEPLOT - Group by celltype, samples within each celltype
 # ===============================
@@ -134,7 +138,7 @@ for idx, gene in enumerate(present):
 
 plt.suptitle('Ridge Plots: Samples within PR precursors vs Rod', fontsize=14, y=1.02)
 plt.tight_layout()
-plt.savefig(f"figures/ridgeplot_{os.path.basename(myObject).replace('.h5ad', '')}.png", 
+plt.savefig(f"figures/{gene_string}_ridgeplot_{base_filename}.png", 
            bbox_inches='tight')
 plt.close()
 
@@ -251,7 +255,7 @@ for idx, gene in enumerate(present):
 
 plt.suptitle('Violin Plots: Samples within PR precursors vs Rod', fontsize=14, y=1.02)
 plt.tight_layout()
-plt.savefig(f"figures/violin_{os.path.basename(myObject).replace('.h5ad', '')}.png", 
+plt.savefig(f"figures/{gene_string}_violin_{base_filename}.png", 
            bbox_inches='tight')
 plt.close()
 
@@ -378,11 +382,11 @@ for idx, gene in enumerate(present):
 
 plt.suptitle('Box Plots with Jitter: Samples within PR precursors vs Rod', fontsize=14, y=1.02)
 plt.tight_layout()
-plt.savefig(f"figures/boxplot_{os.path.basename(myObject).replace('.h5ad', '')}.png", 
+plt.savefig(f"figures/{gene_string}_boxplot_{base_filename}.png", 
            bbox_inches='tight')
 plt.close()
 
 print(f"\nDone! 3 plots saved to figures/ folder:")
-print(f"1. ridgeplot_{os.path.basename(myObject).replace('.h5ad', '')}.png")
-print(f"2. violin_{os.path.basename(myObject).replace('.h5ad', '')}.png")
-print(f"3. boxplot_{os.path.basename(myObject).replace('.h5ad', '')}.png")
+print(f"1. figures/{gene_string}_ridgeplot_{base_filename}.png")
+print(f"2. figures/{gene_string}_violin_{base_filename}.png")
+print(f"3. figures/{gene_string}_boxplot_{base_filename}.png")
