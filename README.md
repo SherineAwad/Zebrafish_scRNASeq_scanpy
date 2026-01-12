@@ -165,29 +165,36 @@ Below are the UMAP plots split by individual samples after reclustering:
 ### Selected genes Comparisons between groups  
 
 
-
+#### elavl3/gad2/slc6a9 in AC
 ![](figures/elavl3_gad2_slc6a9_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/elavl3_gad2_slc6a9_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
 
+#### cabp5a/cabp5b in BC
 ![](figures/cabp5a_cabp5b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/cabp5a_cabp5b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
 
+#### prdm1a/nr2e3 in Rod and PR precursors 
 ![](figures/prdm1a_nr2e3_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/prdm1a_nr2e3_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
-
+#### gnat2/arr3a in Cones
 ![](figures/gnat2_arr3a_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/gnat2_arr3a_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
 
+#### isl2b/rbpms2b in RGC
 ![](figures/isl2b_rbpms2b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/isl2b_rbpms2b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
+
+#### ompa/gad2 in HC
 ![](figures/ompa_gad2_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/ompa_gad2_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
+
+#### rho/guca1b in Rod and PR precursors
 ![](figures/rho_guca1b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 ![](figures/rho_guca1b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
