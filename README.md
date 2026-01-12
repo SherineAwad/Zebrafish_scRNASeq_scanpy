@@ -162,19 +162,36 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 
 
-### Comparisons between Rod and PR precusors 
+### Selected genes Comparisons between groups  
 
 
-#### prdm1a/nr2e3
-![Violin](figures/prdm1a_nr2e3_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 
-![Boxplot](figures/prdm1a_nr2e3_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
+![](elavl3_gad2_slc6a9_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](elavl3_gad2_slc6a9_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
 
-#### rho/guca1b
-![Violin](figures/rho_guca1b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
-	
-![Boxplot](figures/rho_guca1b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
+![](cabp5a_cabp5b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](cabp5a_cabp5b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+
+![](prdm1a_nr2e3_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](prdm1a_nr2e3_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+
+![](gnat2_arr3a_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](gnat2_arr3a_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+
+![](isl2b_rbpms2b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](isl2b_rbpms2b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+![](ompa_gad2_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](ompa_gad2_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+![](rho_guca1b_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+![](rho_guca1b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
+
+
 
 ### UMAPs of Major Retinal Cell Subtypes
 
