@@ -276,8 +276,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ### Recombining subclusters in AC
 
 <img src="figures/umapAC_combined_colored_by_sample.png?v=1" width="70%">
-<img src="figures/umapAC_combined_combined_leiden.png?v=1" width="70%"> 
-<img src="figures/umapAC_combined_Control.png?v=1" width="30%"> <img src="figures/umapAC_combined_LD.png?v=1" width="30%"> <img src="figures/umapAC_combined_NMDA.png?v=1" width="30%">
+<img src="figures/umapAC_combined_combined_leiden.png?v=1" width="70%">
+<div style="display: flex; gap: 10px;">
+  <img src="figures/umapAC_combined_Control.png?v=1" width="30%">
+  <img src="figures/umapAC_combined_LD.png?v=1" width="30%">
+  <img src="figures/umapAC_combined_NMDA.png?v=1" width="30%">
+</div>
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
