@@ -275,8 +275,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Recombining subclusters in AC
 
-<img src="figures/umapAC_combined_colored_by_sample.png?v=1")
-<img src="figures/umapAC_combined_combined_leiden.png?v=1")
+<img src="figures/umapAC_combined_colored_by_sample.png?v=1" />
+<img src="figures/umapAC_combined_combined_leiden.png?v=1" /> 
 <img src="figures/umapAC_combined_Control.png?v=1" width="30%" /> <img src="figures/umapAC_combined_LD.png?v=1" width="30%" /> <img src="figures/umapAC_combined_NMDA.png?v=1" width="30%" />
 
 
