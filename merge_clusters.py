@@ -2,6 +2,7 @@
 import argparse
 import scanpy as sc
 import pandas as pd
+import matplotlib
 
 def main():
     parser = argparse.ArgumentParser()
@@ -48,7 +49,8 @@ def main():
         adata_sample = adata[mask].copy()
         sc.pl.umap(adata_sample, color='combined_leiden', title=f'Sample: {sample}', save=f'{base}_{sample}.png')
     
-    # 4. Separate UMAP for each sample without leiden (just points)
+    # 4. Separate UMAP for each sample without leiden (just points) - Set color to blue
+    matplotlib.rcParams['scatter.edgecolors'] = 'blue'
     for sample in adata.obs['renamed_samples'].unique():
         mask = adata.obs['renamed_samples'] == sample
         adata_sample = adata[mask].copy()

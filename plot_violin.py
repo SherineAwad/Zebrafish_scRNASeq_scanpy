@@ -12,7 +12,6 @@ args = parser.parse_args()
 myObject = args.myObject
 markers = args.markers
 
-
 # Extract base name
 parts = os.path.basename(myObject).split("_")
 base = os.path.splitext(os.path.basename(myObject))[0]
@@ -28,7 +27,20 @@ print("Loaded marker genes:", marker_genes)
 
 # Read AnnData and ensure it's fully in memory
 adata = sc.read_h5ad(myObject)
-print("=== adata.obs columns ===")
+
+# Print existing celltypes
+print("\n=== Existing celltypes in adata ===")
+if 'celltype' in adata.obs.columns:
+    unique_celltypes = adata.obs['celltype'].unique().tolist()
+    print("Celltypes found:")
+    for ct in sorted(unique_celltypes):
+        print(f"  '{ct}'")
+    print(f"\nTotal: {len(unique_celltypes)} unique celltypes")
+else:
+    print("No 'celltype' column found in adata.obs")
+    print("Available columns:", adata.obs.columns.tolist())
+
+print("\n=== adata.obs columns ===")
 print(adata.obs.columns.tolist())
 print("\n=== adata.obs head ===")
 print(adata.obs.head())
@@ -55,8 +67,30 @@ if present:
 else:
     print("No valid marker genes found for plotting.")
 
-import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 600
+
 # VIOLIN plots per gene with rotated x-axis labels
-for gene in present:
-    sc.pl.violin(adata, keys=gene, groupby='celltype', save=f"_{base_prefix}_{gene}_{plot_suffix}", show=False, rotation=90)
+# First, let's check what celltypes actually exist in the data
+if 'celltype' in adata.obs.columns:
+    # Get actual celltypes in the data
+    actual_celltypes = adata.obs['celltype'].unique().tolist()
+    print(f"\nActual celltypes in data: {actual_celltypes}")
+    
+    # Create the order list based on what's actually in the data
+    # Use only the celltypes from your desired order that actually exist
+    desired_order = ['MG', 'MGPC', 'PR precursors', 'Rod', 'Cones', 'BC', 'AC', 'HC', 'RGC', 'Microglia_Immunecells', 'RPE', 'Melanocyte', 'Endothelial', 'Pericytes', 'Oligodendrocyte']
+    
+    # Filter to only include celltypes that exist in the data
+    celltype_order = [ct for ct in desired_order if ct in actual_celltypes]
+    
+    # Add any remaining celltypes that weren't in the desired order
+    remaining_celltypes = [ct for ct in actual_celltypes if ct not in celltype_order]
+    celltype_order.extend(sorted(remaining_celltypes))
+    
+    print(f"Final plotting order: {celltype_order}")
+    
+    for gene in present:
+        sc.pl.violin(adata, keys=gene, groupby='celltype', save=f"_{base_prefix}_{gene}_{plot_suffix}", 
+                    show=False, rotation=90, order=celltype_order)
+else:
+    print("'celltype' column not found, cannot plot violin plots")
