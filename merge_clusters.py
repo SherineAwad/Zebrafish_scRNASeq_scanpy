@@ -2,7 +2,8 @@
 import argparse
 import scanpy as sc
 import pandas as pd
-import matplotlib
+import matplotlib.pyplot as plt
+import os
 
 def main():
     parser = argparse.ArgumentParser()
@@ -11,10 +12,10 @@ def main():
     parser.add_argument('--annotations', required=True)
     args = parser.parse_args()
 
-    # Read
+    # Read input AnnData
     adata = sc.read_h5ad(args.input)
 
-    # Read annotations file
+    # Read annotations file and build mapping
     mapping = {}
     with open(args.annotations, 'r') as f:
         for line in f:
@@ -27,34 +28,57 @@ def main():
 
     # Apply mapping to leiden column
     leiden_str = adata.obs['leiden'].astype(str).copy()
-
-    # Create new column
     adata.obs['combined_leiden'] = leiden_str.map(lambda x: mapping.get(x, x))
 
-    # Save
+    # Save updated AnnData
     adata.write_h5ad(args.output)
 
-    # Plots
     base = args.output.replace('.h5ad', '')
 
-    # 1. UMAP colored by sample
-    sc.pl.umap(adata, color='renamed_samples', save=f'{base}_colored_by_sample.png')
+    # -------------------------------
+    # Ensure figures/ folder exists
+    # -------------------------------
+    os.makedirs('figures', exist_ok=True)
 
-    # 2. UMAP colored by combined_leiden (all samples together)
-    sc.pl.umap(adata, color='combined_leiden', save=f'{base}_combined_leiden.png')
+    # 1. UMAP colored by sample
+    sc.pl.umap(adata, color='renamed_samples', save=f'{base}_colored_by_sample.png', show=False)
+
+    # 2. UMAP colored by combined_leiden
+    sc.pl.umap(adata, color='combined_leiden', save=f'{base}_combined_leiden.png', show=False)
 
     # 3. Separate UMAP for each sample with combined_leiden
     for sample in adata.obs['renamed_samples'].unique():
         mask = adata.obs['renamed_samples'] == sample
         adata_sample = adata[mask].copy()
-        sc.pl.umap(adata_sample, color='combined_leiden', title=f'Sample: {sample}', save=f'{base}_{sample}.png')
-    
-    # 4. Separate UMAP for each sample without leiden (just points) - Set color to blue
-    matplotlib.rcParams['scatter.edgecolors'] = 'blue'
-    for sample in adata.obs['renamed_samples'].unique():
-        mask = adata.obs['renamed_samples'] == sample
-        adata_sample = adata[mask].copy()
-        sc.pl.umap(adata_sample, color=None, title=f'Sample: {sample}', save=f'{base}_{sample}_no_leiden.png')
+        sc.pl.umap(
+            adata_sample,
+            color='combined_leiden',
+            title=f'Sample: {sample}',
+            save=f'{base}_{sample}.png',
+            show=False
+        )
+
+    # 4. Separate UMAP for each sample WITHOUT leiden, colored distinctly per sample
+    adata.obs['renamed_samples'] = adata.obs['renamed_samples'].astype('category')
+    samples = adata.obs['renamed_samples'].cat.categories
+    for sample in samples:
+        sample_adata = adata[adata.obs['renamed_samples'] == sample].copy()
+        sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].astype('category')
+        sample_adata.obs['renamed_samples'] = sample_adata.obs['renamed_samples'].cat.remove_unused_categories()
+
+        # Save into figures/ subfolder
+        fig = sc.pl.umap(
+            sample_adata,
+            color='renamed_samples',
+            title=f'Sample: {sample}',
+            size=20,
+            show=False,
+            return_fig=True
+        )
+        fig.set_size_inches(12, 12)
+        fig.savefig(f'figures/{base}_{sample}_no_leiden.png', dpi=600, bbox_inches='tight')
+        plt.close(fig)
 
 if __name__ == '__main__':
     main()
+
