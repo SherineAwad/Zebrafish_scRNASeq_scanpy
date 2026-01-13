@@ -35,18 +35,24 @@ def main():
 
     # Plots
     base = args.output.replace('.h5ad', '')
-    
+
     # 1. UMAP colored by sample
     sc.pl.umap(adata, color='renamed_samples', save=f'{base}_colored_by_sample.png')
-    
+
     # 2. UMAP colored by combined_leiden (all samples together)
     sc.pl.umap(adata, color='combined_leiden', save=f'{base}_combined_leiden.png')
-    
+
     # 3. Separate UMAP for each sample with combined_leiden
     for sample in adata.obs['renamed_samples'].unique():
         mask = adata.obs['renamed_samples'] == sample
         adata_sample = adata[mask].copy()
         sc.pl.umap(adata_sample, color='combined_leiden', title=f'Sample: {sample}', save=f'{base}_{sample}.png')
+    
+    # 4. Separate UMAP for each sample without leiden (just points)
+    for sample in adata.obs['renamed_samples'].unique():
+        mask = adata.obs['renamed_samples'] == sample
+        adata_sample = adata[mask].copy()
+        sc.pl.umap(adata_sample, color=None, title=f'Sample: {sample}', save=f'{base}_{sample}_no_leiden.png')
 
 if __name__ == '__main__':
     main()
