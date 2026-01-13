@@ -285,26 +285,33 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Feature plots for subclusters in AC after recombining 1 and 45 
 
-<img src="figures/umap_AC_combined_aqp4_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_apoeb_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_arr3a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_bhlhe22_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_bhlhe23_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_cabp5a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_cabp5b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_calb1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_calb2a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_calb2b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_chata_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_chgb_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_cx52.6_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_cx52.7_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_cx52.9_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_eomesa_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_fosab_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_gad1a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_gad1b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_gad2_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_gfap_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_gnat2_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_gngt2a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_grk7b_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_grm6a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_grm6b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_hmgb2b_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_isl1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_isl2b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_lhx1a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_mafaa_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_mpzl2b_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_nr2e3_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_ompa_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_opn1lw1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_opn1lw2_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_opn1mw4_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_opn1sw1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_opn1sw2_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_pcp4a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_rbpms2a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_rbpms2b_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_rlbp1a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_rho_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_robo2_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_slc18a3a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_slc6a9_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_snap25a_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_sox2_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_sox4a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_stat3_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_tbx2a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_tfap2a_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_tgfa_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_th_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_thrb_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_tkta_Harmony.png" width="30%" />
-<img src="figures/umap_AC_combined_vamp1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_vsx1_Harmony.png" width="30%" /> <img src="figures/umap_AC_combined_vsx2_Harmony.png" width="30%" />
+<img src="figures/umap_AC_combined_apoeb_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_cx52.7_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_isl1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_opn1sw2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc5a7a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_tfap2a_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_aqp4_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_cx52.9_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_isl2b_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_pcp4a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc6a1b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_tgfa_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_arr3a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_eomesa_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_lhx1a_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_rbpms2a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc6a1l_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_th_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_bhlhe22_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_fosab_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_mafaa_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_rbpms2b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc6a5_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_thrb_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_bhlhe23_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gad1a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_meis2a_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_rho_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc6a9_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_tkta_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_cabp5a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gad1b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_mpzl2b_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_rlbp1a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_snap25a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_vamp1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_cabp5b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gad2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_nos1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_robo2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_sox2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_vip_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_calb1_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gfap_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_npy_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_slc17a6a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_sox4a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_vsx1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_calb2a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gnat2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_nr2e3_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_slc17a6b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_sst1.1_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_vsx2_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_calb2b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_gngt2a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_ompa_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_slc17a7a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_sst2_Harmony.png?v=2" width="30%" /> 
+<img src="figures/umap_AC_combined_chata_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_grk7b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_opn1lw1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_slc17a8_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_stat3_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_chgb_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_grm6a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_opn1lw2_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc17a9a_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_tac1_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_crhb_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_grm6b_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_opn1mw4_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_slc17a9b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_tbx2a_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_cx52.6_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_hmgb2b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_opn1sw1_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_combined_slc18a3a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_tcf7l2_Harmony.png?v=2" width="30%" />
 
 
 
