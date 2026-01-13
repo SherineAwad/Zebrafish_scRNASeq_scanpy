@@ -273,6 +273,13 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/corrected_AC_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%"> 
 
 
+### Recombining subclusters in AC
+
+<img src="figures/umapAC_combined_colored_by_sample.png?v=1")
+<img src="figures/umapAC_combined_combined_leiden.png?v=1")
+<img src="figures/umapAC_combined_Control.png?v=1" width="30%" /> <img src="figures/umapAC_combined_LD.png?v=1" width="30%" /> <img src="figures/umapAC_combined_NMDA.png?v=1" width="30%" />
+
+
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" width="70%">
 <img src="figures/umap_merged_RGC.png" width ="70%">
@@ -639,6 +646,7 @@ adata.obs columns: ['sample', 'n_genes_by_counts', 'log1p_n_genes_by_counts', 't
 adata.var columns: ['mt', 'n_cells_by_counts', 'mean_counts', 'log1p_mean_counts', 'pct_dropout_by_counts', 'total_counts', 'log1p_total_counts', 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm', 'mean', 'std']
 
 No additional layers found.
+
 
 
 ## How to run Snakemake 
