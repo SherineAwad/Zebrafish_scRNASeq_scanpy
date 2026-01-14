@@ -199,6 +199,9 @@ Below are the UMAP plots split by individual samples after reclustering:
 ![](figures/rho_guca1b_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=3)
 
 
+### gap43/marcksa/marcksb/stmn2a/stmn2b/klf4/klf17/klf9/atoh7/pou4f2 in RGC
+![](figures/gap43_marcksa_marcksb_stmn2a_stmn2b_klf4_klf17_klf9_atoh7_pou4f2_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
+![](figures/gap43_marcksa_marcksb_stmn2a_stmn2b_klf4_klf17_klf9_atoh7_pou4f2_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 
 ### UMAPs of Major Retinal Cell Subtypes
 
@@ -296,6 +299,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 ![Dotplot](figures/AC_combined_dotplot_sorted.png?v=1)
+
+![Dotplot Full](figures/dotplot__AC_combined_annotated_dotplot_sorted_full.png?v=1) 
 
 ### Feature plots for subclusters in AC after recombining 1 and 45 
 
