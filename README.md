@@ -291,6 +291,12 @@ The following UMAP plots illustrate the clustering of subtypes within each major
   <img src="figures/umapAC_combined_NMDA.png?v=2" width="30%">
 </div>
 
+
+### Dotplot for subclusters in AC 
+
+
+![Dotplot](figures/dotplot__AC_combined_annotated_dotplot_sorted.png?v=1)
+
 ### Feature plots for subclusters in AC after recombining 1 and 45 
 
 <img src="figures/umap_AC_combined_apoeb_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_cx52.7_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_combined_isl1_Harmony.png?v=2" width="30%" />
