@@ -334,7 +334,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Cell counts and cell ratio in AC subset
 
-[[View stats summary for AC here](https://docs.google.com/spreadsheets/d/1nlbB0la8o_QE1IjOtlR64hxlaQ4oTQQTXWKVcIf17dQ/edit?usp=sharing)
+[View stats summary for AC here](https://docs.google.com/spreadsheets/d/1nlbB0la8o_QE1IjOtlR64hxlaQ4oTQQTXWKVcIf17dQ/edit?usp=sharing)
 
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" width="70%">
