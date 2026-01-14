@@ -41,10 +41,10 @@ def main():
     os.makedirs('figures', exist_ok=True)
 
     # 1. UMAP colored by sample
-    sc.pl.umap(adata, color='renamed_samples', size=50, save=f'{base}_colored_by_sample.png', show=False)
+    sc.pl.umap(adata, color='renamed_samples', size=80, save=f'{base}_colored_by_sample.png', show=False)
 
     # 2. UMAP colored by combined_leiden
-    sc.pl.umap(adata, color='combined_leiden', size=50, save=f'{base}_combined_leiden.png', show=False)
+    sc.pl.umap(adata, color='combined_leiden', size=80, save=f'{base}_combined_leiden.png', show=False)
 
     # 3. Separate UMAP for each sample with combined_leiden
     for sample in adata.obs['renamed_samples'].unique():
@@ -54,12 +54,14 @@ def main():
             adata_sample,
             color='combined_leiden',
             title=f'Sample: {sample}',
-            size=50,
+            size=80,
             save=f'{base}_{sample}.png',
             show=False
         )
 
     # 4. Separate UMAP for each sample WITHOUT leiden, colored distinctly per sample
+    plt.rcParams['figure.figsize'] = (6.4, 4.8)
+    
     adata.obs['renamed_samples'] = adata.obs['renamed_samples'].astype('category')
     samples = adata.obs['renamed_samples'].cat.categories
     for sample in samples:
@@ -72,14 +74,16 @@ def main():
             sample_adata,
             color='renamed_samples',
             title=f'Sample: {sample}',
-            size=50,
+            size=80,
             show=False,
             return_fig=True
         )
-        fig.set_size_inches(12, 12)
-        fig.savefig(f'figures/{base}_{sample}_no_leiden.png', dpi=600, bbox_inches='tight')
+        fig.set_size_inches(6.4, 4.8)
+        fig.savefig(f'figures/{base}_{sample}_no_leiden.png', bbox_inches='tight', dpi=500)
         plt.close(fig)
+    
+    # Reset figure size to default (optional)
+    plt.rcParams['figure.figsize'] = plt.rcParamsDefault['figure.figsize']
 
 if __name__ == '__main__':
     main()
-

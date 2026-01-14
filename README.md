@@ -275,20 +275,20 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Recombining subclusters 1 and 45 in AC
 
-<img src="figures/umapAC_combined_colored_by_sample.png?v=2" width="70%">
-<img src="figures/umapAC_combined_combined_leiden.png?v=2" width="70%">
+<img src="figures/umapAC_combined_colored_by_sample.png?v=3" width="70%">
+<img src="figures/umapAC_combined_combined_leiden.png?v=3" width="70%">
 
 <div style="display: flex; gap: 10px;">
-  <img src="figures/AC_combined_Control_no_leiden.png?v=4" width="30%">
-  <img src="figures/AC_combined_LD_no_leiden.png?v=4" width="30%">
-  <img src="figures/AC_combined_NMDA_no_leiden.png?v=4" width="30%">
+  <img src="figures/AC_combined_Control_no_leiden.png?v=5" width="30%">
+  <img src="figures/AC_combined_LD_no_leiden.png?v=5" width="30%">
+  <img src="figures/AC_combined_NMDA_no_leiden.png?v=5" width="30%">
 </div>
 
 
 <div style="display: flex; gap: 10px;">
-  <img src="figures/umapAC_combined_Control.png?v=2" width="30%">
-  <img src="figures/umapAC_combined_LD.png?v=2" width="30%">
-  <img src="figures/umapAC_combined_NMDA.png?v=2" width="30%">
+  <img src="figures/umapAC_combined_Control.png?v=3" width="30%">
+  <img src="figures/umapAC_combined_LD.png?v=3" width="30%">
+  <img src="figures/umapAC_combined_NMDA.png?v=3" width="30%">
 </div>
 
 
