@@ -41,10 +41,10 @@ def main():
     os.makedirs('figures', exist_ok=True)
 
     # 1. UMAP colored by sample
-    sc.pl.umap(adata, color='renamed_samples', save=f'{base}_colored_by_sample.png', show=False)
+    sc.pl.umap(adata, color='renamed_samples', size=50, save=f'{base}_colored_by_sample.png', show=False)
 
     # 2. UMAP colored by combined_leiden
-    sc.pl.umap(adata, color='combined_leiden', save=f'{base}_combined_leiden.png', show=False)
+    sc.pl.umap(adata, color='combined_leiden', size=50, save=f'{base}_combined_leiden.png', show=False)
 
     # 3. Separate UMAP for each sample with combined_leiden
     for sample in adata.obs['renamed_samples'].unique():
@@ -54,6 +54,7 @@ def main():
             adata_sample,
             color='combined_leiden',
             title=f'Sample: {sample}',
+            size=50,
             save=f'{base}_{sample}.png',
             show=False
         )
@@ -71,7 +72,7 @@ def main():
             sample_adata,
             color='renamed_samples',
             title=f'Sample: {sample}',
-            size=20,
+            size=50,
             show=False,
             return_fig=True
         )
