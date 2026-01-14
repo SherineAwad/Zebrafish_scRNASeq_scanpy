@@ -22,8 +22,8 @@ def main():
     # Marker genes by functional group
     # ----------------------------
     markers = {
-        'GABAergic': ['gad2', 'gad1b', 'slc6a1b', 'meis2a'],
-        'Cholinergic': ['chata', 'slc18a3a', 'bhlhe22'],
+        'GABAergic': ['gad2', 'gad1b', 'slc6a1b'],
+        'Cholinergic': ['chata', 'slc18a3a'],
         'glycinergic': ['slc6a9'],
         'dopaminergic': ['th'],
         #'neuropeptide': ['tac1', 'npy', 'vip']
