@@ -1,90 +1,92 @@
-import scanpy as sc
-import sys
-import importlib_metadata
-import anndata
+#!/usr/bin/env python3
+"""
+Calculate cell ratios from h5ad file and save stacked bar plot.
+"""
+
 import argparse
-import scanpy.external as sce
+import os
+import scanpy as sc
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-import os
+import matplotlib
+matplotlib.use('Agg')  # Non-interactive backend
 
-sys.modules['importlib.metadata'] = importlib_metadata
+def main():
+    parser = argparse.ArgumentParser(description='Calculate cell ratios from h5ad file')
+    parser.add_argument('--input', '-i', required=True, help='Input h5ad file')
+    parser.add_argument('--column', '-c', required=True, help='Cell type column name in adata.obs')
+    args = parser.parse_args()
+    
+    # Load data
+    adata = sc.read_h5ad(args.input)
+    
+    # Get prefix from input filename
+    prefix = os.path.splitext(os.path.basename(args.input))[0]
+    
+    # Calculate cell counts per sample and cluster
+    ct_counts = pd.crosstab(adata.obs['renamed_samples'], adata.obs[args.column])
+    
+    # Calculate ratios
+    ratios_df = ct_counts.div(ct_counts.sum(axis=1), axis=0)
+    
+    # Create a combined DataFrame for CSV output
+    with open(f"{prefix}_cell_ratios.csv", 'w') as f:
+        # Write ratios
+        f.write("Cell Ratios (Fractions)\n")
+        ratios_df.to_csv(f)
+        f.write("\n\n")
+        
+        # Write counts
+        f.write("Cell Counts\n")
+        ct_counts.to_csv(f)
+        f.write("\n\n")
+        
+        # Write total cells per sample
+        f.write("Total Cells per Sample\n")
+        total_per_sample = ct_counts.sum(axis=1)
+        total_per_sample.to_csv(f, header=False)
+        f.write("\n\n")
+        
+        # Write total cells per cluster
+        f.write("Total Cells per Cluster\n")
+        total_per_cluster = ct_counts.sum(axis=0)
+        total_per_cluster.to_csv(f, header=False)
+    
+    print(f"Saved full data to: {prefix}_cell_ratios.csv")
+    
+    # Print summary to console
+    print("\n=== SUMMARY ===")
+    print(f"\nTotal cells per sample:")
+    total_per_sample = ct_counts.sum(axis=1)
+    for sample, count in total_per_sample.items():
+        print(f"  {sample}: {count} cells")
+    
+    print(f"\nTotal cells per cluster:")
+    total_per_cluster = ct_counts.sum(axis=0)
+    for cluster, count in total_per_cluster.items():
+        print(f"  {cluster}: {count} cells")
+    
+    print(f"\nCell Ratios (first 10 clusters):")
+    print(ratios_df.iloc[:, :10])
+    print(f"\nFull data saved to {prefix}_cell_ratios.csv")
+    
+    # Create colors for plot
+    colors = plt.cm.tab20.colors
+    
+    # Plot
+    ax = ratios_df.plot(kind='bar', stacked=True, figsize=(12, 6), color=colors)
+    plt.ylabel("Fraction of cells")
+    plt.xlabel("Sample")
+    plt.title("Cell Type Contribution per Sample")
+    plt.xticks(rotation=45, ha='right')
+    plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+    
+    # Save the figure
+    plt.savefig(f"{prefix}_cell_ratios.png", dpi=600, bbox_inches='tight')
+    plt.close()
+    
+    print(f"\nSaved plot to: {prefix}_cell_ratios.png")
 
-parser = argparse.ArgumentParser()
-parser.add_argument('myObject')
-args = parser.parse_args()
-
-myObject =  args.myObject
-base_name = os.path.splitext(os.path.basename(myObject))[0]
-
-adata = sc.read(myObject)
-
-# Validate required columns
-if 'renamed_samples' not in adata.obs or 'celltype' not in adata.obs:
-    raise ValueError("Your .h5ad file must contain 'renamed_samples' and 'celltype' in .obs")
-
-# Sanitize values
-adata.obs['renamed_samples'] = adata.obs['renamed_samples'].astype(str).str.strip()
-adata.obs['celltype'] = adata.obs['celltype'].astype(str).str.strip()
-
-# Count cells per renamed_samples group
-cell_counts = adata.obs['renamed_samples'].value_counts()
-print("Number of cells per renamed_samples group:")
-print(cell_counts)
-
-
-
-marker_genes = {
-"MG":	["aqp4"],
-"MGPC":	["cdk1"],
-"PR precursors": ["nr2e3"],
-"Rod": ["guca1b"],
-"Cones": ["gnat2"],
-"BC":	["cabp5a"],
-"AC": ["elavl3"],
-"HC": 	["ompa"],
-"RGC":	["isl2b"],
-"Microglia_ImmuneCells": ["mpeg1.1"],
-"RPE": 	["rpe65a"],
-"Endothelial": ["tie1"],
-"Pericytes": ["acta2"],
-"Oligocytes": ["mbpa"],
-"Melanocytes": ["mitfa"]
-}
-celltype_order = ['MG', 'MGPC', 'PR precursors', 'Rod', 'Cones', 'BC', 'AC', 'HC', 'RGC','Microglia_ImmuneCells','RPE', 'Melanocyte','Endothelial','Perycites','Oligodenrocyte']
-adata.obs['celltype'] = pd.Categorical(adata.obs['celltype'], categories=celltype_order, ordered=True)
-
-figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
-
-'''
-fig = sc.pl.dotplot(
-    adata,
-    marker_genes,
-    groupby="celltype",
-    categories_order = celltype_order,
-    standard_scale="var",
-    figsize=(6,5),
-    dot_max=1.0, dendrogram=False, show =False,return_fig=True)
-
-fig.savefig(figure_name, dpi=600,bbox_inches="tight")
-
-'''
-
-figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
-fig = sc.pl.dotplot(
-    adata,
-    marker_genes,
-    groupby="celltype",
-    categories_order=celltype_order,
-    standard_scale="var",
-    figsize=(6,5),
-    dot_max=1.0,
-    dendrogram=False,
-    show=False,
-    return_fig=True
-)
-
-fig.savefig(figure_name, dpi=600, bbox_inches="tight")
-
-
+if __name__ == "__main__":
+    main()
