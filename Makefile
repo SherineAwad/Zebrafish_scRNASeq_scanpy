@@ -21,3 +21,7 @@ figures/gap43_marcksa_marcksb_stmn2a_stmn2b_klf4_klf17_klf9_atoh7_pou4f2_boxplot
 
 AC_combined_cell_ratios.csv:
 	python stats.py -i AC_combined.h5ad -c combined_leiden
+
+
+figures/umap_annotationsON.png:
+	python annotate_subtypes.py --input AC_combined.h5ad --annotations AC_subtypes_annotations.txt --output AC_subtypes_annotated.h5ad --remove_cluster 45
