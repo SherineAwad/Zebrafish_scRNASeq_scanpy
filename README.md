@@ -289,9 +289,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 <div style="display: flex; gap: 10px;">
-  <img src="figures/umapAC_Control.png?v=3" width="30%">
-  <img src="figures/umapAC_LD.png?v=3" width="30%">
-  <img src="figures/umapAC_NMDA.png?v=3" width="30%">
+  <img src="figures/umapAC_Control.png?v=4" width="30%">
+  <img src="figures/umapAC_LD.png?v=4" width="30%">
+  <img src="figures/umapAC_NMDA.png?v=4" width="30%">
 </div>
 
 
