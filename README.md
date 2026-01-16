@@ -298,9 +298,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ### Dotplot for subclusters in AC 
 
 
-![Dotplot](figures/AC_combined_dotplot_sorted.png?v=2)
+![Dotplot](figures/AC_combined_dotplot_sorted.png?v=3)
 
-![Dotplot Full](figures/dotplot__AC_combined_annotated_dotplot_sorted_full.png?v=2)
+![Dotplot Full](figures/dotplot__AC_combined_annotated_dotplot_sorted_full.png?v=3)
 
 ### Feature plots for subclusters in AC after recombining 1 and 45 
 
