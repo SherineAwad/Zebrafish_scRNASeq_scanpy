@@ -50,7 +50,7 @@ def main():
             adata_sample,
             color='combined_leiden',
             title=f'Sample: {sample}',
-            size=80,
+            size=60,legend_loc='on data',
             save=f'{base}_{sample}.png',
             show=False
         )
