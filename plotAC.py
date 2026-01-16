@@ -40,7 +40,7 @@ def main():
     sc.pl.umap(adata, color='renamed_samples', size=80, save=f'{base}_colored_by_sample.png', show=False)
 
     # 2. UMAP colored by combined_leiden
-    sc.pl.umap(adata, color='combined_leiden', size=80, legend_loc='on data', save=f'{base}_combined_leiden.png', show=False)
+    sc.pl.umap(adata, color='combined_leiden', size=20, legend_loc='on data', save=f'{base}_combined_leiden.png', show=False)
 
     # 3. Separate UMAP for each sample with combined_leiden
     for sample in adata.obs['renamed_samples'].unique():
@@ -50,7 +50,7 @@ def main():
             adata_sample,
             color='combined_leiden',
             title=f'Sample: {sample}',
-            size=60,legend_loc='on data',
+            size=80, legend_loc='on data',
             save=f'{base}_{sample}.png',
             show=False
         )
@@ -70,7 +70,7 @@ def main():
             sample_adata,
             color='renamed_samples',
             title=f'Sample: {sample}',
-            size=80,legend_loc='on data',
+            size=80,
             show=False,
             return_fig=True
         )
