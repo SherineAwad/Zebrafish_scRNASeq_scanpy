@@ -70,7 +70,7 @@ def main():
             sample_adata,
             color='renamed_samples',
             title=f'Sample: {sample}',
-            size=80,
+            size=80,legend_loc='on data',
             show=False,
             return_fig=True
         )

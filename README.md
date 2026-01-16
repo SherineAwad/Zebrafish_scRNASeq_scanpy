@@ -282,9 +282,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umapAC_combined_leiden.png?v=5" width="70%">
 
 <div style="display: flex; gap: 10px;">
-  <img src="figures/AC_Control_no_leiden.png?v=5" width="30%">
-  <img src="figures/AC_LD_no_leiden.png?v=5" width="30%">
-  <img src="figures/AC_NMDA_no_leiden.png?v=5" width="30%">
+  <img src="figures/AC_Control_no_leiden.png?v=6" width="30%">
+  <img src="figures/AC_LD_no_leiden.png?v=6" width="30%">
+  <img src="figures/AC_NMDA_no_leiden.png?v=6" width="30%">
 </div>
 
 
