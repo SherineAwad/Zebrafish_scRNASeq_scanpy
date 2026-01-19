@@ -344,7 +344,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ## AC subtypes DGE 
 
-[View top 50 in AC subtypes DGE](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
+[view top 50 in AC subtypes DGE for 0-44 clusters](https://docs.google.com/spreadsheets/d/1RGvgnL9WOM777AKQPsSrzVpekmWye_YEFcHeQd64ZKo/edit?usp=sharing)
+
+
+[View top 50 in AC subtypes DGE for annotated clusters](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
 
 
 #### Retinal Ganglion Cell (RGC) Subtypes
