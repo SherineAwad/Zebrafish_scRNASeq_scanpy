@@ -342,13 +342,14 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ![AC subtypes](figures/umap_AC_combined_annotations.png?v=2)
 ![AC subtypes ON](figures/umap_AC_combined_annotationsON.png?v=2)
 
+[View top 50 in AC subtypes DGE](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
+
 
 #### Retinal Ganglion Cell (RGC) Subtypes
 <img src="figures/umapRGC.png" width="70%">
 <img src="figures/umap_merged_RGC.png" width ="70%">
 
 <img src="figures/umap_RGC_NMDA.png" width ="33%"><img src="figures/umap_RGC_LD.png" width ="33%"><img src="figures/umap_RGC_Control.png" width ="33%">
-
 
 
 #### RGC Subtypes after batch correction (STRICT PARAMETERS) 
