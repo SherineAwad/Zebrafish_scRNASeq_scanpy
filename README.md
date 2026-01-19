@@ -342,6 +342,8 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ![AC subtypes](figures/umap_AC_combined_annotations.png?v=2)
 ![AC subtypes ON](figures/umap_AC_combined_annotationsON.png?v=2)
 
+## AC subtypes DGE 
+
 [View top 50 in AC subtypes DGE](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
 
 
