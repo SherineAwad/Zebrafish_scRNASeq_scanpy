@@ -400,6 +400,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_corrected_RGC_mbpa_sHarmony.png" width="30%" /> <img src="figures/umap_corrected_RGC_rpe65a_sHarmony.png" width="30%" /><img src="figures/umap_corrected_RGC_tbr1b_sHarmony.png" width="30%" />
 
 
+
 #### Horizontal Cell (HC) Subtypes
 <img src="figures/umapHC.png" width="70%">
 <img src="figures/umap_merged_HC.png" width ="70%">
@@ -485,6 +486,24 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 ### MG clusters after removing clusters 11 and 13 
 
 <img src="figures/corrected_MG_annotated_clustered_corrected_doubletRemoved_Zebrafishes_filteredannotationsON.png" width ="90%">
+
+
+## More DGE 
+
+### Cones top 50 
+[Control vs LD](https://docs.google.com/spreadsheets/d/1-4jA8FQE_NslbgKVH4VA68r5PvLHmfODVIQZmFJhFh0/edit?usp=sharing)
+
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1kZaSc9uBsUSCnbCRQfHNh2RK7UD_zz-mq-I5vYqfzuY/edit?usp=sharing)
+
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1T-BzWwR0IvZk21Rfii44tjQLrXmJ5PZ0DeX-N_xrNLQ/edit?usp=sharing)
+
+
+### RGC top 50 
+[Control vs LD](https://docs.google.com/spreadsheets/d/13nY6Be2w2LqnVqjwPNy7MvMSFRg7MQM-3IWLTCGJ2xc/edit?usp=sharing)
+
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1nNNG6u8SRG28UOven0p1IgAU1g-XoElGgAA6ZTTKclc/edit?usp=sharing)
+
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1DZT2tiaRbYY2V1VOw9IAOGGVboUuhBvMMC-OWGsuP4Q/edit?usp=sharing) 
 
 
 ## Pearson correlation 
