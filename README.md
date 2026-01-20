@@ -302,6 +302,20 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ![Dotplot Full](figures/AC_subtypes_annotated_dotplot_sorted_full.png?v=3)
 
+
+### More dotplots 
+
+
+![Dotplot vesicular_glutamate_transporters](figures/AC_subtypes_annotated_vesicular_glutamate_transporters.png?v=2) 
+
+![Dotplot mGlu_receptors](figures/AC_subtypes_annotated_mGlu_receptors.png?v=2) 
+
+![Dotplot monoamines](figures/AC_subtypes_annotated_monoamines.png?v=2)
+
+![Dotplot gasotransmitters](figures/AC_subtypes_annotated_gasotransmitters.png?v=2)
+
+![Dotplot neuropeptide_extended](figures/AC_subtypes_annotated_neuropeptide_extended.png?v=2)
+
 ### Feature plots for subclusters in AC after recombining 1 and 45 
 
 <img src="figures/umap_AC_subtypes_annotated_apoeb_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_subtypes_annotated_hmgb2b_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_subtypes_annotated_slc17a9b_Harmony.png?v=2" width="30%" />

@@ -26,7 +26,7 @@ def main():
         'Cholinergic': ['chata', 'slc18a3a'],
         'glycinergic': ['slc6a9'],
         'dopaminergic': ['th'],
-        #'neuropeptide': ['tac1', 'npy', 'vip']
+        'neuropeptide': ['tac1', 'npy', 'vip']
     }
 
     # Check which genes exist in the dataset
@@ -133,9 +133,80 @@ def main():
             save=f"_{base_prefix}_annotated_dotplot_sorted.png",
             show=False
         )
-        print(f"Also saved via Scanpy to: figures/dotplot_{base_prefix}_annotated_dotplot_sorted.png")
     except Exception as e:
         print(f"Note: Scanpy direct save gave warning: {e}")
+        # ----------------------------
+    # EXTRA DOTPLOTS (APPENDED)
+    # ----------------------------
+
+    print("\nGenerating additional dotplots...")
+
+    # ---- fixed cluster order ----
+    forced_cluster_order = [
+        '18','23','34','11','35','4','31','32','12','10','28','15','8','38','33',
+        '14','20','37','44','3','41','36','7','42','26','24','2','39','43','9',
+        '5','30','27','0','21','40','29','22','6','17','13','1','19','16','25'
+    ]
+
+    # convert to string in case leiden is categorical int
+    adata.obs[cluster_col] = adata.obs[cluster_col].astype(str)
+
+    existing = [c for c in forced_cluster_order if c in adata.obs[cluster_col].unique()]
+    adata.obs[cluster_col] = adata.obs[cluster_col].astype("category")
+    adata.obs[cluster_col] = adata.obs[cluster_col].cat.reorder_categories(existing, ordered=True)
+
+    # ---- gene sets ----
+    extra_plots = {
+        "vesicular_glutamate_transporters": [
+            "slc17a7a","slc17a7b","slc17a6a","slc17a6b","slc17a8"
+        ],
+
+        "mGlu_receptors": [
+            "grm1a","grm1b","grm2a","grm2b","grm5a","grm5b","grm6a","grm6b"
+        ],
+
+        "monoamines": [
+            "ddc","pnmt","dbh","tph1a","tph1b","tph2","tph3"
+        ],
+
+        "gasotransmitters": [
+            "nos1","hmox1a","hmo1b","hmox2a","hmox2b","ctha","cthb","cbs"
+        ],
+
+        "neuropeptide_extended": [
+            "npy","cart1","cart2","cart3","cart4","tac1","sta","sstb",
+            "pomca","pomcb","gal"
+        ]
+    }
+
+    for plot_name, genes in extra_plots.items():
+
+        present = [g for g in genes if g in adata.var_names]
+        missing = set(genes) - set(present)
+
+        if missing:
+            print(f"{plot_name}: skipping missing genes {missing}")
+
+        if not present:
+            print(f"{plot_name}: no genes found, skipping.")
+            continue
+
+        print(f"Plotting {plot_name}...")
+
+        dp = sc.pl.dotplot(
+            adata,
+            var_names=present,
+            groupby=cluster_col,
+            dendrogram=False,
+            standard_scale='var',
+            show=False,
+            return_fig=True
+        )
+
+        out = f"figures/{base_prefix}_{plot_name}.png"
+        dp.savefig(out, dpi=300, bbox_inches="tight")
+        print(f"Saved: {out}")
+
 
 if __name__ == "__main__":
     main()
