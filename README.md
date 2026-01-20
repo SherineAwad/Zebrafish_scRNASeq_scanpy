@@ -332,6 +332,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 <img src="figures/umap_AC_subtypes_annotated_grm6a_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_subtypes_annotated_slc17a8_Harmony.png?v=2" width="30%" /> <img src="figures/umap_AC_subtypes_annotated_grm6b_Harmony.png?v=2" width="30%" />
 <img src="figures/umap_AC_subtypes_annotated_slc17a9a_Harmony.png?v=2" width="30%" />
 
+## More feature plots 
+<img src="figures/umap_AC_subtypes_annotated_grm2a_Harmony.png?v=2" width="30%" /><img src="figures/umap_AC_subtypes_annotated_grm2b_Harmony.png?v=2" width="30%" /><img src="figures/umap_AC_subtypes_annotated_grm5a_Harmony.png?v=2" width="30%" >
+<img src="figures/umap_AC_subtypes_annotated_grm5b_Harmony.png?v=2" width="30%" /><img src="figures/umap_AC_subtypes_annotated_grm1a_Harmony.png?v=2" width="30%" /><img src="figures/umap_AC_subtypes_annotated_grm1b_Harmony.png?v=2" width="30%" />
+<img src="figures/umap_AC_subtypes_annotated_slc17a7b_Harmony.png?v=2" width="30%" />
+
 ### Cell counts and cell ratio in AC subset
 
 [View stats summary for AC here](https://docs.google.com/spreadsheets/d/1TCNveU_OY5oVMZhvx86DvY9n4KgYP_u0zXPEMvF-UuQ/edit?usp=sharing)
