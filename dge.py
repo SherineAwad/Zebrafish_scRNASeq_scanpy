@@ -4,6 +4,7 @@ import scanpy as sc
 import pandas as pd
 import os
 import numpy as np
+import matplotlib.pyplot as plt
 
 def main():
     parser = argparse.ArgumentParser()
@@ -16,6 +17,7 @@ def main():
                         help="Metric to rank genes by (wilcoxon_score, logfoldchange, pval, pval_adj)")
     parser.add_argument("--sample1", type=str, help="First sample/group for comparison")
     parser.add_argument("--sample2", type=str, help="Second sample/group for comparison")
+    parser.add_argument("-k", "--topk", type=int, help="Top K genes for DotPlot")
 
     args = parser.parse_args()
 
@@ -23,46 +25,88 @@ def main():
 
     if args.groupby not in adata.obs:
         raise KeyError(f"Groupby key '{args.groupby}' not found in adata.obs")
-
     if "renamed_samples" not in adata.obs:
         raise KeyError("Column 'renamed_samples' not found in adata.obs")
 
     adata_copy = adata.copy()
     adata_copy.uns["log1p"] = {"base": None}
+    
+    df = None  # Initialize
+    
+    # ================ DECIDE: OVERALL SAMPLE COMPARISON OR PER-CLUSTER ================
+    if args.sample1 and args.sample2:
+        # ================ OVERALL SAMPLE COMPARISON ONLY ================
+        mask = adata_copy.obs["renamed_samples"].isin([args.sample1, args.sample2])
+        sub = adata_copy[mask].copy()
 
-    rows = []
+        n1 = (sub.obs["renamed_samples"] == args.sample1).sum()
+        n2 = (sub.obs["renamed_samples"] == args.sample2).sum()
 
-    # ================= ORIGINAL ALL-DGE =================
-    sc.tl.rank_genes_groups(
-        adata_copy,
-        groupby=args.groupby,
-        method="wilcoxon",
-        n_genes=None
-    )
+        if n1 < 2 or n2 < 2:
+            print(f"Skipping sample comparison: insufficient cells ({args.sample1}={n1}, {args.sample2}={n2})")
+            return
+        
+        # PERFORM OVERALL SAMPLE COMPARISON
+        sc.tl.rank_genes_groups(
+            sub,
+            groupby="renamed_samples",
+            groups=[args.sample1],
+            reference=args.sample2,
+            method="wilcoxon",
+            n_genes=None
+        )
 
-    r = adata_copy.uns["rank_genes_groups"]
-    groups = r["names"].dtype.names
-
-    for g in groups:
+        # EXTRACT OVERALL RESULTS
+        r = sub.uns["rank_genes_groups"]
+        g = args.sample1
+        rows = []
         for i in range(len(r["names"][g])):
             rows.append({
-                "group": g,
+                "group": f"{args.sample1}_vs_{args.sample2}",  # SINGLE GROUP
                 "gene": r["names"][g][i],
                 "wilcoxon_score": r["scores"][g][i],
                 "pval": r["pvals"][g][i],
                 "pval_adj": r["pvals_adj"][g][i],
                 "logfoldchange": r["logfoldchanges"][g][i]
             })
+        df = pd.DataFrame(rows)
+        
+        # STORE IN UNS
+        adata_copy.uns["dge_table"] = df
+        print(f"Computed OVERALL sample comparison between {args.sample1} and {args.sample2}")
+        
+    else:
+        # ================ ORIGINAL PER-CLUSTER DGE ================
+        rows = []
+        sc.tl.rank_genes_groups(
+            adata_copy,
+            groupby=args.groupby,
+            method="wilcoxon",
+            n_genes=None
+        )
 
-    df = pd.DataFrame(rows)
+        r = adata_copy.uns["rank_genes_groups"]
+        groups = r["names"].dtype.names
+
+        for g in groups:
+            for i in range(len(r["names"][g])):
+                rows.append({
+                    "group": g,
+                    "gene": r["names"][g][i],
+                    "wilcoxon_score": r["scores"][g][i],
+                    "pval": r["pvals"][g][i],
+                    "pval_adj": r["pvals_adj"][g][i],
+                    "logfoldchange": r["logfoldchanges"][g][i]
+                })
+        df = pd.DataFrame(rows)
+        adata_copy.uns["dge_table"] = df
+        print("Computed PER-CLUSTER DGE")
 
     # ================= TOP-N OVERWRITE =================
-    if args.topn is not None:
+    if df is not None and args.topn is not None:
         if args.metric not in df.columns:
             raise ValueError(f"Metric '{args.metric}' not found in DE table columns: {list(df.columns)}")
-
         ascending = args.metric in ["pval", "pval_adj"]
-
         top_rows = []
         for g, group_df in df.groupby("group"):
             if ascending:
@@ -72,59 +116,46 @@ def main():
                     group_df[args.metric].abs().sort_values(ascending=False).index
                 )
             top_rows.append(sorted_group.head(args.topn))
-
         df = pd.concat(top_rows)
 
-    # ================= SAVE ONLY ONE CSV =================
-    df.to_csv(args.csv, index=False)
+    # ================= SAVE CSV AND H5AD =================
+    if df is not None:
+        df.to_csv(args.csv, index=False)
+        adata_copy.write_h5ad(args.out)
+        print(f"Saved DGE table → {args.csv}")
+        print(f"Saved DE-containing object → {args.out}")
 
-    adata_copy.uns["dge_table"] = df
-    adata_copy.write_h5ad(args.out)
+    # ================= DOTPLOT (TOP K ONLY FOR PLOTTING) =================
+    if args.topk and df is not None:
+        fig_dir = "figures"
+        os.makedirs(fig_dir, exist_ok=True)
 
-    print(f"Saved DGE table → {args.csv}")
-    print(f"Saved DE-containing object → {args.out}")
+        if args.sample1 and args.sample2:
+            # TOP K FROM OVERALL SAMPLE COMPARISON
+            top_genes = df.sort_values("wilcoxon_score", ascending=False).head(args.topk)["gene"].tolist()
+            title = f"{args.sample1}_vs_{args.sample2}"
+        else:
+            # TOP K FROM PER-CLUSTER
+            top_genes = []
+            for g, group_df in df.groupby("group"):
+                top_genes.extend(group_df.sort_values("wilcoxon_score", ascending=False).head(args.topk)["gene"].tolist())
+            top_genes = list(dict.fromkeys(top_genes))
+            title = "AllDGE_topgenes"
 
-    # ================= SAMPLE COMPARISON (NO CSV SAVE) =================
-    if args.sample1 and args.sample2:
+        sc.pl.dotplot(
+            adata_copy,
+            var_names=top_genes,
+            groupby=args.groupby,
+            standard_scale="var",
+            title=title,
+            show=False
+        )
 
-        comp_rows = []
-
-        for cluster in adata_copy.obs[args.groupby].unique():
-            sub = adata_copy[adata_copy.obs[args.groupby] == cluster].copy()
-
-            c1 = (sub.obs["renamed_samples"] == args.sample1).sum()
-            c2 = (sub.obs["renamed_samples"] == args.sample2).sum()
-
-            if c1 < 2 or c2 < 2:
-                print(f"Skipping cluster {cluster}: insufficient cells ({args.sample1}={c1}, {args.sample2}={c2})")
-                continue
-
-            sc.tl.rank_genes_groups(
-                sub,
-                groupby="renamed_samples",
-                groups=[args.sample1],
-                reference=args.sample2,
-                method="wilcoxon",
-                n_genes=None
-            )
-
-            r = sub.uns["rank_genes_groups"]
-            g = args.sample1
-
-            for i in range(len(r["names"][g])):
-                comp_rows.append({
-                    "cluster": cluster,
-                    "sample1": args.sample1,
-                    "gene": r["names"][g][i],
-                    "wilcoxon_score": r["scores"][g][i],
-                    "pval": r["pvals"][g][i],
-                    "pval_adj": r["pvals_adj"][g][i],
-                    "logfoldchange": r["logfoldchanges"][g][i],
-                    "sample2": args.sample2
-                })
-
-        df_comp = pd.DataFrame(comp_rows)
-        adata_copy.uns["dge_comparison"] = df_comp
+        csv_prefix = os.path.splitext(os.path.basename(args.csv))[0]
+        fig_path = os.path.join(fig_dir, f"{csv_prefix}.png")
+        plt.savefig(fig_path, bbox_inches="tight", dpi=150)
+        plt.close()
+        print(f"Saved DotPlot → {fig_path}")
 
 
 if __name__ == "__main__":

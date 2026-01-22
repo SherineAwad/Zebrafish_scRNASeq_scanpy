@@ -369,6 +369,10 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 [view top 50 in AC subtypes DGE for 0-44 clusters](https://docs.google.com/spreadsheets/d/1RGvgnL9WOM777AKQPsSrzVpekmWye_YEFcHeQd64ZKo/edit?usp=sharing)
 
+## Dot plot for top 2 in 0-44 clusters
+
+![Dotplot 0-44](figures/AC_subtypes_dge_t50.png?v=2)
+
 
 [View top 50 in AC subtypes DGE for annotated clusters](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
 
@@ -490,7 +494,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ## More DGE 
 
-### Cones top 50 
+### Cones top 50 per subtype 
 [Control vs LD](https://docs.google.com/spreadsheets/d/1-4jA8FQE_NslbgKVH4VA68r5PvLHmfODVIQZmFJhFh0/edit?usp=sharing)
 
 [Control vs NMDA](https://docs.google.com/spreadsheets/d/1kZaSc9uBsUSCnbCRQfHNh2RK7UD_zz-mq-I5vYqfzuY/edit?usp=sharing)
@@ -498,12 +502,51 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 [LD vs NMDA](https://docs.google.com/spreadsheets/d/1T-BzWwR0IvZk21Rfii44tjQLrXmJ5PZ0DeX-N_xrNLQ/edit?usp=sharing)
 
 
-### RGC top 50 
+### Cones top 50 not per cluster 
+[Control vs LD](https://docs.google.com/spreadsheets/d/1VdGppKCc3kADuKYSpu8oqfO3LjT90rRjwukAJkNMZPY/edit?usp=sharing)
+
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1K2KDvKo-8HRbE12FTeZmg6lMutKtLXAMTH73jNbi1aA/edit?usp=sharing)
+
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1f6uTBpEkmOHt5tiP1JTbn1vfk99HLgS8JfywwRW2F08/edit?usp=sharing) 
+
+### Dotplots 
+#### Cones Control vs NMDA 
+![](figures/Cones_dge_Control_NMDA_at50.png?v=1)
+
+#### Cones Control vs LD
+![](figures/Cones_dge_Control_LD_at50.png?v=1)
+
+#### Cones LD vc NMDA 
+![](figures/Cones_dge_LD_NMDA_at50.png?v=1)
+
+
+
+
+### RGC top 50 per subtype  
 [Control vs LD](https://docs.google.com/spreadsheets/d/13nY6Be2w2LqnVqjwPNy7MvMSFRg7MQM-3IWLTCGJ2xc/edit?usp=sharing)
 
 [Control vs NMDA](https://docs.google.com/spreadsheets/d/1nNNG6u8SRG28UOven0p1IgAU1g-XoElGgAA6ZTTKclc/edit?usp=sharing)
 
 [LD vs NMDA](https://docs.google.com/spreadsheets/d/1DZT2tiaRbYY2V1VOw9IAOGGVboUuhBvMMC-OWGsuP4Q/edit?usp=sharing) 
+
+### RGC top 50 not per cluster 
+
+[Control vs LD](https://docs.google.com/spreadsheets/d/1ZNPddoLS9m7m8ORMVeoLAK30PrvcEedQtyi4CBU1Iy8/edit?usp=sharing)
+
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1cn0H-X108uuSkznttO7Xgg3cZYqSG0ZGiPy4IMkDNgQ/edit?usp=sharing)
+
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/12wnZWrxvj-Ts8gecPBzdErmyBCX2iuUPCs88YLBBqA0/edit?usp=sharing)
+
+
+### Dotplots 
+#### RGC Control vs NMDA 
+![](figures/RGC_dge_Control_NMDA_at50.png?v=1)
+
+#### RGC Control vs LD
+![](figures/RGC_dge_Control_LD_at50.png?v=1)
+
+#### RGC LD vc NMDA 
+![](figures/RGC_dge_LD_NMDA_at50.png?v=1)
 
 
 ## Pearson correlation 
