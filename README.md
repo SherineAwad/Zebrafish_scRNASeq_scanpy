@@ -511,14 +511,13 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Dotplots 
 #### Cones Control vs NMDA 
-![](figures/Cones_dge_Control_NMDA_at50.png?v=1)
+![](figures/Cones_dge_Control_NMDA_at50.png?v=2)
 
 #### Cones Control vs LD
-![](figures/Cones_dge_Control_LD_at50.png?v=1)
+![](figures/Cones_dge_Control_LD_at50.png?v=2)
 
-#### Cones LD vc NMDA 
-![](figures/Cones_dge_LD_NMDA_at50.png?v=1)
-
+#### Cones LD vs NMDA 
+![](figures/Cones_dge_LD_NMDA_at50.png?v=2)
 
 
 
@@ -540,13 +539,13 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ### Dotplots 
 #### RGC Control vs NMDA 
-![](figures/RGC_dge_Control_NMDA_at50.png?v=1)
+![](figures/RGC_dge_Control_NMDA_at50.png?v=2)
 
 #### RGC Control vs LD
-![](figures/RGC_dge_Control_LD_at50.png?v=1)
+![](figures/RGC_dge_Control_LD_at50.png?v=2)
 
-#### RGC LD vc NMDA 
-![](figures/RGC_dge_LD_NMDA_at50.png?v=1)
+#### RGC LD vs NMDA 
+![](figures/RGC_dge_LD_NMDA_at50.png?v=2)
 
 
 ## Pearson correlation 

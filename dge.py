@@ -30,9 +30,9 @@ def main():
 
     adata_copy = adata.copy()
     adata_copy.uns["log1p"] = {"base": None}
-    
+
     df = None  # Initialize
-    
+
     # ================ DECIDE: OVERALL SAMPLE COMPARISON OR PER-CLUSTER ================
     if args.sample1 and args.sample2:
         # ================ OVERALL SAMPLE COMPARISON ONLY ================
@@ -45,7 +45,7 @@ def main():
         if n1 < 2 or n2 < 2:
             print(f"Skipping sample comparison: insufficient cells ({args.sample1}={n1}, {args.sample2}={n2})")
             return
-        
+
         # PERFORM OVERALL SAMPLE COMPARISON
         sc.tl.rank_genes_groups(
             sub,
@@ -70,11 +70,11 @@ def main():
                 "logfoldchange": r["logfoldchanges"][g][i]
             })
         df = pd.DataFrame(rows)
-        
+
         # STORE IN UNS
         adata_copy.uns["dge_table"] = df
         print(f"Computed OVERALL sample comparison between {args.sample1} and {args.sample2}")
-        
+
     else:
         # ================ ORIGINAL PER-CLUSTER DGE ================
         rows = []
@@ -130,15 +130,32 @@ def main():
         fig_dir = "figures"
         os.makedirs(fig_dir, exist_ok=True)
 
+        # USE SAME METRIC AS --metric ARGUMENT FOR PLOTTING
+        if args.metric not in df.columns:
+            raise ValueError(f"Metric '{args.metric}' not found in DE table columns: {list(df.columns)}")
+        
+        ascending = args.metric in ["pval", "pval_adj"]
+        
         if args.sample1 and args.sample2:
-            # TOP K FROM OVERALL SAMPLE COMPARISON
-            top_genes = df.sort_values("wilcoxon_score", ascending=False).head(args.topk)["gene"].tolist()
+            # TOP K FROM OVERALL SAMPLE COMPARISON - USING --metric
+            if ascending:
+                top_genes = df.sort_values(args.metric, ascending=True).head(args.topk)["gene"].tolist()
+            else:
+                top_genes = df.reindex(
+                    df[args.metric].abs().sort_values(ascending=False).index
+                ).head(args.topk)["gene"].tolist()
             title = f"{args.sample1}_vs_{args.sample2}"
         else:
-            # TOP K FROM PER-CLUSTER
+            # TOP K FROM PER-CLUSTER - USING --metric
             top_genes = []
             for g, group_df in df.groupby("group"):
-                top_genes.extend(group_df.sort_values("wilcoxon_score", ascending=False).head(args.topk)["gene"].tolist())
+                if ascending:
+                    top_genes.extend(group_df.sort_values(args.metric, ascending=True).head(args.topk)["gene"].tolist())
+                else:
+                    sorted_group = group_df.reindex(
+                        group_df[args.metric].abs().sort_values(ascending=False).index
+                    )
+                    top_genes.extend(sorted_group.head(args.topk)["gene"].tolist())
             top_genes = list(dict.fromkeys(top_genes))
             title = "AllDGE_topgenes"
 
