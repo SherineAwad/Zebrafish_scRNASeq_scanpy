@@ -31,11 +31,10 @@ def main():
     adata_copy = adata.copy()
     adata_copy.uns["log1p"] = {"base": None}
 
-    df = None  # Initialize
+    df = None
 
     # ================ DECIDE: OVERALL SAMPLE COMPARISON OR PER-CLUSTER ================
     if args.sample1 and args.sample2:
-        # ================ OVERALL SAMPLE COMPARISON ONLY ================
         mask = adata_copy.obs["renamed_samples"].isin([args.sample1, args.sample2])
         sub = adata_copy[mask].copy()
 
@@ -46,7 +45,6 @@ def main():
             print(f"Skipping sample comparison: insufficient cells ({args.sample1}={n1}, {args.sample2}={n2})")
             return
 
-        # PERFORM OVERALL SAMPLE COMPARISON
         sc.tl.rank_genes_groups(
             sub,
             groupby="renamed_samples",
@@ -56,13 +54,12 @@ def main():
             n_genes=None
         )
 
-        # EXTRACT OVERALL RESULTS
         r = sub.uns["rank_genes_groups"]
         g = args.sample1
         rows = []
         for i in range(len(r["names"][g])):
             rows.append({
-                "group": f"{args.sample1}_vs_{args.sample2}",  # SINGLE GROUP
+                "group": f"{args.sample1}_vs_{args.sample2}",
                 "gene": r["names"][g][i],
                 "wilcoxon_score": r["scores"][g][i],
                 "pval": r["pvals"][g][i],
@@ -71,12 +68,10 @@ def main():
             })
         df = pd.DataFrame(rows)
 
-        # STORE IN UNS
         adata_copy.uns["dge_table"] = df
         print(f"Computed OVERALL sample comparison between {args.sample1} and {args.sample2}")
 
     else:
-        # ================ ORIGINAL PER-CLUSTER DGE ================
         rows = []
         sc.tl.rank_genes_groups(
             adata_copy,
@@ -106,9 +101,13 @@ def main():
     if df is not None and args.topn is not None:
         if args.metric not in df.columns:
             raise ValueError(f"Metric '{args.metric}' not found in DE table columns: {list(df.columns)}")
+
+        finite_df = df.replace([np.inf, -np.inf], np.nan).dropna(subset=["logfoldchange"])
+
         ascending = args.metric in ["pval", "pval_adj"]
         top_rows = []
-        for g, group_df in df.groupby("group"):
+
+        for g, group_df in finite_df.groupby("group"):
             if ascending:
                 sorted_group = group_df.sort_values(args.metric, ascending=True)
             else:
@@ -116,6 +115,7 @@ def main():
                     group_df[args.metric].abs().sort_values(ascending=False).index
                 )
             top_rows.append(sorted_group.head(args.topn))
+
         df = pd.concat(top_rows)
 
     # ================= SAVE CSV AND H5AD =================
@@ -130,25 +130,24 @@ def main():
         fig_dir = "figures"
         os.makedirs(fig_dir, exist_ok=True)
 
-        # USE SAME METRIC AS --metric ARGUMENT FOR PLOTTING
         if args.metric not in df.columns:
             raise ValueError(f"Metric '{args.metric}' not found in DE table columns: {list(df.columns)}")
-        
+
+        finite_df = df.replace([np.inf, -np.inf], np.nan).dropna(subset=["logfoldchange"])
+
         ascending = args.metric in ["pval", "pval_adj"]
-        
+
         if args.sample1 and args.sample2:
-            # TOP K FROM OVERALL SAMPLE COMPARISON - USING --metric
             if ascending:
-                top_genes = df.sort_values(args.metric, ascending=True).head(args.topk)["gene"].tolist()
+                top_genes = finite_df.sort_values(args.metric, ascending=True).head(args.topk)["gene"].tolist()
             else:
-                top_genes = df.reindex(
-                    df[args.metric].abs().sort_values(ascending=False).index
+                top_genes = finite_df.reindex(
+                    finite_df[args.metric].abs().sort_values(ascending=False).index
                 ).head(args.topk)["gene"].tolist()
             title = f"{args.sample1}_vs_{args.sample2}"
         else:
-            # TOP K FROM PER-CLUSTER - USING --metric
             top_genes = []
-            for g, group_df in df.groupby("group"):
+            for g, group_df in finite_df.groupby("group"):
                 if ascending:
                     top_genes.extend(group_df.sort_values(args.metric, ascending=True).head(args.topk)["gene"].tolist())
                 else:
@@ -177,3 +176,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

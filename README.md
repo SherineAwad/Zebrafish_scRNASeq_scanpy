@@ -553,20 +553,20 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 ### Rod top 50 not per cluster 
-[Control vs NMDA]()
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1dytpS0_ilhGGDB5flQuLnuQvTFI18o4kkJpQwNPvbxQ/edit?usp=sharing)
 
-[Control vs LD]()
+[Control vs LD](https://docs.google.com/spreadsheets/d/127PP7gy3BUwIy7XlavUTlgHiTfKxuzVXQ82jxXk57y4/edit?usp=sharing)
 
-[LD vs NMDA]()
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1JM2uqotCaPWHCsUibRNj2bjtZQ47tvYxzfbWiYB5SvM/edit?usp=sharing)
 
 
 ### Dotplots
 
-![](figures/Rod_dge_Control_LD_at50.png?v=2)
+![](figures/Rod_dge_Control_LD_at50.png?v=3)
 
-![](figures/Rod_dge_LD_NMDA_at50.png?v=2)
+![](figures/Rod_dge_LD_NMDA_at50.png?v=3)
 
-![](figures/Rod_dge_Control_NMDA_at50.png?v=2)
+![](figures/Rod_dge_Control_NMDA_at50.png?v=3)
 
 ## Pearson correlation 
 
