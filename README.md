@@ -373,7 +373,7 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ![Dotplot 0-44](figures/AC_subtypes_dge_t50.png?v=2)
 
-### Same plot but different order 
+## Same plot but different order 
 
 ![Dotplot 0-44 reordered](figures/AC_subtypes_dge_t50_reordered.png?v=2)
 
@@ -550,6 +550,23 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### RGC LD vs NMDA 
 ![](figures/RGC_dge_LD_NMDA_at50.png?v=2)
 
+
+
+### Rod top 50 not per cluster 
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/1drl_dcBfD1uQhYLeC2RgXHGSxKVmhlZDDngtJCijxgk/edit?usp=sharing)
+
+[Control vs LD](https://docs.google.com/spreadsheets/d/1ws87y50TcmnMVQeyTJnhl_BTLIKjJMT-b0BZ9EAMijo/edit?usp=sharing)
+
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1u11bZTAEqDCiaqfMHsXfto3EGPEBzRA9Bt0-rUwcias/edit?usp=sharing)
+
+
+### Dotplots
+
+![](figures/Rod_dge_Control_LD_at50.png?v=2)
+
+![](figures/Rod_dge_LD_NMDA_at50.png?v=2)
+
+![](figures/Rod_dge_Control_NMDA_at50.png?v=2)
 
 ## Pearson correlation 
 
