@@ -373,6 +373,9 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ![Dotplot 0-44](figures/AC_subtypes_dge_t50.png?v=2)
 
+### Same plot but different order 
+
+![Dotplot 0-44 reordered](figures/AC_subtypes_dge_t50_reordered.png?v=2)
 
 [View top 50 in AC subtypes DGE for annotated clusters](https://docs.google.com/spreadsheets/d/1JllaITWce7dgGlXc1aBXm6VAMl0oPkxma8EXXN4eqc4/edit?usp=sharing)
 
