@@ -553,12 +553,11 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 
 ### Rod top 50 not per cluster 
-[Control vs NMDA](https://docs.google.com/spreadsheets/d/15Zi2vsfTGWqBaZBV0IWr3syzituG_r-_plJbbTXrw6g/edit?usp=sharing)
+[Control vs NMDA](https://docs.google.com/spreadsheets/d/15Zi2vsfTGWqBaZBV0IWr3syzituG_r-_plJbbTXrw6g/edit?usp=sharing&v=2)
 
-[Control vs LD](https://docs.google.com/spreadsheets/d/127PP7gy3BUwIy7XlavUTlgHiTfKxuzVXQ82jxXk57y4/edit?usp=sharing)
+[Control vs LD](https://docs.google.com/spreadsheets/d/127PP7gy3BUwIy7XlavUTlgHiTfKxuzVXQ82jxXk57y4/edit?usp=sharing&v=2)
 
-[LD vs NMDA](https://docs.google.com/spreadsheets/d/1JM2uqotCaPWHCsUibRNj2bjtZQ47tvYxzfbWiYB5SvM/edit?usp=sharing)
-
+[LD vs NMDA](https://docs.google.com/spreadsheets/d/1JM2uqotCaPWHCsUibRNj2bjtZQ47tvYxzfbWiYB5SvM/edit?usp=sharing&v=2)
 
 ### Dotplots
 
