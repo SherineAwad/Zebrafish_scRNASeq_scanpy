@@ -668,6 +668,32 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 
 
 
+## Volcano plots 
+
+This volcano plot visualizes **all genes**, showing the relationship between the **magnitude of change** (log2 fold change) and **statistical significance** (-log10 adjusted p-value) for each gene.  
+The top 5 genes with the most pronounced differences between Control and the rest are highlighted with arrows for clarity.
+
+##### Rod
+
+![](figures/Rod_dge_Control_vs_rest_volcano.png?v=1) 
+
+##### Cones 
+
+![](figures/Cones_dge_Control_vs_rest_volcano.png?v=1)
+
+##### BC
+![](figures/BC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### AC
+![](figures/AC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### HC
+![](figures/HC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### RGC
+![](figures/RGC_dge_Control_vs_rest_volcano.png?v=1)
+
+
 # Differential gene expression: per celltype 
 
 ```
