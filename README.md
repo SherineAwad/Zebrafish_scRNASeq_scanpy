@@ -567,6 +567,34 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 ![](figures/Rod_dge_Control_NMDA_at50.png?v=3)
 
+
+## Volcano plots 
+
+This volcano plot visualizes **all genes**, showing the relationship between the **magnitude of change** (log2 fold change) and **statistical significance** (-log10 adjusted p-value) for each gene.
+The top 5 genes with the most pronounced differences between Control and the rest are highlighted with arrows for clarity.
+
+##### Rod
+
+![](figures/Rod_dge_Control_vs_rest_volcano.png?v=1)
+
+##### Cones 
+
+![](figures/Cones_dge_Control_vs_rest_volcano.png?v=1)
+
+##### BC
+![](figures/BC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### AC
+![](figures/AC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### HC
+![](figures/HC_dge_Control_vs_rest_volcano.png?v=1)
+
+##### RGC
+![](figures/RGC_dge_Control_vs_rest_volcano.png?v=1)
+
+
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
@@ -665,33 +693,6 @@ python pearson_heatmap.py annotated_clustered_corrected_doubletRemoved_Zebrafish
 ##### > 0.5 
 
 ![ld vs nmda 0.5](ld_vs_nmda_heatmap_0.5.png?v=1)
-
-
-
-## Volcano plots 
-
-This volcano plot visualizes **all genes**, showing the relationship between the **magnitude of change** (log2 fold change) and **statistical significance** (-log10 adjusted p-value) for each gene.  
-The top 5 genes with the most pronounced differences between Control and the rest are highlighted with arrows for clarity.
-
-##### Rod
-
-![](figures/Rod_dge_Control_vs_rest_volcano.png?v=1) 
-
-##### Cones 
-
-![](figures/Cones_dge_Control_vs_rest_volcano.png?v=1)
-
-##### BC
-![](figures/BC_dge_Control_vs_rest_volcano.png?v=1)
-
-##### AC
-![](figures/AC_dge_Control_vs_rest_volcano.png?v=1)
-
-##### HC
-![](figures/HC_dge_Control_vs_rest_volcano.png?v=1)
-
-##### RGC
-![](figures/RGC_dge_Control_vs_rest_volcano.png?v=1)
 
 
 # Differential gene expression: per celltype 
