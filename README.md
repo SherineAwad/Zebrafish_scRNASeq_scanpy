@@ -573,26 +573,41 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 This volcano plot visualizes **all genes**, showing the relationship between the **magnitude of change** (log2 fold change) and **statistical significance** (-log10 adjusted p-value) for each gene.
 The top 5 genes with the most pronounced differences between Control and the rest are highlighted with arrows for clarity.
 
+- Red line on volcano plot = p-value of 0.05 (standard significance)
+
+- Grey line = no change (fold change = 0)
+
 ##### Rod
 
-![](figures/Rod_dge_Control_vs_rest_volcano.png?v=1)
+![](figures/Rod_dge_Control_vs_rest_volcano.png?v=2)
+
+[Top 50 Rod](https://docs.google.com/spreadsheets/d/1b9kUe7PiwMjpKvIN_B17PiKR3SwFwpWgjSRw9tgeBHM/edit?usp=sharing)
 
 ##### Cones 
 
 ![](figures/Cones_dge_Control_vs_rest_volcano.png?v=1)
 
+[Top 50 Cones](https://docs.google.com/spreadsheets/d/1rbSwGllne8Y_ODgJqUhTdtOUF8L5j4sriIVzR9n8WtA/edit?usp=sharing)
+
 ##### BC
 ![](figures/BC_dge_Control_vs_rest_volcano.png?v=1)
+
+[Top 50 BC](https://docs.google.com/spreadsheets/d/1Qrdk-dSWyK0qRIXkK1ackgnuwD8tiPyEaktXoFLiFq8/edit?usp=sharing)
 
 ##### AC
 ![](figures/AC_dge_Control_vs_rest_volcano.png?v=1)
 
+[Top 50 AC](https://docs.google.com/spreadsheets/d/13_D8tHKduCIgUb9GT1vLeA9MKIcPOC6QsOpDFhZaE3o/edit?usp=sharing)
+
 ##### HC
 ![](figures/HC_dge_Control_vs_rest_volcano.png?v=1)
+
+[Top 50 HC](https://docs.google.com/spreadsheets/d/1GCKoMuxRuxxq_E__IO5CwoMBnQUqXRNV1r-ZeBM92RA/edit?usp=sharing)
 
 ##### RGC
 ![](figures/RGC_dge_Control_vs_rest_volcano.png?v=1)
 
+[Top 50 RGC](https://docs.google.com/spreadsheets/d/1LNUEJX9TEBJtQ16a7tp56hj4t7rPQVRvimy67-fZ1tg/edit?usp=sharing)
 
 
 ## Pearson correlation 

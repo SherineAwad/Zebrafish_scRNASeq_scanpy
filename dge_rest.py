@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import scanpy as sc
 import pandas as pd
@@ -92,6 +91,7 @@ def main():
     plt.title(f"Volcano plot: {args.sample1} vs rest")
     plt.axhline(y=-np.log10(0.05), color='red', linestyle='--')
     plt.axvline(x=0, color='grey', linestyle='--')
+    plt.xlim(-20, 30)  # <-- ONLY CHANGE: Set x-axis limits from -20 to 30
 
     # ---------------- LABEL TOP-K GENES WITH adjustText (all get arrows) ----------------
     if args.topk is not None:
@@ -126,4 +126,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
