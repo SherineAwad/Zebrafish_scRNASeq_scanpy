@@ -203,6 +203,26 @@ Below are the UMAP plots split by individual samples after reclustering:
 ![](figures/gap43_marcksa_marcksb_stmn2a_stmn2b_klf4_klf17_klf9_atoh7_pou4f2_violin_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 ![](figures/gap43_marcksa_marcksb_stmn2a_stmn2b_klf4_klf17_klf9_atoh7_pou4f2_boxplot_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=1)
 
+
+### More gene comparisons 
+
+#### six7/pde6c in Cones
+![](figures/six7_pde6c_violin_corrected_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+![](figures/six7_pde6c_boxplot_corrected_Cones_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
+#### pde6a/pde6b/gnat1 in Rod
+![](figures/pde6a_pde6b_gnat1_violin_Rod_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+![](figures/pde6a_pde6b_gnat1_boxplot_Rod_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
+#### stmn4/tuba1b in RGC
+![](figures/stmn4_tuba1b_violin_corrected_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+![](figures/stmn4_tuba1b_boxplot_corrected_RGC_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
+#### per1b/nr1d1 in BC
+![](figures/per1b_nr1d1_violin_corrected_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+![](figures/per1b_nr1d1_boxplot_corrected_BC_annotated_clustered_corrected_doubletRemoved_Zebrafishes.png?v=2)
+
+
 ### UMAPs of Major Retinal Cell Subtypes
 
 The following UMAP plots illustrate the clustering of subtypes within each major retinal cell type. These visualizations highlight transcriptional diversity captured by single-cell RNA sequencing.
