@@ -33,5 +33,6 @@ figures/umapAC_combined_colored_by_sample.png:
 figures/umap_AC_subtypes_annotated_vsx2_Harmony.png:
 	python plot_markers.py AC_subtypes_annotated.h5ad markers.txt 
 
+
 figures/AC_subtypes_annotated_dotplot_sorted.png:
 	python plot_dotplot.py -i AC_subtypes_annotated.h5ad
