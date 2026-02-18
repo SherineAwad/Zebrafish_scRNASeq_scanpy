@@ -153,6 +153,10 @@ Below are the UMAP plots split by individual samples after reclustering:
 
 <img src="figures/umap_annotated_clustered_corrected_nr2e3_Harmony.png?v=1" width="33%">
 
+### More Markers per request 
+
+<img src="figures/umap_annotated_clustered_corrected_rbpms2a_Harmony.png?v=1" width="33%"><img src="figures/umap_annotated_clustered_corrected_rbpms2b_Harmony.png?v=1" width="33%"><img src="figures/umap_annotated_clustered_corrected_rho_Harmony.png?v=1" width="33%">
+
 
 ### Selected Markers Violin per request
 
