@@ -634,6 +634,29 @@ The top 5 genes with the most pronounced differences between Control and the res
 [Top 50 RGC](https://docs.google.com/spreadsheets/d/1LNUEJX9TEBJtQ16a7tp56hj4t7rPQVRvimy67-fZ1tg/edit?usp=sharing)
 
 
+
+## Diffusion Map Analysis of Cell Type Across Treatments
+
+Diffusion map is a dimensionality reduction method that identifies continuous axes of variation in single-cell data based on cell-to-cell similarity, capturing trajectories or state changes rather than discrete clusters.
+
+### RGC example
+
+![](figures/diffmap_RGC_diffMap_DC1_by_condition.png?v=1)
+
+![](figures/diffmap_RGC_diffMap_by_condition.png?v=1)
+
+**Figure 1: Diffusion Map (DC1 vs DC2)**
+- Cells from Control, LD, and NMDA conditions are largely **mixed together**.
+- No distinct separation is observed along DC1 or DC2.
+- **Interpretation:** The dominant transcriptional variation in this cell type is **not driven by LD or NMDA**.
+
+**Figure 2: Violin Plot of DC1**
+- DC1 distributions for Control, LD, and NMDA **overlap almost completely**.
+- Medians and spreads are similar across conditions.
+- **Interpretation:** Confirms the diffusion map result — **neither LD nor NMDA induce a strong shift** along the main diffusion axis.
+
+**Conclusion:** In this cell type, the treatments do not drive major transcriptional differences detectable by diffusion map.
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
