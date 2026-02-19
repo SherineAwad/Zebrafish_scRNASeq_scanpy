@@ -709,7 +709,7 @@ Lower density at later pseudotime indicates:
 - Only a subset of cells progresses fully  
 
 
-#### Why Nasal vs. Dorsal vs. VenTRAL  Is Not Shown
+#### Why Nasal vs. Dorsal vs. Ventral  Is Not Shown
 
 - The current scRNA-seq dataset does **not contain spatial coordinates**.  
 - There is **no metadata indicating anatomical position**.  
