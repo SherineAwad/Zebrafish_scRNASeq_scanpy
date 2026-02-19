@@ -711,17 +711,51 @@ Overall, this pattern suggests:
 - Late states that may be transient or reached by only a subset of cells  
 
 
-## 🚨🚨🚨  Nasal vs. Dorsal vs. Ventral Is Not Shown
+## Pseudo-Spatial Surface Map Using Marker Genes
 
-The current scRNA-seq dataset does **not** contain spatial coordinates.  
-There is **no metadata indicating anatomical position**.  
-Cells were likely dissociated prior to sequencing, so spatial origin is not preserved.
+![](figures/figures/pseudo_surface_RGC_Spatial.png?v=1) 
 
-Without:
-- Pre-labeled regional metadata  
-- Spatial transcriptomics data 
+This plot shows a **pseudo-spatial distribution of cells** using known marker genes for specific anatomical axes.  
 
-### 🚨🚨🚨 WORKING ON Computational mapping using region-specific marker genes to WORK AROUND WHAT ABOVE 
+Its purpose is to:
+
+- Estimate **relative positioning of cells along Nasal → Temporal (X-axis) and Ventral → Dorsal (Y-axis) axes**  
+- Visualize **cell density across inferred pseudo-regions**  
+- Provide a **spatial context** for transcriptional states, even without true spatial coordinates  
+
+> Note: This is an **inferred pseudo-spatial map** based on gene expression patterns; it does not represent actual measured cell positions.
+
+
+#### What the Plot Shows
+
+- **X-axis (Pseudo Nasal → Temporal)**  
+  Derived from the difference in expression between genes enriched in nasal vs temporal regions.  
+  - Cells with X ≈ 0 are more “nasal-like”  
+  - Cells with X ≈ 1 are more “temporal-like”
+
+- **Y-axis (Pseudo Ventral → Dorsal)**  
+  Derived from the difference in expression between ventral vs dorsal markers.  
+  - Cells with Y ≈ 0 are more “ventral-like”  
+  - Cells with Y ≈ 1 are more “dorsal-like”
+
+- **Color / intensity (Cell Density)**  
+  The plot uses a 2D hexbin to show **where cells accumulate** on the pseudo-spatial surface.  
+  Brighter regions indicate **higher density**.
+
+
+#### Interpretation of the Observed Pattern
+
+- Clusters of cells in the plot suggest **groups with similar inferred spatial identity**.  
+- Gradients along X and Y axes indicate **relative spatial transitions** inferred from gene expression.  
+- This allows for **visual comparison of cell distributions** across pseudo-anatomical axes.
+
+#### Limitations
+
+- **Not true spatial positions**: Cells were dissociated, so their real Nasal / Temporal / Ventral / Dorsal locations are lost.  
+- Accuracy depends on the **quality and specificity of the chosen marker genes**.  
+- Only provides **relative, inferred positions** along the axes, not absolute anatomical coordinates.
+
+
 
 ## Pearson correlation 
 
