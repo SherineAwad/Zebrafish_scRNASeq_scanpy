@@ -659,6 +659,70 @@ Diffusion map is a dimensionality reduction method that identifies continuous ax
 
 **Conclusion:** In this cell type, the treatments do not drive major transcriptional differences detectable by diffusion map.
 
+# Temporal Pseudo-Surface Map of Retinal Cells Along Pseudotime
+
+## Purpose of the Plot
+
+This plot shows **cell density along pseudotime**, creating a **temporal pseudo-surface** of the cell population.
+
+Its purpose is to identify:
+
+- Where cells **accumulate** along a biological trajectory  
+- Potential **stable states**  
+- Possible **transition checkpoints**  
+- Regions where cells progress **slowly or rapidly**  
+
+In short:
+
+> It shows which transcriptional states are most populated along the inferred trajectory.
+
+### Example in RGC 
+
+![](figures/pseudomap_surface_RGC_PseudoMap.png?v=1)
+
+
+## What the Plot Shows
+
+- **X-axis (Pseudotime 0 → 1)**  
+  Represents progression through a biological process (e.g., differentiation).
+
+- **Y-axis (visual jitter / surface)**  
+  Used to separate cells vertically for visualization; **not biologically meaningful**.  
+  It allows the density of cells along pseudotime to form a smooth surface.
+
+- **Color intensity (density)**  
+  Brighter regions = higher cell density  
+  Darker regions = lower cell density  
+
+##### Interpretation of the Observed Pattern
+
+There is a strong accumulation around **pseudotime ~0.2**, suggesting:
+
+- Cells spend more time in this transcriptional state  
+- It may represent a **stable intermediate state**  
+- Could indicate a **regulatory checkpoint** along the trajectory  
+
+Lower density at later pseudotime indicates:
+
+- Fewer cells reach late states  
+- Late states may be transient  
+- Only a subset of cells progresses fully  
+
+
+#### Why Nasal vs. Dorsal vs. VenTRAL  Is Not Shown
+
+- The current scRNA-seq dataset does **not contain spatial coordinates**.  
+- There is **no metadata indicating anatomical position**.  
+- Cells were likely dissociated, so spatial origin is lost.  
+
+Without:
+
+- Pre-labeled region information, or  
+- Spatial transcriptomics data, or  
+- Computational mapping using known marker genes  
+
+
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
