@@ -641,9 +641,11 @@ Diffusion map is a dimensionality reduction method that identifies continuous ax
 
 ### RGC example
 
-![](figures/diffmap_RGC_diffMap_DC1_by_condition.png?v=1)
 
-![](figures/diffmap_RGC_diffMap_by_condition.png?v=1)
+![1](figures/diffmap_RGC_diffMap_by_condition.png?v=1)
+
+![2](figures/diffmap_RGC_diffMap_DC1_by_condition.png?v=1)
+
 
 **Figure 1: Diffusion Map (DC1 vs DC2)**
 - Cells from Control, LD, and NMDA conditions are largely **mixed together**.
