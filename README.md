@@ -711,7 +711,7 @@ Overall, this pattern suggests:
 - Late states that may be transient or reached by only a subset of cells  
 
 
-## 🚨🚨🚨 Why Nasal vs. Dorsal vs. Ventral Is Not Shown
+## 🚨🚨🚨  Nasal vs. Dorsal vs. Ventral Is Not Shown
 
 The current scRNA-seq dataset does **not** contain spatial coordinates.  
 There is **no metadata indicating anatomical position**.  
@@ -719,13 +719,9 @@ Cells were likely dissociated prior to sequencing, so spatial origin is not pres
 
 Without:
 - Pre-labeled regional metadata  
-- Spatial transcriptomics data  
-- Computational mapping using region-specific marker genes  
+- Spatial transcriptomics data 
 
-Anatomical distinctions such as nasal, dorsal, or ventral cannot be inferred from this plot alone.
-
-
-
+### 🚨🚨🚨 WORKING ON Computational mapping using region-specific marker genes to WORK AROUND WHAT ABOVE 
 
 ## Pearson correlation 
 
