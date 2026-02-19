@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
-
 import argparse
 import scanpy as sc
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import gaussian_kde
+from scipy.spatial.distance import cdist
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -30,14 +29,26 @@ def main():
     else:
         print("✔ Using existing DiffMap")
 
+    # ---------------- Select root cell automatically ----------------
+    # Use DiffMap if available, otherwise PCA
+    if "X_diffmap" in adata.obsm:
+        embedding = adata.obsm["X_diffmap"]
+    else:
+        embedding = adata.obsm["X_pca"]
+    
+    # Find cell closest to origin (0-vector) in embedding space
+    distances = cdist(embedding, np.zeros((1, embedding.shape[1])))
+    root_cell = np.argmin(distances)
+    adata.uns['iroot'] = root_cell
+    print(f"✔ Root cell selected automatically: index {root_cell}")
+
     # ---------------- Pseudotime ----------------
-    adata.uns['iroot'] = 0  # automatic root
     sc.tl.dpt(adata, n_dcs=10)
     pseudotime = adata.obs['dpt_pseudotime'].values
     pseudotime = (pseudotime - pseudotime.min()) / (pseudotime.max() - pseudotime.min())  # normalize 0→1
 
     # ---------------- Y-axis: jittered cell positions ----------------
-    y = np.random.uniform(0, 1, size=pseudotime.shape)  # vertical jitter to represent surface
+    y = np.random.uniform(0, 1, size=pseudotime.shape)  # vertical jitter
 
     # ---------------- 2D Kernel Density ----------------
     xy = np.vstack([pseudotime, y])

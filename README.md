@@ -678,52 +678,52 @@ In short:
 
 ### Example in RGC 
 
-![](figures/pseudomap_surface_RGC_PseudoMap.png?v=1)
+![](figures/pseudomap_surface_RGC_PseudoMap.png?v=2)
+
+### What the Plot Shows
+
+#### X-axis (Pseudotime 0 → 1)
+Represents progression through a biological process (e.g., differentiation).
+
+#### Y-axis (Visual Jitter / Surface)
+Used to vertically separate cells for visualization; **not biologically meaningful**.  
+It allows the density of cells along pseudotime to form a smooth surface.
+
+#### Color Intensity (Density)
+- Brighter regions = higher cell density  
+- Darker regions = lower cell density  
 
 
-## Drawbacks of the plot: 
+### Interpretation of the Observed Pattern
 
-- Selecting first cell as a root: NOT IDEAL  -WORKING ON THAT 
+There is a very strong accumulation of cells early in pseudotime, with the highest density around approximately **0.05–0.1**. This suggests that many cells occupy an early transcriptional state.
 
-## What the Plot Shows
+A secondary, lower-density enrichment appears around approximately **0.2–0.25**, indicating another populated intermediate state.
 
-- **X-axis (Pseudotime 0 → 1)**  
-  Represents progression through a biological process (e.g., differentiation).
+There is a much weaker and more diffuse signal around approximately **0.5**, suggesting relatively few cells reach mid-to-late pseudotime states.
 
-- **Y-axis (visual jitter / surface)**  
-  Used to separate cells vertically for visualization; **not biologically meaningful**.  
-  It allows the density of cells along pseudotime to form a smooth surface.
+After approximately **0.6**, cell density becomes very low, indicating that only a small fraction of cells progress to late pseudotime states.
 
-- **Color intensity (density)**  
-  Brighter regions = higher cell density  
-  Darker regions = lower cell density  
-
-##### Interpretation of the Observed Pattern
-
-There is a strong accumulation around **pseudotime ~0.2**, suggesting:
-
-- Cells spend more time in this transcriptional state  
-- It may represent a **stable intermediate state**  
-- Could indicate a **regulatory checkpoint** along the trajectory  
-
-Lower density at later pseudotime indicates:
-
-- Fewer cells reach late states  
-- Late states may be transient  
-- Only a subset of cells progresses fully  
+Overall, this pattern suggests:
+- A large early population  
+- One or two intermediate states  
+- Progressive depletion of cells along the trajectory  
+- Late states that may be transient or reached by only a subset of cells  
 
 
-### 🚨🚨🚨 Why Nasal vs. Dorsal vs. Ventral  Is Not Shown
+## 🚨🚨🚨 Why Nasal vs. Dorsal vs. Ventral Is Not Shown
 
-- The current scRNA-seq dataset does **not contain spatial coordinates**.  
-- There is **no metadata indicating anatomical position**.  
-- Cells were likely dissociated, so spatial origin is lost.  
+The current scRNA-seq dataset does **not** contain spatial coordinates.  
+There is **no metadata indicating anatomical position**.  
+Cells were likely dissociated prior to sequencing, so spatial origin is not preserved.
 
 Without:
+- Pre-labeled regional metadata  
+- Spatial transcriptomics data  
+- Computational mapping using region-specific marker genes  
 
-- Pre-labeled region information, or  
-- Spatial transcriptomics data, or  
-- Computational mapping using known marker genes  
+Anatomical distinctions such as nasal, dorsal, or ventral cannot be inferred from this plot alone.
+
 
 
 
