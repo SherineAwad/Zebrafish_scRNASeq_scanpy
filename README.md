@@ -681,6 +681,10 @@ In short:
 ![](figures/pseudomap_surface_RGC_PseudoMap.png?v=1)
 
 
+## Drawbacks of the plot: 
+
+- Selecting first cell as a root: NOT IDEAL  -WORKING ON THAT 
+
 ## What the Plot Shows
 
 - **X-axis (Pseudotime 0 → 1)**  
@@ -709,7 +713,7 @@ Lower density at later pseudotime indicates:
 - Only a subset of cells progresses fully  
 
 
-#### Why Nasal vs. Dorsal vs. Ventral  Is Not Shown
+### 🚨🚨🚨 Why Nasal vs. Dorsal vs. Ventral  Is Not Shown
 
 - The current scRNA-seq dataset does **not contain spatial coordinates**.  
 - There is **no metadata indicating anatomical position**.  
