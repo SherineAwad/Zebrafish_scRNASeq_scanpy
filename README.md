@@ -756,6 +756,68 @@ Its purpose is to:
 - Only provides **relative, inferred positions** along the axes, not absolute anatomical coordinates.
 
 
+## Logistic Regression Classifier 
+
+**Conceptually:**
+
+- **Input:** Each cell is represented by its gene expression profile (many genes per cell).
+- **Training data:** **Control RGCs only** (unlesioned, healthy baseline).
+- **Goal:** Measure how **Control-like** each cell is, rather than explicitly classifying conditions.
+- **Approach (one-class model):**
+  - Learns the **normal expression manifold of Control RGCs**.
+  - Does **not** use LD or NMDA cells during training.
+  - Assigns a **fidelity score** to every cell based on how well it fits the Control distribution.
+
+This is a **novelty / normality detection** problem, not a binary classification problem.
+
+
+### How the model works
+
+- The model learns the **structure and variability of Control cells only**.
+- For each cell (Control, LD, or NMDA), it computes a **decision score**:
+  - **High score** → cell lies close to the Control expression manifold.
+  - **Low score** → cell deviates from Control (lesioned / abnormal).
+- Scores are normalized to **0–1** for visualization:
+  - **1 = highly Control-like**
+  - **0 = strongly non-Control-like**
+
+Geometrically, you can think of this as learning a **boundary around Control cells in high-dimensional gene-expression space**, rather than drawing a line between two classes.
+
+
+### RGC example: Fidelity score  
+### 🚨🚨 Trained on Control only (LD/NMDA never seen during training)
+
+![](figures/violin_fidelity_RGC.png?v=2)
+
+<img src="figures/umap_conditions_RGC.png?v=2" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=2" width="30%" />
+
+#### What the Classifier Tests
+
+- The classifier tests **transcriptional similarity to Control**.  
+- If **fidelity is high**, the cell is **very similar to Control**.  
+- If **fidelity is low**, the cell is **transcriptionally different from Control**.  
+
+#### What the Output Shows
+
+- **Control:** mostly high fidelity → strongly Control-like  
+- **LD:** mixed fidelity → some cells similar, some deviating  
+- **NMDA:** mostly low fidelity → largely deviating from Control  
+
+# Confusion Matrices Based on Fidelity Scores
+## Calculated by split_classifier 
+
+### Control vs LD
+|           | Pred Control | Pred LD |
+|-----------|-------------|---------|
+| True Ctrl | 49          | 108     |
+| True LD   | 1085        | 3214    |
+
+### Control vs NMDA
+|           | Pred Control | Pred NMDA |
+|-----------|-------------|-----------|
+| True Ctrl | 162         | 294       |
+| True NMDA | 756         | 3543      |
+
 
 ## Pearson correlation 
 

@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-# classifier.py
-# FULL FIXED + plots variation for homogeneous subsets
-# Arguments / classifier / plotting logic unchanged
+# classifier_control_only_oneclass.py
+# TRUE control-only training using One-Class SVM
 
 import argparse
 import scanpy as sc
 import numpy as np
-from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+from sklearn.svm import OneClassSVM
 import matplotlib.pyplot as plt
 
 def main():
@@ -16,6 +15,7 @@ def main():
     parser.add_argument("--h5ad", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--hvg_genes", type=int, default=2000)
+    parser.add_argument("--suffix", default="")
     args = parser.parse_args()
 
     # ----------------------------
@@ -24,110 +24,121 @@ def main():
     adata = sc.read_h5ad(args.h5ad)
 
     # ----------------------------
-    # Keep only Control / LD / NMDA
+    # Subset RGC assumed already done upstream
     # ----------------------------
-    adata = adata[adata.obs["renamed_samples"].isin(["Control","LD","NMDA"])].copy()
+    train_adata = adata[adata.obs["renamed_samples"] == "Control"].copy()
+    test_adata = adata[adata.obs["renamed_samples"].isin(["LD", "NMDA"])].copy()
+
+    if train_adata.n_obs < 10:
+        raise RuntimeError("Not enough Control cells to train.")
 
     # ----------------------------
-    # Labels: Control=1, LD/NMDA=0
+    # Remove zero-variance genes (based on Control)
     # ----------------------------
-    y = adata.obs["renamed_samples"].apply(lambda x: 1 if x=="Control" else 0).values
-    if len(np.unique(y)) != 2:
-        raise RuntimeError("Classifier needs both Control and LD/NMDA cells")
+    Xc = train_adata.X.toarray() if not isinstance(train_adata.X, np.ndarray) else train_adata.X
+    gene_var = np.var(Xc, axis=0)
+    keep = gene_var > 0
+
+    train_adata = train_adata[:, keep].copy()
+    test_adata = test_adata[:, keep].copy()
 
     # ----------------------------
-    # Normalize / log1p if needed
+    # HVGs (Control only)
     # ----------------------------
-    log_needed = True
-    if "log1p_total_counts" in adata.obs.columns:
-        try:
-            if 'log1p' in adata.uns and adata.uns['log1p'].get('base', None) is not None:
-                log_needed = False
-        except Exception:
-            log_needed = True
-
-    if log_needed:
-        sc.pp.normalize_total(adata, target_sum=1e4)
-        sc.pp.log1p(adata)
-
-    # ----------------------------
-    # HVG: remove genes with zero variance
-    # ----------------------------
-    X_dense = adata.X.toarray() if not isinstance(adata.X, np.ndarray) else adata.X
-    gene_var = np.var(X_dense, axis=0)
-    nonzero_var_idx = gene_var > 0
-
-    if nonzero_var_idx.sum() == 0:
-        hvgs = np.arange(adata.n_vars)
-    else:
-        adata = adata[:, nonzero_var_idx].copy()
-        hvg_n = min(args.hvg_genes, adata.n_vars)
-        sc.pp.highly_variable_genes(adata, n_top_genes=hvg_n, flavor="seurat", subset=False)
-        hvgs = adata.var["highly_variable"].values
+    hvg_n = min(args.hvg_genes, train_adata.n_vars)
+    try:
+        sc.pp.highly_variable_genes(
+            train_adata,
+            n_top_genes=hvg_n,
+            flavor="seurat",
+            subset=False
+        )
+        hvgs = train_adata.var["highly_variable"].values
+        if hvgs.sum() == 0:
+            hvgs[:] = True
+    except Exception:
+        hvgs = np.ones(train_adata.n_vars, dtype=bool)
 
     # ----------------------------
-    # Prepare X and fix NaN/inf
+    # Prepare matrices
     # ----------------------------
-    X = adata.X[:, hvgs]
-    if not isinstance(X, np.ndarray):
-        X = X.toarray()
+    X_train = train_adata.X[:, hvgs]
+    X_test = test_adata.X[:, hvgs]
 
-    X = np.nan_to_num(X, nan=0.0, posinf=1e6, neginf=-1e6)
+    if not isinstance(X_train, np.ndarray):
+        X_train = X_train.toarray()
+    if not isinstance(X_test, np.ndarray):
+        X_test = X_test.toarray()
+
+    X_train = np.nan_to_num(X_train)
+    X_test = np.nan_to_num(X_test)
 
     # ----------------------------
-    # Classifier
+    # One-class model
     # ----------------------------
-    clf = Pipeline([
-        ("scaler", StandardScaler(with_mean=False)),
-        ("lr", LogisticRegression(max_iter=2000, solver="lbfgs"))
+    model = Pipeline([
+        ("scaler", StandardScaler()),
+        ("ocsvm", OneClassSVM(kernel="rbf", nu=0.05, gamma="scale"))
     ])
-    clf.fit(X, y)
+
+    model.fit(X_train)
 
     # ----------------------------
-    # Fidelity score
+    # Fidelity scores
     # ----------------------------
-    fidelity = clf.predict_proba(X)[:, 1]
-    adata.obs["fidelity_score"] = fidelity
+    f_train = model.decision_function(X_train)
+    f_test = model.decision_function(X_test)
+
+    f_all = np.concatenate([f_train, f_test])
+    f_all = (f_all - f_all.min()) / (f_all.max() - f_all.min() + 1e-9)
+
+    train_adata.obs["fidelity_score"] = f_all[:len(f_train)]
+    test_adata.obs["fidelity_score"] = f_all[len(f_train):]
 
     # ----------------------------
-    # Add slight jitter for plotting if all identical
+    # Combine for plotting
     # ----------------------------
-    if np.all(fidelity == fidelity[0]):
-        jitter = np.random.normal(0, 0.01, size=fidelity.shape)
-        adata.obs["fidelity_score_plot"] = np.clip(fidelity + jitter, 0, 1)
-    else:
-        adata.obs["fidelity_score_plot"] = fidelity
+    adata_pred = train_adata.concatenate(test_adata, index_unique=None)
 
     # ----------------------------
-    # UMAP if missing
+    # UMAP
     # ----------------------------
-    if "X_umap" not in adata.obsm:
-        sc.pp.neighbors(adata)
-        sc.tl.umap(adata)
+    if "X_umap" not in adata_pred.obsm:
+        sc.pp.neighbors(adata_pred)
+        sc.tl.umap(adata_pred)
 
-    # ----------------------------
-    # Plots
-    # ----------------------------
-    # UMAP colored by fidelity (with jitter for visualization)
-    sc.pl.umap(adata, color="fidelity_score_plot", cmap="viridis", vmin=0, vmax=1, show=False)
-    plt.savefig("umap_fidelity.png", dpi=300)
+    suffix = f"_{args.suffix}" if args.suffix else ""
+
+    sc.pl.umap(
+        adata_pred,
+        color="fidelity_score",
+        cmap="viridis",
+        vmin=0,
+        vmax=1,
+        show=False
+    )
+    plt.savefig(f"umap_fidelity{suffix}.png", dpi=300)
     plt.close()
 
-    # UMAP colored by sample
-    sc.pl.umap(adata, color="renamed_samples", show=False)
-    plt.savefig("umap_conditions.png", dpi=300)
+    sc.pl.umap(
+        adata_pred,
+        color="renamed_samples",
+        show=False
+    )
+    plt.savefig(f"umap_conditions{suffix}.png", dpi=300, bbox_inches="tight")
     plt.close()
 
-    # Violin plot
-    sc.pl.violin(adata, keys="fidelity_score_plot", groupby="renamed_samples",
-                 stripplot=False, jitter=False, show=False)
-    plt.savefig("violin_fidelity.png", dpi=300)
+    sc.pl.violin(
+        adata_pred,
+        keys="fidelity_score",
+        groupby="renamed_samples",
+        stripplot=False,
+        show=False
+    )
+    plt.savefig(f"violin_fidelity{suffix}.png", dpi=300)
     plt.close()
 
-    # ----------------------------
-    # Save updated h5ad
-    # ----------------------------
-    adata.write(args.output)
+    adata_pred.write(args.output)
 
 if __name__ == "__main__":
     main()
