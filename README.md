@@ -713,7 +713,7 @@ Overall, this pattern suggests:
 
 ## Pseudo-Spatial Surface Map Using Marker Genes
 
-![](figures/figures/pseudo_surface_RGC_Spatial.png?v=1) 
+![](figures/pseudo_surface_RGC_Spatial.png?v=1) 
 
 This plot shows a **pseudo-spatial distribution of cells** using known marker genes for specific anatomical axes.  
 
