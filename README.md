@@ -787,9 +787,9 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ### RGC example: Fidelity score  
 ### 🚨🚨 Trained on Control only (LD/NMDA never seen during training)
 
-![](figures/violin_fidelity_RGC.png?v=2)
+![](figures/violin_fidelity_RGC.png?v=3)
 
-<img src="figures/umap_conditions_RGC.png?v=2" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=2" width="30%" />
+<img src="figures/umap_conditions_RGC.png?v=3" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=3" width="30%" />
 
 #### What the Classifier Tests
 
@@ -804,7 +804,6 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 - **NMDA:** mostly low fidelity → largely deviating from Control  
 
 # Confusion Matrices Based on Fidelity Scores
-## Calculated by split_classifier 
 
 ### Control vs LD
 |           | Pred Control | Pred LD |
