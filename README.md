@@ -756,7 +756,7 @@ Its purpose is to:
 - Only provides **relative, inferred positions** along the axes, not absolute anatomical coordinates.
 
 
-## Logistic Regression Classifier 
+## One-Class Support Vector Machine (SVM) Control Fidelity Model  
 
 **Conceptually:**
 
