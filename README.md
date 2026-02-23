@@ -783,9 +783,23 @@ This is a **novelty / normality detection** problem, not a binary classification
 
 Geometrically, you can think of this as learning a **boundary around Control cells in high-dimensional gene-expression space**, rather than drawing a line between two classes.
 
+## 🚨🚨 Why SVM and not Logistic regression 
+
+- **SVM vs Logistic Regression:**  
+  - Logistic regression draws **one straight line** between two labeled classes — it **needs examples from both classes to learn**, so it **cannot be used if the goal is to measure deviation from Control without labeling LD or NMDA**.  
+  - One-Class SVM **keeps drawing flexible boundaries** (lines or surfaces) around the Control data to capture its full shape and variation — it **learns the normal pattern of Control cells** and does not require other classes.  
+
+- **Why SVM is better when training on Control only:**  
+  - It **learns the normal distribution of Control cells**, capturing the natural variation among healthy cells.  
+  - Assigns a **fidelity score** showing how Control-like each cell is.  
+  - Automatically flags **any unknown or abnormal cells** (LD/NMDA) as deviations, without needing labels for them.  
+
+- **Why training on Control only is better:**  
+  - The goal is to **measure deviation from normal**, so the model should **only learn what “normal” looks like**.  
+  - Including LD or NMDA in training would **blur the boundary**, because the model would start treating abnormal patterns as normal.  
+  - By training only on Control, the SVM **keeps the boundary tight around healthy cells**, ensuring fidelity scores are meaningful and deviations are accurately detected.
 
 ### RGC example: Fidelity score  
-### 🚨🚨 Trained on Control only (LD/NMDA never seen during training)
 
 ![](figures/violin_fidelity_RGC.png?v=4)
 
@@ -817,6 +831,22 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 | True Ctrl | 162         | 294       |
 | True NMDA | 756         | 3543      |
 
+
+## Conclusion 
+
+1. **Control cells (true Control):**  
+   - Only a minority of Control cells are predicted as Control-like (e.g., 49/157 ≈ 25%), meaning the SVM boundary captures **the core of the Control distribution**.  
+   - The majority are predicted as non-Control, reflecting **natural variability** or the **conservative boundary** of the model.  
+   - **Interpretation:** The model is sensitive and prioritizes detecting deviations, so even some healthy cells appear outside the strict Control boundary.
+
+2. **LD/NMDA cells (true non-Control):**  
+   - Most non-Control cells fall outside the Control boundary and are correctly predicted as non-Control.  
+   - A smaller fraction overlaps with the Control-like region, indicating some **partial similarity to normal cells**.  
+
+3. **Takeaway:**  
+   - The SVM captures a **graded spectrum of deviation from Control**, rather than a strict binary classification.  
+   - Both natural variability in Control cells and partial similarity in non-Control cells contribute to overlap in predictions.  
+   - Fidelity scores provide a **continuous measure of how far each cell deviates from the healthy baseline**.
 
 ## Pearson correlation 
 
