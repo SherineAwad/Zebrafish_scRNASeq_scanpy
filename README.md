@@ -805,19 +805,29 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 <img src="figures/umap_conditions_RGC.png?v=4" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=4" width="30%" />
 
-#### What the Classifier Tests
 
-- The classifier tests **transcriptional similarity to Control**.  
-- If **fidelity is high**, the cell is **very similar to Control**.  
-- If **fidelity is low**, the cell is **transcriptionally different from Control**.  
+## Comments on fidelity scores
 
-#### What the Output Shows
+- **Control cells:**  
+  - Ideally should be near 1, but due to natural variation, many fall around ~0.6.  
+  - This explains why a **large fraction of Control cells is predicted as non-Control** in the confusion matrix — the SVM boundary is conservative.  
 
-- **Control:** mostly high fidelity → strongly Control-like  
-- **LD:** mixed fidelity → some cells similar, some deviating  
-- **NMDA:** mostly low fidelity → largely deviating from Control  
+- **LD / NMDA cells:**  
+  - Their **mean fidelity is also around 0.6**, but their distribution is **shifted lower** and broader than Control.  
+  - A smaller fraction still overlaps with Control, explaining why some LD/NMDA cells are predicted as Control-like.  
 
-# Confusion Matrices Based on Fidelity Scores
+### Key Conceptual Takeaway
+
+- **Fidelity scores reflect relative deviation from Control**, not absolute 0–1 perfection.  
+- Even if the **mean scores of LD/NMDA are similar to Control (~0.6)**, their **distribution differs**, producing the patterns we see in the confusion matrices:  
+
+  - **Control cells:** moderate spread → some false negatives  
+  - **LD/NMDA:** more cells below threshold → most correctly detected as deviating  
+
+- This reinforces the **graded nature of the SVM output** — not binary, but a spectrum of “Control-likeness.”
+
+
+## Confusion Matrices Based on Fidelity Scores
 
 ### Control vs LD
 |           | Pred Control | Pred LD |
@@ -832,7 +842,7 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 | True NMDA | 756         | 3543      |
 
 
-## Conclusion 
+## Comments on confusion matrix 
 
 1. **Control cells (true Control):**  
    - Only a minority of Control cells are predicted as Control-like (e.g., 49/157 ≈ 25%), meaning the SVM boundary captures **the core of the Control distribution**.  
