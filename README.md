@@ -787,9 +787,9 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ### RGC example: Fidelity score  
 ### 🚨🚨 Trained on Control only (LD/NMDA never seen during training)
 
-![](figures/violin_fidelity_RGC.png?v=3)
+![](figures/violin_fidelity_RGC.png?v=4)
 
-<img src="figures/umap_conditions_RGC.png?v=3" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=3" width="30%" />
+<img src="figures/umap_conditions_RGC.png?v=4" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=4" width="30%" />
 
 #### What the Classifier Tests
 
