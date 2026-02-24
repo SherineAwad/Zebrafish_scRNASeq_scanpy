@@ -563,7 +563,6 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 
 [LD vs NMDA](https://docs.google.com/spreadsheets/d/12wnZWrxvj-Ts8gecPBzdErmyBCX2iuUPCs88YLBBqA0/edit?usp=sharing)
 
-
 ### Dotplots 
 #### RGC Control vs NMDA 
 ![](figures/RGC_dge_Control_NMDA_at50.png?v=2)
@@ -574,6 +573,53 @@ The following UMAP plots illustrate the clustering of subtypes within each major
 #### RGC LD vs NMDA 
 ![](figures/RGC_dge_LD_NMDA_at50.png?v=2)
 
+### RGC top 50 per subtype 
+[RGC per subtype](https://docs.google.com/spreadsheets/d/1ujyI7ioshs5zUGFKHRWR6eGMiGVT_GJ8Zm7Fe2aqkUc/edit?usp=sharing)
+
+### RGC per subtype dotplot top marker 
+![](figures/RGC_dge_at50.png?v=2)
+
+### RGC cellratio and counts per subtype 
+| cluster | cell_count | cell_ratio |
+|---------|------------|-----------|
+| 0       | 404        | 0.088210  |
+| 1       | 326        | 0.071179  |
+| 2       | 306        | 0.066812  |
+| 3       | 223        | 0.048690  |
+| 4       | 208        | 0.045415  |
+| 5       | 197        | 0.043013  |
+| 6       | 193        | 0.042140  |
+| 7       | 187        | 0.040830  |
+| 8       | 154        | 0.033624  |
+| 9       | 128        | 0.027948  |
+| 10      | 123        | 0.026856  |
+| 11      | 123        | 0.026856  |
+| 12      | 119        | 0.025983  |
+| 13      | 118        | 0.025764  |
+| 14      | 116        | 0.025328  |
+| 15      | 114        | 0.024891  |
+| 16      | 110        | 0.024017  |
+| 17      | 105        | 0.022926  |
+| 18      | 103        | 0.022489  |
+| 19      | 94         | 0.020524  |
+| 20      | 93         | 0.020306  |
+| 21      | 90         | 0.019651  |
+| 22      | 87         | 0.018996  |
+| 23      | 78         | 0.017031  |
+| 24      | 75         | 0.016376  |
+| 25      | 73         | 0.015939  |
+| 26      | 73         | 0.015939  |
+| 27      | 66         | 0.014410  |
+| 28      | 65         | 0.014192  |
+| 29      | 65         | 0.014192  |
+| 30      | 64         | 0.013974  |
+| 31      | 52         | 0.011354  |
+| 32      | 48         | 0.010480  |
+| 33      | 47         | 0.010262  |
+| 34      | 45         | 0.009825  |
+| 35      | 44         | 0.009607  |
+| 36      | 32         | 0.006987  |
+| 37      | 32         | 0.006987  |
 
 
 ### Rod top 50 not per cluster 
