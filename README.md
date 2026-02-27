@@ -849,10 +849,9 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ### RGC example: Fidelity score  
 
-![](figures/violin_fidelity_RGC.png?v=4)
+![](umap_all_conditions_RGC_split.png?v=1)
 
-<img src="figures/umap_conditions_RGC.png?v=4" width="30%" /> <img src="figures/umap_fidelity_RGC.png?v=4" width="30%" />
-
+![](violin_fidelity_all_groups_RGC_split.png?v=1)
 
 ## Comments on fidelity scores
 
@@ -875,36 +874,13 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 - This reinforces the **graded nature of the SVM output** — not binary, but a spectrum of “Control-likeness.”
 
 
-## Confusion Matrices Based on Fidelity Scores
 
-### Control vs LD
-|           | Pred Control | Pred LD |
-|-----------|-------------|---------|
-| True Ctrl | 49          | 108     |
-| True LD   | 1085        | 3214    |
-
-### Control vs NMDA
-|           | Pred Control | Pred NMDA |
-|-----------|-------------|-----------|
-| True Ctrl | 162         | 294       |
-| True NMDA | 756         | 3543      |
+## SVM classifier Rod example: 
 
 
-## Comments on confusion matrix 
+![](umap_all_conditions_Rod_split.png?v=1) 
 
-1. **Control cells (true Control):**  
-   - Only a minority of Control cells are predicted as Control-like (e.g., 49/157 ≈ 25%), meaning the SVM boundary captures **the core of the Control distribution**.  
-   - The majority are predicted as non-Control, reflecting **natural variability** or the **conservative boundary** of the model.  
-   - **Interpretation:** The model is sensitive and prioritizes detecting deviations, so even some healthy cells appear outside the strict Control boundary.
-
-2. **LD/NMDA cells (true non-Control):**  
-   - Most non-Control cells fall outside the Control boundary and are correctly predicted as non-Control.  
-   - A smaller fraction overlaps with the Control-like region, indicating some **partial similarity to normal cells**.  
-
-3. **Takeaway:**  
-   - The SVM captures a **graded spectrum of deviation from Control**, rather than a strict binary classification.  
-   - Both natural variability in Control cells and partial similarity in non-Control cells contribute to overlap in predictions.  
-   - Fidelity scores provide a **continuous measure of how far each cell deviates from the healthy baseline**.
+![](violin_fidelity_all_groups_Rod_split.png?v=1)
 
 ## Pearson correlation 
 
