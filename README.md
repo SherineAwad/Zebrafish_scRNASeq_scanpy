@@ -882,6 +882,13 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ![](violin_fidelity_all_groups_Rod_split.png?v=1)
 
+## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
+
+
+![](violin_fidelity_all_groups_zebrafish_split.png?v=1)
+
+![](umap_all_conditions_zebrafish_split.png?v=1)
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
