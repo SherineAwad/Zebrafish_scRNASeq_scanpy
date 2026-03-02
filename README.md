@@ -889,6 +889,54 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ![](umap_all_conditions_zebrafish_split.png?v=1)
 
+
+### How this script is different:
+Here you go — the **Markdown explanation in a code block**:
+
+
+It internally **loops over all cell types**. For each cell type, it performs the following steps:
+
+1. **Subset that cell type**
+   - Extracts only the cells belonging to the current cell type from the full dataset.
+
+2. **Train a separate model (scaler + SVM) on Control of that cell type**
+   - Scaling (mean=0, variance=1) is computed using only Control cells of that cell type.
+   - One-Class SVM is trained only on these Control cells.
+
+3. **Score treated cells of that cell type**
+   - LD or NMDA cells of the same cell type are scored relative to their Control model.
+
+4. **Write results back**
+   - The fidelity scores are inserted back into the global dataset, preserving separation between cell types.
+
+---
+
+#### Why this approach is good
+
+- **Respects cell type biology**
+  - Different cell types have different gene expression profiles. A single model across all cell types would produce meaningless scores.
+
+- **Correct scaling and HVG selection**
+  - Each cell type has its own variance structure and highly variable genes. Modeling per cell type ensures HVGs and scaling are accurate.
+
+- **Independent, interpretable scores**
+  - Fidelity scores always mean: *“similar to Control of the same cell type”*.
+
+- **Error containment**
+  - If one cell type fails or has too few cells, the other cell types are unaffected.
+
+---
+
+#### Why **not** to run one model on all cell types
+
+- Different cell types would be **mixed in scaling and HVG selection**, distorting the feature space.
+- One SVM would learn a **mixture of distributions**, which is biologically meaningless.
+- Fidelity scores would not reflect **cell-type-specific similarity**, making downstream analysis invalid.
+
+> **Bottom line:** Looping per cell type ensures biologically accurate, interpretable, and robust results.
+```
+
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
