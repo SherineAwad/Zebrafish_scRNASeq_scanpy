@@ -940,8 +940,6 @@ It internally **loops over all cell types**. For each cell type, it performs the
 - Fidelity scores would not reflect **cell-type-specific similarity**, making downstream analysis invalid.
 
 > **Bottom line:** Looping per cell type ensures biologically accurate, interpretable, and robust results.
-```
-
 
 ## Cosine Similarity 
 
@@ -961,10 +959,6 @@ Both approaches are valid — but they tell **different stories**, and that choi
 #### Citation 
 
 Watson, E. R., Mora, A., Taherian Fard, A., & Mar, J. C. (2022). How does the structure of data impact cell–cell similarity? Evaluating how structural properties influence the performance of proximity metrics in single cell RNA-seq data. Briefings in bioinformatics, 23(6), bbac387.
-
-
-
-
 
 
 ## Pearson correlation 
