@@ -943,6 +943,30 @@ It internally **loops over all cell types**. For each cell type, it performs the
 ```
 
 
+## Cosine Similarity 
+
+
+> **Cosine similarity is not invariant to gene selection.  
+> HVG-based analyses answer a different biological question than all-gene analyses.**
+
+Both approaches are valid — but they tell **different stories**, and that choice must be stated explicitly.
+
+
+![Cosine Ctrl vs LD](Cosine_Ctrl_LD.png?v=1)
+
+![Cosine Ctrl vs NMDA](Cosine_Ctrl_NMDA.png?v=1)
+
+![Cosine LD vs NMDA](Cosine_LD_NMDA.png?v=1)
+
+#### Citation 
+
+Watson, E. R., Mora, A., Taherian Fard, A., & Mar, J. C. (2022). How does the structure of data impact cell–cell similarity? Evaluating how structural properties influence the performance of proximity metrics in single cell RNA-seq data. Briefings in bioinformatics, 23(6), bbac387.
+
+
+
+
+
+
 ## Pearson correlation 
 
 - The script first calculates the average expression of each gene within each cell type, separately for the two conditions you’re comparing. So for every gene, you have an average expression value for each cell type under condition 1 and condition 2.
