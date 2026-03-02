@@ -761,7 +761,7 @@ Overall, this pattern suggests:
 
 ## Pseudo-Spatial Surface Map Using Marker Genes
 
-![](figures/pseudo_surface_RGC_Spatial.png?v=1) 
+![](figures/pseudo_surface_RGC_Spatial.png?v=2) 
 
 This plot shows a **pseudo-spatial distribution of cells** using known marker genes for specific anatomical axes.  
 
@@ -773,6 +773,12 @@ Its purpose is to:
 
 > Note: This is an **inferred pseudo-spatial map** based on gene expression patterns; it does not represent actual measured cell positions.
 
+##### Used the following spatial Markers
+
+  --nasal_genes Rbpms Pou4f1 neurolin brn3b isl1 atoh7 foxg1a dmbx1 lhx2 ebf2 eomesa barhl2 
+  --temporal_genes Pou4f2 Thy1 ephb4a ephb4b cox1 cyp26a1 epha4b nr2f2 nr2f6b bmp4 
+  --ventral_genes Tubb3 Nefl barhl1a cxcr4b vsx2 pitx2 bmp7 shh ptc1 gli1 vax2 tbx5 
+  --dorsal_genes Sncg Gap43 epha7a epha7b wnt2ba wnt4a lhx9 nr2e1 tcf7l2 pax6a pax6b
 
 #### What the Plot Shows
 
