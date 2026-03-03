@@ -902,10 +902,9 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
 
 
-![](violin_fidelity_all_groups_zebrafish_split.png?v=2)
+![](violin_fidelity_all_groups_zebrafish_split.png?v=3)
 
-![](umap_all_conditions_zebrafish_split.png?v=2)
-
+![](umap_all_conditions_zebrafish_split.png?v=3)
 
 
 ### How this script is different:
