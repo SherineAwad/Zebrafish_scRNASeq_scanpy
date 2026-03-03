@@ -939,8 +939,6 @@ It internally **loops over all cell types**. For each cell type, it performs the
 
 ## Isolation Forest instead of SVM 
 
-# Isolation Forest Steps
-
 1. **Train on Control cells only**
    - Build hundreds of random trees
    - Each tree: pick random gene → random threshold → split → repeat until single cells
