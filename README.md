@@ -883,8 +883,7 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ![](violin_fidelity_all_groups_HC_split.png?v=1)
 
 
-## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
-
+## SVM classifier for all samples 
 
 ![](violin_fidelity_all_groups_zebrafish_split.png?v=3)
 
@@ -988,6 +987,11 @@ It internally **loops over all cell types**. For each cell type, it performs the
 
 ![](violin_fidelity_all_groups_HC_IF.png?v=1)
 
+
+## SVM classifier for all samples 
+
+
+![](violin_fidelity_all_groups_zebrafish_IF.png?v=1)
 
 ## Cosine Similarity 
 
