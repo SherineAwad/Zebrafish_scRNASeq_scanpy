@@ -934,6 +934,20 @@ It internally **loops over all cell types**. For each cell type, it performs the
 > **Bottom line:** Looping per cell type ensures biologically accurate, interpretable, and robust results.
 
 
+## Why SVM Parameters Are Tricky
+
+#### Gamma
+Controls how complex the Control boundary is:
+- Guess wrong = either **too simple** (miss real differences) or **too complex** (fit noise)
+
+#### Nu
+Controls expected % of outliers in Control:
+- Guess wrong = either **include weird Controls** or **exclude real Controls**
+
+#### The Problem
+You have to guess BOTH correctly without knowing your data's true structure. Isolation Forest avoids this guessing game.
+
+
 ## Isolation Forest instead of SVM 
 
 1. **Train on Control cells only**
@@ -959,39 +973,38 @@ It internally **loops over all cell types**. For each cell type, it performs the
 #### Isolation Forest Rod example 
 
 
-![](violin_fidelity_all_groups_Rod_IF.png?v=1)
+![](violin_fidelity_all_groups_Rod_IF.png?v=2)
 
 #### Isolation Forest RGC example 
 
-
-![](violin_fidelity_all_groups_RGC_IF.png?v=1)
+![](violin_fidelity_all_groups_RGC_IF.png?v=2)
 
 
 #### Isolation Forest BC example
 
 
-![](violin_fidelity_all_groups_BC_IF.png?v=1)
+![](violin_fidelity_all_groups_BC_IF.png?v=2)
 
 
 #### Isolation Forest Cones example 
 
 
-![](violin_fidelity_all_groups_Cones_IF.png?v=1)
+![](violin_fidelity_all_groups_Cones_IF.png?v=2)
 
 #### Isolation Forest MG example 
 
 
-![](violin_fidelity_all_groups_MG_IF.png?v=1)
+![](violin_fidelity_all_groups_MG_IF.png?v=2)
 
 #### Isolation Forest HC example 
 
-![](violin_fidelity_all_groups_HC_IF.png?v=1)
+![](violin_fidelity_all_groups_HC_IF.png?v=2)
 
 
 #### Isolation Forest classifier for all samples 
 
 
-![](violin_fidelity_all_groups_zebrafish_IF.png?v=1)
+![](violin_fidelity_all_groups_zebrafish_IF.png?v=2)
 
 ## Cosine Similarity 
 
