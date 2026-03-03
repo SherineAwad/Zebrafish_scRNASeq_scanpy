@@ -988,7 +988,7 @@ It internally **loops over all cell types**. For each cell type, it performs the
 ![](violin_fidelity_all_groups_HC_IF.png?v=1)
 
 
-## SVM classifier for all samples 
+#### Isolation Forest classifier for all samples 
 
 
 ![](violin_fidelity_all_groups_zebrafish_IF.png?v=1)
