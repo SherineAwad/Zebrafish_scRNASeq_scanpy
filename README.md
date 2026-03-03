@@ -952,6 +952,47 @@ It internally **loops over all cell types**. For each cell type, it performs the
 
 > **Bottom line:** Looping per cell type ensures biologically accurate, interpretable, and robust results.
 
+
+### Trying out Isolation Forest instead of SVM 
+
+#### Rod Example 
+
+![](umap_all_conditions_Rod_IF.png?v=1)
+
+![](violin_fidelity_all_groups_Rod_IF.png?v=1)
+
+#### RGC Example 
+
+![](umap_all_conditions_RGC_IF.png?v=1)
+
+![](violin_fidelity_all_groups_RGC_IF.png?v=1)
+
+
+#### BC Example
+
+![](umap_all_conditions_BC_IF.png?v=1)
+
+![](violin_fidelity_all_groups_BC_IF.png?v=1)
+
+
+#### Cones Example 
+
+![](umap_all_conditions_Cones_IF.png?v=1)
+
+![](violin_fidelity_all_groups_Cones_IF.png?v=1)
+
+#### MG Example 
+
+![](umap_all_conditions_MG_IF.png?v=1)
+
+![](violin_fidelity_all_groups_MG_IF.png?v=1)
+
+#### HC Example 
+![](umap_all_conditions_HC_IF.png?v=1)
+
+![](violin_fidelity_all_groups_HC_IF.png?v=1)
+
+
 ## Cosine Similarity 
 
 
