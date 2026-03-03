@@ -855,28 +855,49 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ### RGC example: Fidelity score  
 
-![](umap_all_conditions_RGC_split.png?v=2) 
+![](umap_all_conditions_RGC_split.png?v=3) 
 
-![](violin_fidelity_all_groups_RGC_split.png?v=2)
+![](violin_fidelity_all_groups_RGC_split.png?v=3)
 
-## Comments on fidelity scores
-
-- **Control cells:**  
-  - Ideally should be near 1
-  - This explains why a **large fraction of Control cells is predicted as non-Control** in the confusion matrix — the SVM boundary is conservative.  
-
-- **LD / NMDA cells:**  
-  - Fidelity scores around **0.6** reflect **partial similarity to Control**.
-  - Values less than 1 indicate that these cells **deviate from Control**, but the score is relative:
-  - The SVM decision function measures how much a cell’s expression pattern overlaps with the Control distribution.
-  - Lower than 1 simply means **the perturbation has altered expression**, while still sharing some Control-like features.
-
-## SVM classifier Rod example: 
+## SVM classifier Rod example
 
 
-![](umap_all_conditions_Rod_split.png?v=2) 
+![](umap_all_conditions_Rod_split.png?v=3) 
 
-![](violin_fidelity_all_groups_Rod_split.png?v=2)
+![](violin_fidelity_all_groups_Rod_split.png?v=3)
+
+
+
+## SVM classifier Cones example
+
+
+![](umap_all_conditions_Cones_split.png?v=1)
+
+![](violin_fidelity_all_groups_Cones_split.png?v=1)
+
+
+## SVM classifier BC example
+
+![](umap_all_conditions_BC_split.png?v=1)
+
+![](violin_fidelity_all_groups_BC_split.png?v=1)
+
+
+## SVM classifier MG example
+
+![](umap_all_conditions_MG_split.png?v=1)
+
+![](violin_fidelity_all_groups_MG_split.png?v=1)
+
+
+## SVM classifier HC example
+
+![](umap_all_conditions_HC_split.png?v=1)
+
+![](violin_fidelity_all_groups_HC_split.png?v=1)
+
+
+
 
 ## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
 
@@ -884,6 +905,7 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ![](violin_fidelity_all_groups_zebrafish_split.png?v=2)
 
 ![](umap_all_conditions_zebrafish_split.png?v=2)
+
 
 
 ### How this script is different:

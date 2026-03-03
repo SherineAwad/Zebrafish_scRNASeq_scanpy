@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # split_classifier_full_fixed2.py
-# Fully robust version — handles sparse matrix copy errors, 
-# sets Control fidelity to 1, and fixed violin plot
+# Fully robust version — handles sparse matrix copy errors,
+# corrected Control fidelity (no forced 1), and fixed violin plot
 
 import argparse
 import scanpy as sc
@@ -73,7 +73,7 @@ def run_control_similarity(sub, condition, hvg_n, max_control_cells=3000, random
 
     model = Pipeline([
         ("scaler", StandardScaler()),
-        ("ocsvm", OneClassSVM(kernel="rbf", nu=0.01, gamma="scale"))  # nu reduced
+        ("ocsvm", OneClassSVM(kernel="rbf", nu=0.01, gamma="scale"))
     ])
     model.fit(X_train)
 
@@ -83,8 +83,8 @@ def run_control_similarity(sub, condition, hvg_n, max_control_cells=3000, random
     all_f = np.concatenate([f_train, f_test])
     f_scaled = (all_f - all_f.min()) / (all_f.max() - all_f.min() + 1e-9)
 
-    # Set Control fidelity to 1
-    ctrl.obs[f"fidelity_{condition}"] = 1.0
+    # Assign real scaled SVM scores — no forced 1
+    ctrl.obs[f"fidelity_{condition}"] = f_scaled[:len(f_train)]
     test.obs[f"fidelity_{condition}"] = f_scaled[len(f_train):]
 
     y_true = np.array([1]*len(f_train) + [0]*len(f_test))
@@ -136,7 +136,7 @@ def main():
     # Violin plot
     groups = ["Control", "LD", "NMDA"]
     data = [
-        np.ones(np.sum(adata.obs["renamed_samples"] == "Control")),  # Control line at 1
+        adata.obs.loc[adata.obs["renamed_samples"] == "Control", "fidelity_LD"].dropna().values,
         adata.obs.loc[adata.obs["renamed_samples"] == "LD", "fidelity_LD"].clip(0,1).values,
         adata.obs.loc[adata.obs["renamed_samples"] == "NMDA", "fidelity_NMDA"].clip(0,1).values
     ]
