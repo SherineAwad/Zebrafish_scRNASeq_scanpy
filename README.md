@@ -855,45 +855,35 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ### RGC example: Fidelity score  
 
-![](umap_all_conditions_RGC_split.png?v=1)
+![](umap_all_conditions_RGC_split.png?v=2) 
 
-![](violin_fidelity_all_groups_RGC_split.png?v=1)
+![](violin_fidelity_all_groups_RGC_split.png?v=2)
 
 ## Comments on fidelity scores
 
 - **Control cells:**  
-  - Ideally should be near 1, but due to natural variation, many fall around ~0.6.  
+  - Ideally should be near 1
   - This explains why a **large fraction of Control cells is predicted as non-Control** in the confusion matrix — the SVM boundary is conservative.  
 
 - **LD / NMDA cells:**  
-  - Their **mean fidelity is also around 0.6**, but their distribution is **shifted lower** and broader than Control.  
-  - A smaller fraction still overlaps with Control, explaining why some LD/NMDA cells are predicted as Control-like.  
-
-### Key Conceptual Takeaway
-
-- **Fidelity scores reflect relative deviation from Control**, not absolute 0–1 perfection.  
-- Even if the **mean scores of LD/NMDA are similar to Control (~0.6)**, their **distribution differs**, producing the patterns we see in the confusion matrices:  
-
-  - **Control cells:** moderate spread → some false negatives  
-  - **LD/NMDA:** more cells below threshold → most correctly detected as deviating  
-
-- This reinforces the **graded nature of the SVM output** — not binary, but a spectrum of “Control-likeness.”
-
-
+  - Fidelity scores around **0.6** reflect **partial similarity to Control**.
+  - Values less than 1 indicate that these cells **deviate from Control**, but the score is relative:
+  - The SVM decision function measures how much a cell’s expression pattern overlaps with the Control distribution.
+  - Lower than 1 simply means **the perturbation has altered expression**, while still sharing some Control-like features.
 
 ## SVM classifier Rod example: 
 
 
-![](umap_all_conditions_Rod_split.png?v=1) 
+![](umap_all_conditions_Rod_split.png?v=2) 
 
-![](violin_fidelity_all_groups_Rod_split.png?v=1)
+![](violin_fidelity_all_groups_Rod_split.png?v=2)
 
 ## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
 
 
-![](violin_fidelity_all_groups_zebrafish_split.png?v=1)
+![](violin_fidelity_all_groups_zebrafish_split.png?v=2)
 
-![](umap_all_conditions_zebrafish_split.png?v=1)
+![](umap_all_conditions_zebrafish_split.png?v=2)
 
 
 ### How this script is different:

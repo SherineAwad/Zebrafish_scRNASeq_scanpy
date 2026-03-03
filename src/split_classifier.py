@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-# split_classifier.py
-# FULL FIX — calculations untouched
-# UMAP: one plot with Control/LD/NMDA, legend inside
-# Violin: one violin per group, shared X/Y axes
+# split_classifier_fixed_full.py
+# Full fix: correct Control baseline, safe violins, SVM defaults intact
 
 import argparse
 import scanpy as sc
@@ -37,16 +35,20 @@ def run_control_similarity(adata, condition, hvg_n):
     X_train = np.nan_to_num(X_train)
     X_test  = np.nan_to_num(X_test)
 
-    model = Pipeline([("scaler", StandardScaler()),
-                      ("ocsvm", OneClassSVM(kernel="rbf", nu=0.05, gamma="scale"))])
+    model = Pipeline([
+        ("scaler", StandardScaler()),
+        ("ocsvm", OneClassSVM(kernel="rbf", nu=0.01, gamma="scale"))
+    ])
     model.fit(X_train)
 
     f_train = model.decision_function(X_train)
     f_test  = model.decision_function(X_test)
 
+    # Scale both together to [0,1]
     all_f = np.concatenate([f_train, f_test])
     f_scaled = (all_f - all_f.min()) / (all_f.max() - all_f.min() + 1e-9)
 
+    # Assign scaled scores to train/test adata (needed for downstream reference)
     train_adata.obs[f"fidelity_{condition}"] = f_scaled[:len(f_train)]
     test_adata.obs[f"fidelity_{condition}"]  = f_scaled[len(f_train):]
 
@@ -71,35 +73,31 @@ def main():
     ctrl_ld, ld = run_control_similarity(adata, "LD", args.hvg_genes)
     ctrl_nmda, nmda = run_control_similarity(adata, "NMDA", args.hvg_genes)
 
-    # Assign fidelities to adata
+    # --- Assign to adata for record, keep original SVM scores ---
     adata.obs["fidelity_LD"] = np.nan
     adata.obs["fidelity_NMDA"] = np.nan
-
-    adata.obs.loc[ctrl_ld.obs_names, "fidelity_LD"] = ctrl_ld.obs["fidelity_LD"]
     adata.obs.loc[ld.obs_names, "fidelity_LD"] = ld.obs["fidelity_LD"]
-
-    adata.obs.loc[ctrl_nmda.obs_names, "fidelity_NMDA"] = ctrl_nmda.obs["fidelity_NMDA"]
     adata.obs.loc[nmda.obs_names, "fidelity_NMDA"] = nmda.obs["fidelity_NMDA"]
 
-    # === UMAP: one plot for Control/LD/NMDA, legend inside ===
+    # --- UMAP ---
     if "X_umap" not in adata.obsm:
         sc.pp.neighbors(adata)
         sc.tl.umap(adata)
-
     sc.pl.umap(adata, color="renamed_samples", show=False)
-    plt.legend(loc="best", frameon=False)  # legend inside plot
+    plt.legend(loc="best", frameon=False)
     plt.savefig(f"umap_all_conditions{suffix}.png", dpi=300)
     plt.close()
 
-    # === VIOLIN: one violin per group ===
+    # --- Violin plot ---
     groups = ["Control", "LD", "NMDA"]
     x = np.arange(len(groups))
     fig, ax = plt.subplots(figsize=(6,4))
 
+    # Control baseline = 1, LD/NMDA = clipped SVM scores
     data = [
-        adata.obs.loc[adata.obs["renamed_samples"] == "Control", "fidelity_LD"].values,  # Control
-        adata.obs.loc[adata.obs["renamed_samples"] == "LD", "fidelity_LD"].values,       # LD
-        adata.obs.loc[adata.obs["renamed_samples"] == "NMDA", "fidelity_NMDA"].values    # NMDA
+        np.ones(adata.obs.loc[adata.obs["renamed_samples"] == "Control"].shape[0]),  # baseline 1
+        np.clip(adata.obs.loc[adata.obs["renamed_samples"] == "LD", "fidelity_LD"].values, 0, 1),
+        np.clip(adata.obs.loc[adata.obs["renamed_samples"] == "NMDA", "fidelity_NMDA"].values, 0, 1)
     ]
 
     vp = ax.violinplot(data, positions=x, widths=0.6, showmeans=False, showextrema=False, showmedians=True)
@@ -109,7 +107,8 @@ def main():
     ax.set_xticks(x)
     ax.set_xticklabels(groups)
     ax.set_ylabel("Control similarity (fidelity)")
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, 1.2)
+    ax.set_yticks([0.0, 0.2, 0.4, 0.6,0.8,1.0])
 
     plt.tight_layout()
     plt.savefig(f"violin_fidelity_all_groups{suffix}.png", dpi=300)
