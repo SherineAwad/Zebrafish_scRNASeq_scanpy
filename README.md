@@ -853,7 +853,7 @@ Geometrically, you can think of this as learning a **boundary around Control cel
   - Including LD or NMDA in training would **blur the boundary**, because the model would start treating abnormal patterns as normal.  
   - By training only on Control, the SVM **keeps the boundary tight around healthy cells**, ensuring fidelity scores are meaningful and deviations are accurately detected.
 
-### RGC example: Fidelity score  
+### SVM classifier RGC example
 
 ![](violin_fidelity_all_groups_RGC_split.png?v=3)
 
@@ -881,8 +881,6 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 ## SVM classifier HC example
 
 ![](violin_fidelity_all_groups_HC_split.png?v=1)
-
-
 
 
 ## SVM classifier for all samples (ADJUSTED TO REDUCE MEM)
@@ -959,34 +957,34 @@ It internally **loops over all cell types**. For each cell type, it performs the
 
 
 
-#### Rod Example 
+#### Isolation Forest Rod example 
 
 
 ![](violin_fidelity_all_groups_Rod_IF.png?v=1)
 
-#### RGC Example 
+#### Isolation Forest RGC example 
 
 
 ![](violin_fidelity_all_groups_RGC_IF.png?v=1)
 
 
-#### BC Example
+#### Isolation Forest BC example
 
 
 ![](violin_fidelity_all_groups_BC_IF.png?v=1)
 
 
-#### Cones Example 
+#### Isolation Forest Cones example 
 
 
 ![](violin_fidelity_all_groups_Cones_IF.png?v=1)
 
-#### MG Example 
+#### Isolation Forest MG example 
 
 
 ![](violin_fidelity_all_groups_MG_IF.png?v=1)
 
-#### HC Example 
+#### Isolation Forest HC example 
 
 ![](violin_fidelity_all_groups_HC_IF.png?v=1)
 
