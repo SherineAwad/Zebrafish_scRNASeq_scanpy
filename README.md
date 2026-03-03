@@ -855,14 +855,9 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ### RGC example: Fidelity score  
 
-![](umap_all_conditions_RGC_split.png?v=3) 
-
 ![](violin_fidelity_all_groups_RGC_split.png?v=3)
 
 ## SVM classifier Rod example
-
-
-![](umap_all_conditions_Rod_split.png?v=3) 
 
 ![](violin_fidelity_all_groups_Rod_split.png?v=3)
 
@@ -870,29 +865,20 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 ## SVM classifier Cones example
 
-
-![](umap_all_conditions_Cones_split.png?v=1)
-
 ![](violin_fidelity_all_groups_Cones_split.png?v=1)
 
 
 ## SVM classifier BC example
-
-![](umap_all_conditions_BC_split.png?v=1)
 
 ![](violin_fidelity_all_groups_BC_split.png?v=1)
 
 
 ## SVM classifier MG example
 
-![](umap_all_conditions_MG_split.png?v=1)
-
 ![](violin_fidelity_all_groups_MG_split.png?v=1)
 
 
 ## SVM classifier HC example
-
-![](umap_all_conditions_HC_split.png?v=1)
 
 ![](violin_fidelity_all_groups_HC_split.png?v=1)
 
@@ -903,8 +889,6 @@ Geometrically, you can think of this as learning a **boundary around Control cel
 
 
 ![](violin_fidelity_all_groups_zebrafish_split.png?v=3)
-
-![](umap_all_conditions_zebrafish_split.png?v=3)
 
 
 ### How this script is different:
@@ -953,42 +937,58 @@ It internally **loops over all cell types**. For each cell type, it performs the
 > **Bottom line:** Looping per cell type ensures biologically accurate, interpretable, and robust results.
 
 
-### Trying out Isolation Forest instead of SVM 
+## Isolation Forest instead of SVM 
+
+# Isolation Forest Steps
+
+1. **Train on Control cells only**
+   - Build hundreds of random trees
+   - Each tree: pick random gene → random threshold → split → repeat until single cells
+   - Trees know NOTHING about "Control" vs "anomaly"
+
+2. **Run ALL cells through trained trees**
+   - Control cells (training data)
+   - LD cells
+   - NMDA cells
+
+3. **Measure path length for each cell**
+   - Count how many splits until cell is isolated
+   - Average across all trees
+
+4. **Convert to fidelity score**
+   - Long average path = hard to isolate = looks like Control = HIGH fidelity
+   - Short average path = easy to isolate = different from Control = LOW fidelity
+
+
 
 #### Rod Example 
 
-![](umap_all_conditions_Rod_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_Rod_IF.png?v=1)
 
 #### RGC Example 
 
-![](umap_all_conditions_RGC_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_RGC_IF.png?v=1)
 
 
 #### BC Example
 
-![](umap_all_conditions_BC_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_BC_IF.png?v=1)
 
 
 #### Cones Example 
 
-![](umap_all_conditions_Cones_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_Cones_IF.png?v=1)
 
 #### MG Example 
 
-![](umap_all_conditions_MG_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_MG_IF.png?v=1)
 
 #### HC Example 
-![](umap_all_conditions_HC_IF.png?v=1)
 
 ![](violin_fidelity_all_groups_HC_IF.png?v=1)
 
