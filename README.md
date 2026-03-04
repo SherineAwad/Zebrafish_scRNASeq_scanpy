@@ -973,33 +973,32 @@ You have to guess BOTH correctly without knowing your data's true structure. Iso
 #### Isolation Forest Rod example 
 
 
-![](violin_fidelity_all_groups_Rod_IF.png?v=2)
+![](violin_fidelity_all_groups_Rod_IF.png?v=3)
 
 #### Isolation Forest RGC example 
 
-![](violin_fidelity_all_groups_RGC_IF.png?v=2)
+![](violin_fidelity_all_groups_RGC_IF.png?v=3)
 
 
 #### Isolation Forest BC example
 
 
-![](violin_fidelity_all_groups_BC_IF.png?v=2)
+![](violin_fidelity_all_groups_BC_IF.png?v=3)
 
 
 #### Isolation Forest Cones example 
 
 
-![](violin_fidelity_all_groups_Cones_IF.png?v=2)
+![](violin_fidelity_all_groups_Cones_IF.png?v=3)
 
 #### Isolation Forest MG example 
 
 
-![](violin_fidelity_all_groups_MG_IF.png?v=2)
+![](violin_fidelity_all_groups_MG_IF.png?v=3)
 
 #### Isolation Forest HC example 
 
-![](violin_fidelity_all_groups_HC_IF.png?v=2)
-
+![](violin_fidelity_all_groups_HC_IF.png?v=3)
 
 #### Isolation Forest classifier for all samples 
 

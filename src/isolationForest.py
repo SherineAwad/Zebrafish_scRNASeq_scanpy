@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # split_classifier_fixed_full.py
-# FULL FIX — no forced baseline, correct assignments, clean scaling
+# FULL FIX — ONE Control model for all predictions
 
 import argparse
 import scanpy as sc
@@ -11,11 +11,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import confusion_matrix
 
-def run_control_similarity(adata, condition, hvg_n):
-
+def run_control_model(adata, hvg_n):
+    """Train ONE model on Control, predict on ALL cells"""
+    
+    # Get all Control cells for training
     train_adata = adata[adata.obs["renamed_samples"] == "Control"].copy()
-    test_adata  = adata[adata.obs["renamed_samples"] == condition].copy()
-
+    
     if train_adata.n_obs < 10:
         raise RuntimeError("Not enough Control cells to train.")
 
@@ -23,11 +24,10 @@ def run_control_similarity(adata, condition, hvg_n):
     Xc = train_adata.X.toarray() if not isinstance(train_adata.X, np.ndarray) else train_adata.X
     keep = np.var(Xc, axis=0) > 0
     train_adata = train_adata[:, keep].copy()
-    test_adata  = test_adata[:, keep].copy()
-
-    # HVG selection
+    
+    # HVG selection on Control only
     hvg_n = min(hvg_n, train_adata.n_vars)
-
+    
     try:
         sc.pp.highly_variable_genes(
             train_adata,
@@ -35,49 +35,62 @@ def run_control_similarity(adata, condition, hvg_n):
             flavor="seurat",
             subset=True
         )
-
         X_train = train_adata.X.toarray() if not isinstance(train_adata.X, np.ndarray) else train_adata.X
-        X_test  = test_adata[:, train_adata.var_names].X
-
-        if not isinstance(X_test, np.ndarray):
-            X_test = X_test.toarray()
-
+        
     except Exception:
         X_train = train_adata.X.toarray() if not isinstance(train_adata.X, np.ndarray) else train_adata.X
-        X_test  = test_adata.X.toarray() if not isinstance(test_adata.X, np.ndarray) else test_adata.X
 
     X_train = np.nan_to_num(X_train)
-    X_test  = np.nan_to_num(X_test)
-
-    # Model - ONLY CHANGE: SVM to Isolation Forest
+    
+    # Train ONE model on Control only
     model = Pipeline([
         ("scaler", StandardScaler()),
         ("iforest", IsolationForest(contamination=0.01, random_state=42))
     ])
-
+    
     model.fit(X_train)
-
-    f_train = model.decision_function(X_train)
-    f_test  = model.decision_function(X_test)
-
-    # Joint scaling (real scaling — no forcing)
-    all_f = np.concatenate([f_train, f_test])
-    f_scaled = (all_f - all_f.min()) / (all_f.max() - all_f.min() + 1e-9)
-
-    train_adata.obs[f"fidelity_{condition}"] = f_scaled[:len(f_train)]
-    test_adata.obs[f"fidelity_{condition}"]  = f_scaled[len(f_train):]
-
-    y_true = np.array([1]*len(f_train) + [0]*len(f_test))
+    
+    # Get scores for ALL cells
+    all_scores = []
+    all_cells = []
+    
+    for condition in ["Control", "LD", "NMDA"]:
+        condition_adata = adata[adata.obs["renamed_samples"] == condition].copy()
+        
+        # Align genes with training data
+        condition_adata = condition_adata[:, train_adata.var_names].copy()
+        X_condition = np.nan_to_num(to_dense(condition_adata.X))
+        
+        # Get decision scores
+        scores = model.decision_function(X_condition)
+        all_scores.extend(scores)
+        all_cells.extend(condition_adata.obs_names)
+    
+    # Scale all scores together
+    all_scores = np.array(all_scores)
+    f_scaled = (all_scores - all_scores.min()) / (all_scores.max() - all_scores.min() + 1e-9)
+    
+    # Create fidelity column
+    adata.obs["fidelity"] = np.nan
+    for i, cell_name in enumerate(all_cells):
+        adata.obs.loc[cell_name, "fidelity"] = f_scaled[i]
+    
+    # Confusion matrix for Control vs non-Control
+    y_true = np.array([1 if adata.obs.loc[cell, "renamed_samples"] == "Control" else 0 for cell in all_cells])
     y_pred = (f_scaled >= 0.5).astype(int)
-
-    print(f"\nConfusion matrix: Control vs {condition}")
+    
+    print("\nConfusion matrix: Control vs all others")
     print(confusion_matrix(y_true, y_pred))
+    
+    return adata
 
-    return train_adata, test_adata
+
+def to_dense(X):
+    from scipy.sparse import issparse
+    return X.A if issparse(X) else X
 
 
 def main():
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--h5ad", required=True)
     parser.add_argument("--output", required=True)
@@ -88,21 +101,9 @@ def main():
     suffix = f"_{args.suffix}" if args.suffix else ""
 
     adata = sc.read_h5ad(args.h5ad)
-
-    # Run comparisons
-    ctrl_ld, ld = run_control_similarity(adata, "LD", args.hvg_genes)
-    ctrl_nmda, nmda = run_control_similarity(adata, "NMDA", args.hvg_genes)
-
-    # Initialize columns
-    adata.obs["fidelity_LD"] = np.nan
-    adata.obs["fidelity_NMDA"] = np.nan
-
-    # Correct assignments
-    adata.obs.loc[ctrl_ld.obs_names, "fidelity_LD"] = ctrl_ld.obs["fidelity_LD"].values
-    adata.obs.loc[ld.obs_names, "fidelity_LD"] = ld.obs["fidelity_LD"].values
-
-    adata.obs.loc[ctrl_nmda.obs_names, "fidelity_NMDA"] = ctrl_nmda.obs["fidelity_NMDA"].values
-    adata.obs.loc[nmda.obs_names, "fidelity_NMDA"] = nmda.obs["fidelity_NMDA"].values
+    
+    # Run ONE model on Control, predict everything
+    adata = run_control_model(adata, args.hvg_genes)
 
     # UMAP (independent)
     if "X_umap" not in adata.obsm:
@@ -114,27 +115,16 @@ def main():
     plt.savefig(f"umap_all_conditions{suffix}.png", dpi=300)
     plt.close()
 
-    # Violin plot (keep ticks and limits exactly as before)
+    # Violin plot - ONE model, ALL groups
     groups = ["Control", "LD", "NMDA"]
     x = np.arange(len(groups))
 
     fig, ax = plt.subplots(figsize=(6,4))
 
     data = [
-        adata.obs.loc[
-            adata.obs["renamed_samples"] == "Control",
-            "fidelity_LD"
-        ].dropna().values,
-
-        np.clip(adata.obs.loc[
-            adata.obs["renamed_samples"] == "LD",
-            "fidelity_LD"
-        ].dropna().values, 0, 1),
-
-        np.clip(adata.obs.loc[
-            adata.obs["renamed_samples"] == "NMDA",
-            "fidelity_NMDA"
-        ].dropna().values, 0, 1)
+        adata.obs.loc[adata.obs["renamed_samples"] == "Control", "fidelity"].dropna().values,
+        adata.obs.loc[adata.obs["renamed_samples"] == "LD", "fidelity"].dropna().values,
+        adata.obs.loc[adata.obs["renamed_samples"] == "NMDA", "fidelity"].dropna().values
     ]
 
     vp = ax.violinplot(
@@ -160,6 +150,7 @@ def main():
     plt.close()
 
     adata.write(args.output)
+    print(f"Saved results to {args.output}")
 
 
 if __name__ == "__main__":
