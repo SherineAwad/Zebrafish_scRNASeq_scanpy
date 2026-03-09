@@ -1005,6 +1005,26 @@ You have to guess BOTH correctly without knowing your data's true structure. Iso
 
 ![](violin_fidelity_all_groups_zebrafish_IF.png?v=2)
 
+## Using Random Forest:  
+
+### BC 
+![](violin_fidelity_all_groups_BC_RF.png?v=1) 
+
+### AC 
+![](violin_fidelity_all_groups_AC_RF.png?v=1)
+
+### RGC 
+![](violin_fidelity_all_groups_RGC_RF.png?v=1)
+
+### HC 
+![](violin_fidelity_all_groups_HC_RF.png?v=1)
+
+### MG 
+![](violin_fidelity_all_groups_MG_RF.png?v=1)
+
+### Cones 
+![](violin_fidelity_all_groups_Cones_RF.png?v=1)
+
 ## Cosine Similarity 
 
 
